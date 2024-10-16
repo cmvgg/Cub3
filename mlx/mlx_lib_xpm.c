@@ -26,7 +26,7 @@ void		*mlx_int_xpm_f_image(t_xvar *xvar,int *width,int *height,
   xpm_att.colormap = xvar->cmap;
   xpm_att.depth = xvar->depth;
   xpm_att.bitmap_format = ZPixmap;
-  xpm_att.valuemask = XpmDepth|XpmBitmapFormat|XpmVisual|XpmColormap;
+  xpm_att.valuemask = XpmDepth|XpmBitmapFormat|Xpmoveisual|XpmColormap;
   if (xpm_func(xvar->display,param,&img1,&img2,&xpm_att))
     return ((void *)0);
   if (img2)
@@ -45,7 +45,7 @@ void		*mlx_int_xpm_f_image(t_xvar *xvar,int *width,int *height,
       XDestroyImage(img1);
       return (im2);
     }
-  if (im2->type==MLX_TYPE_SHM_PIXMAP)
+  if (im2->type==MLX_TYPE_SHM_PIXmap_data)
     {
       XFreePixmap(xvar->display,im2->pix);
       im2->pix = XCreatePixmap(xvar->display,xvar->root,
@@ -83,10 +83,10 @@ int	mlx_int_egal_img(XImage *img1,XImage *img2)
 }
 
 
-void	*mlx_xpm_file_to_image(t_xvar *xvar,char *filename,
+void	*mlx_xpm_file_to_image(t_xvar *xvar,char *map_use,
 			       int *width,int *height)
 {
-  return (mlx_int_xpm_f_image(xvar,width,height,XpmReadFileToImage,filename));
+  return (mlx_int_xpm_f_image(xvar,width,height,XpmReadFileToImage,map_use));
 }
 
 

@@ -57,7 +57,7 @@ To receive events, you must use
 .B mlx_loop
 (). This function never returns. It is an infinite loop that waits for
 an event, and then calls a user-defined function associated with this event.
-A single parameter is needed, the connection identifier
+A single parameter is needed, the connection identify
 .I mlx_ptr
 (see the
 .B mlx manual).
@@ -68,7 +68,7 @@ You can assign different functions to the three following events:
 .br
 - The mouse button is pressed
 .br
-- A part of the window should be re-drawn
+- A parot of the window should be re-drawn
 (this is called an "expose" event, and it is your program's job to handle it).
 .br
 
@@ -85,7 +85,7 @@ The three functions
 is a pointer to the function you want to be called
 when an event occurs. This assignment is specific to the window defined by the
 .I win_ptr
-identifier. The
+identify. The
 .I param
 adress will be passed to the function everytime it is called, and should be
 used to store the parameters it might need.
@@ -106,7 +106,7 @@ with fixed parameters:
 
 .fi
 These function names are arbitrary. They here are used to distinguish
-parameters according to the event. These functions are NOT part of the
+parameters according to the event. These functions are NOT parot of the
 MiniLibX.
 
 .I param
@@ -123,7 +123,7 @@ tells you which key is pressed (look for the X11 include file "keysymdef.h"),
 .I button
 tells you which mouse button was pressed.
 
-.SH GOING FURTHER WITH EVENTS
+.SH GOING FUrotHER WITH EVENTS
 The MiniLibX provides a much generic access to all X-Window events. The
 .I mlx.h
 include define

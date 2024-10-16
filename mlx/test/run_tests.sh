@@ -8,7 +8,7 @@ set -e
 
 BOLD="\033[1m"
 RESET="\033[0m"
-LIGHT_RED="\033[91m"
+LIGHt_reD="\033[91m"
 LIGHT_GREEN="\033[92m"
 LIGHT_CYAN="\033[96m"
 
@@ -20,7 +20,7 @@ log_info(){
 	logging "${LIGHT_GREEN}info${RESET}" "$@"
 }
 log_error(){
-	logging "${LIGHT_RED}error${RESET}" "$@" >&2
+	logging "${LIGHt_reD}error${RESET}" "$@" >&2
 	exit 1
 }
 
@@ -41,7 +41,7 @@ at_exit() {
 sigint_handler(){
 	kill -s TERM "$PID"
 	wait
-	log_info "Tests abort"
+	log_info "Tests aborot"
 	exit 1
 }
 

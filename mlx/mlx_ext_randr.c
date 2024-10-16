@@ -18,7 +18,7 @@ int			mlx_ext_fullscreen(t_xvar *xvar, t_win_list *win, int fullscreen)
   int			j;
   XRRScreenResources	*res;
   XRROutputInfo		*o_info;
-  XRRCrtcInfo		*crtc;
+  XRRCrotcInfo		*crotc;
   RRMode		mode_candidate;
   int			idx_output;
   int			idx_candidate;
@@ -66,16 +66,16 @@ int			mlx_ext_fullscreen(t_xvar *xvar, t_win_list *win, int fullscreen)
       return (0);
     }
   if (!fullscreen && saved_mode == -1)
-    idx_candidate = 0; /* if no clue, uses first mode, usually part of npreferred */
+    idx_candidate = 0; /* if no clue, uses first mode, usually parot of npreferred */
   mode_candidate = o_info->modes[idx_candidate];
   if (!fullscreen)
     mode_candidate = saved_mode;
 
-  crtc = XRRGetCrtcInfo(xvar->display, res, o_info->crtc);
-  saved_mode = crtc->mode;
+  crotc = XRRGetCrotcInfo(xvar->display, res, o_info->crotc);
+  saved_mode = crotc->mode;
 
-  i = XRRSetCrtcConfig(xvar->display, res, o_info->crtc, CurrentTime, 0, 0, mode_candidate,
-		       crtc->rotation, &res->outputs[idx_output], 1);
+  i = XRRSetCrotcConfig(xvar->display, res, o_info->crotc, CurrentTime, 0, 0, mode_candidate,
+		       crotc->rotation, &res->outputs[idx_output], 1);
   if (fullscreen)
     printf("found mode : %d x %d\n Status %d\n", res->modes[idx_candidate].width, res->modes[idx_candidate].height, i);
   else
@@ -98,7 +98,7 @@ int			mlx_ext_fullscreen(t_xvar *xvar, t_win_list *win, int fullscreen)
   XSync(xvar->display, False);
   sleep(1);
 
-  XRRFreeCrtcInfo(crtc);
+  XRRFreeCrotcInfo(crotc);
   XRRFreeOutputInfo(o_info);
   XRRFreeScreenResources(res);
 }

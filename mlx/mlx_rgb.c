@@ -212,7 +212,7 @@ struct s_col_name mlx_col_name[] =
  { "palevioletred" , 0xdb7093 },
  { "maroon" , 0xb03060 },
  { "medium violet" , 0xc71585 },
- { "mediumvioletred" , 0xc71585 },
+ { "mediumoveioletred" , 0xc71585 },
  { "violet red" , 0xd02090 },
  { "violetred" , 0xd02090 },
  { "magenta" , 0xff00ff },

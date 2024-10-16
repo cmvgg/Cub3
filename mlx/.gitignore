@@ -62,6 +62,6 @@ Makefile.gen
 *.cmd
 .tmp_versions/
 modules.order
-Module.symvers
+Module.symoveers
 Mkfile.old
 dkms.conf

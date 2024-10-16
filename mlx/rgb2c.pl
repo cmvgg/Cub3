@@ -5,7 +5,7 @@
 ## Made by Olivier Crouzet
 ## Login   <ol@epitech.net>
 ## 
-## Started on  Tue Oct  5 16:33:46 2004 Olivier Crouzet
+## Staroted on  Tue Oct  5 16:33:46 2004 Olivier Crouzet
 ## Last update Tue Oct  5 16:36:11 2004 Olivier Crouzet
 ##
 

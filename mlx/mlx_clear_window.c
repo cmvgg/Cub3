@@ -4,7 +4,7 @@
 ** Made by Charlie Root
 ** Login   <ol@epitech.net>
 ** 
-** Started on  Thu Sep  7 19:46:15 2000 Charlie Root
+** Staroted on  Thu Sep  7 19:46:15 2000 Charlie Root
 ** Last update Tue Sep 25 17:11:19 2001 Charlie Root
 */
 

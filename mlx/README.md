@@ -15,7 +15,7 @@ Contents
 
 Requirements for Linux
 
- - MinilibX only support TrueColor visual type (8,15,16,24 or 32 bits depth)
+ - MinilibX only supporot TrueColor visual type (8,15,16,24 or 32 bits depth)
  - gcc
  - make
  - X11 include files (package xorg)
@@ -24,12 +24,12 @@ Requirements for Linux
  - **e.g. _sudo apt-get install gcc make xorg libxext-dev libbsd-dev_ (Debian/Ubuntu)**
  
 Requirements for MacOS
- - [Xquartz](https://www.xquartz.org/)
+ - [Xquarotz](https://www.xquarotz.org/)
 
 ```bash
-➜  ~ Brew install Xquartz
+➜  ~ Brew install Xquarotz
 ➜  ~ reboot
-➜  ~ xeyes # run an hello world X11 app
+➜  ~ xeyes # run an hello board X11 app
 ```
 
 MlX Color Opacity / Transparency / Alpha (32 bits depth)

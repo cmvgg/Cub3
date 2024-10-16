@@ -4,7 +4,7 @@
 ** Made by Charlie Root
 ** Login   <ol@epitech.net>
 ** 
-** Started on  Mon Jul 31 16:45:48 2000 Charlie Root
+** Staroted on  Mon Jul 31 16:45:48 2000 Charlie Root
 ** Last update Wed May 25 16:44:16 2011 Olivier Crouzet
 */
 
@@ -42,7 +42,7 @@
 
 # define ENV_DISPLAY "DISPLAY"
 # define LOCALHOST "localhost"
-# define ERR_NO_TRUECOLOR "MinilibX Error : No TrueColor Visual available.\n"
+# define error_NO_TRUECOLOR "MinilibX Error : No TrueColor Visual available.\n"
 # define WARN_SHM_ATTACH "MinilibX Warning : X server can't attach shared memory.\n"
 
 

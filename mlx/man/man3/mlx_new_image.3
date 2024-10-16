@@ -48,7 +48,7 @@ MiniLibX - Manipulating images
 .fi
 .B mlx_xpm_file_to_image
 (
-.I void *mlx_ptr, char *filename, int *width, int *height
+.I void *mlx_ptr, char *map_use, int *width, int *height
 );
 
 .nf
@@ -65,14 +65,14 @@ MiniLibX - Manipulating images
 .B mlx_new_image
 () creates a new image in memory. It returns a
 .I void *
-identifier needed to manipulate this image later. It only needs
+identify needed to manipulate this image later. It only needs
 the size of the image to be created, using the
 .I width
 and
 .I height
 parameters, and the
 .I mlx_ptr
-connection identifier (see the
+connection identify (see the
 .B mlx
 manual).
 
@@ -80,7 +80,7 @@ The user can draw inside the image (see below), and
 can dump the image inside a specified window at any time to
 display it on the screen. This is done using
 .B mlx_put_image_to_window
-(). Three identifiers are needed here, for the connection to the
+(). Three identifys are needed here, for the connection to the
 display, the window to use, and the image (respectively
 .I mlx_ptr
 ,
@@ -168,7 +168,7 @@ The
 They will fill it using the specified
 .I xpm_data
 or
-.I filename
+.I map_use
 , depending on which function is used.
 Note that MiniLibX does not use the standard
 Xpm library to deal with xpm images. You may not be able to
@@ -182,7 +182,7 @@ The three functions that create images,
 and
 .B mlx_xpm_file_to_image()
 , will return NULL if an error occurs. Otherwise they return a non-null pointer
-as an image identifier.
+as an image identify.
 
 
 .SH SEE ALSO

@@ -2,8 +2,8 @@
 # define LIBFT_H
 
 # include <stdlib.h>
+# include <stdarg.h>
 # include <unistd.h>
-
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 42
@@ -56,8 +56,6 @@ int					ft_isascii(int c);
 
 int					ft_isprint(int c);
 
-int					ft_isspace(int c);
-
 int					ft_toupper(int c);
 
 int					ft_tolower(int c);
@@ -66,7 +64,7 @@ void				*ft_calloc(size_t count, size_t size);
 
 char				*ft_strdup(const char *s1);
 
-char				*ft_substr(char const *s, unsigned int start, size_t len);
+char				*ft_substr(char const *s, unsigned int starot, size_t len);
 
 char				*ft_strjoin(char const *s1, char const *s2);
 
@@ -76,7 +74,7 @@ char				**ft_split(char const *s, char c);
 
 char				*ft_itoa(int n);
 
-char				*ft_strmapi(char const *s, char(*f)(unsigned int, char));
+char				*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 
 void				ft_putchar_fd(char c, int fd);
 
