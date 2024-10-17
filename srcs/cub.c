@@ -40,6 +40,9 @@ static void	initialize_game_values(t_data *dsp_dt, t_texture_element *elem_txt,
 	int	green;
 	int	blue;
 
+	red = 0;
+	green = 0;
+	blue = 0;
 	dsp_dt->map.board = map_dt->matrix;
 	dsp_dt->screen_w = elem_txt->resolution.width;
 	dsp_dt->screen_h = elem_txt->resolution.height;
@@ -58,6 +61,7 @@ static void	initialize_game_values(t_data *dsp_dt, t_texture_element *elem_txt,
 	dsp_dt->key.rot_left = 0;
 	dsp_dt->key.rot_right = 0;
 	dsp_dt->key.destroy = 0;
+	
 }
 
 static void	initialize_textures(t_data *dsp_dt, t_texture_element *elem_texture)
@@ -78,6 +82,7 @@ static void	initialize_textures(t_data *dsp_dt, t_texture_element *elem_texture)
 			dsp_dt->screen_w, dsp_dt->screen_h);
 	dsp_dt->mlx.addr = mlx_get_data_addr(dsp_dt->mlx.img,
 			&dsp_dt->mlx.bpp, &dsp_dt->mlx.length, &dsp_dt->mlx.end);
+	
 }
 
 void	cub(t_texture_element *elem_texture, t_map_data *map_data)
@@ -86,6 +91,9 @@ void	cub(t_texture_element *elem_texture, t_map_data *map_data)
 	int		screen_max_width;
 	int		screen_max_height;
 
+	screen_max_height = 0;
+	screen_max_width = 0;
+	
 	dsp_dt.mlx.mlx = mlx_init();
 	locate_player(&dsp_dt, map_data);
 	initialize_game_values(&dsp_dt, elem_texture, map_data);

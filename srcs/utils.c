@@ -16,10 +16,10 @@ void	init_buffer(int mode, int ***buffer, t_data *dsp_dt)
 	if (mode == 1)
 	{
 		x = 0;
-		(*buffer) = (int **)malloc(sizeof(int *) * dsp_dt->screen_h);
+		(*buffer) = (int **)ft_calloc(sizeof(int *), dsp_dt->screen_h);
 		while (x < dsp_dt->screen_h)
 		{
-			(*buffer)[x] = (int *)malloc(sizeof(int) * dsp_dt->screen_w);
+			(*buffer)[x] = (int *)ft_calloc(sizeof(int), dsp_dt->screen_w);
 			x++;
 		}
 	}
@@ -79,6 +79,10 @@ void	draw_sprites(int width, int height, int **buffer, t_data *dsp_dt)
 	int		y;
 
 	stripe = dsp_dt->spr.startx;
+	color = NULL;
+	tex_x = 0;
+	tex_y = 0;
+	y = 0;
 	while (stripe < dsp_dt->spr.endx)
 	{
 		tex_x = calculate_tex_cor(0, stripe, width, dsp_dt);

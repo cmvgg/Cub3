@@ -109,10 +109,8 @@ char				*ft_hextoa(unsigned long n, char **str);
 
 char				*ft_charstr(char c);
 
-int					ft_pot(int n, int pot);
+int					ft_pow(int n, int pot);
 
 int					get_next_line(int fd, char **line);
-
-int					printf(const char *format, ...);
 
 #endif

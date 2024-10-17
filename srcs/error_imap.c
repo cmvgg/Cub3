@@ -21,20 +21,21 @@ static void	check_values(const char *map_use, t_map_data *map_data)
 	int		fd;
 
 	read_count = 0;
+	fd = 0;
 	fd = open(map_use, O_RDONLY);
 	while (read_count < 8)
 	{
 		get_next_line(fd, &current_line);
 		if (*current_line != '\0')
 			read_count++;
-		//free(current_line);
+		free(current_line);
 	}
 	elem_texture_to_map(fd, &current_line);
 	map_data->player = 0;
 	validate_map_first_line(&current_line, map_data);
-	validate_map_lines(fd, &current_line, map_data);
+	validate_map_lines(fd, current_line, map_data);
 	if (map_data->player == 0)
-		ft_error("Error:\n");
+		ft_error("Error: No player\n");
 	validate_map_last_line(&current_line, map_data);
 	close(fd);
 }
@@ -49,7 +50,7 @@ void	create_map(const char *map_use, t_map_data *map_data)
 	while (row_idx < map_data->height)
 	{
 		map_data->matrix[row_idx]
-			= (char *)malloc(sizeof(char) * (map_data->width + 1));
+			= (char *)ft_calloc(sizeof(char), (map_data->width + 1));
 		column_idx = 0;
 		while (column_idx < map_data->width)
 		{

@@ -1,10 +1,11 @@
-R 1920 1080 
-NO ./textures/grey.xpm
-SO ./textures/wood.xpm
-WE ./textures/brick.xpm
-EA ./textures/blue.xpm
-F 100,10,20
-C 32,150,100
+R 1920 1080
+NO ./textures/grey2.xpm
+SO ./textures/grey2.xpm
+WE ./textures/grey2.xpm
+EA ./textures/grey2.xpm
+S ./textures/grey2.xpm
+F 100,100,20
+C 100,150,100
 
 1111111111
 1000000011

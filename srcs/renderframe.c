@@ -93,9 +93,9 @@ int	render_frame(t_data *dsp)
 	int	x;
 	int	**buffer;
 
+	x = 0;
 	init_buffer(1, &buffer, dsp);
 	update_player_movement(dsp);
-	x = 0;
 	while (x < dsp->screen_w)
 	{
 		set_ray(x, dsp);

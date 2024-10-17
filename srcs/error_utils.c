@@ -1,21 +1,19 @@
 #include "../includes/cub3d.h"
 
-static int	ext_look_color(int tot, int count, char *color)
+static int	ext_look_color(int *tot, int count, char *color)
 {
-	int	del;
 
 	if (color[count] == '\0')
 		ft_error("Error:\n");
 	if ((color[count] < '0' || color[count] > '9'))
 		ft_error("Error:\n");
 	count = 0;
-	del = 0;
 	while (color[count])
 	{
 		if (color[count] == ',')
 			count++;
 		if ((color[count] < '0' || color[count] > '9')
-			&& (color[count] != ',' && del < 2)
+			&& (color[count] != ',')
 			&& color[count] != ' ' && color[count] != '\t')
 			ft_error("Error:\n");
 		count++;
@@ -24,7 +22,7 @@ static int	ext_look_color(int tot, int count, char *color)
 	return (0);
 }
 
-static void	final_color(int count, char *str)
+static void	final_color(int count, char const *str)
 {
 	while (str[count] == ' ' || str[count] == '\t')
 		count++;
@@ -39,12 +37,12 @@ void	validate_image_path(char *path)
 
 	tmp = path;
 	path = ft_strtrim(path, " \t");
-	printf("\n\n PATH: %s\n\n", path);
 	fd = open(path, O_RDONLY);
+	//printf("\n\n%s\n", path);
 	free(tmp);
 	if (fd < 0)
 	{
-		close(fd);
+		//close(fd);
 		ft_error("Error\n");
 	}
 	tmp = ft_strnstr(path + ft_strlen(path) - 4, ".xpm", ft_strlen(path));
@@ -66,9 +64,10 @@ int	look_color(int *red, int *green, char *color)
 
 	tot = 0;
 	count = 0;
+	value = 0;
 	while (tot < 3)
 	{
-		value = ext_look_color(tot, count, color);
+		value = ext_look_color(&tot, count, color);
 		while (color[count] >= '0' && color[count] <= '9')
 			value = (value * 10) + (color[count++] - '0');
 		if ((tot < 2 && color[count] != ','))

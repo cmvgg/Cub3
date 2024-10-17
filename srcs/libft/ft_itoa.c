@@ -49,7 +49,7 @@ char	*ft_itoa(int n)
 	len_num = ft_len_num(n);
 	if (n <= 0)
 		len_num++;
-	result = (char *)malloc((len_num + 1) * sizeof(char));
+	result = (char *)ft_calloc((len_num + 1), sizeof(char));
 	if (!result)
 		return (0);
 	if (n > 0 && n < 10)

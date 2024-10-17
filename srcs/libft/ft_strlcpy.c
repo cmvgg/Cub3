@@ -1,23 +1,34 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cvarela- <cvarela-@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/09/12 11:53:55 by jllarena          #+#    #+#             */
+/*   Updated: 2024/10/17 17:19:37 by cvarela-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../../includes/libft.h"
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
-	unsigned int	count;
-	unsigned int	output;
+	size_t	i;
 
-	if (!dst && !src)
-		return (0);
-	output = 0;
-	while (src[output] != '\0')
-		output++;
-	if (dstsize == 0)
-		return (output);
-	count = 0;
-	while (src[count] != '\0' && count < (dstsize - 1))
+	i = 0;
+	while (i + 1 < dstsize && src[i])
 	{
-		dst[count] = src[count];
-		count++;
+		dst[i] = src[i];
+		i++;
 	}
-	dst[count++] = '\0';
-	return (output);
+	if (dstsize > 0)
+	{
+		dst[i] = '\0';
+	}
+	while (src[i])
+	{
+		i++;
+	}
+	return (i);
 }

@@ -12,14 +12,19 @@ static int	gnl_find_nl(char **res, char **line)
 {
 	char	*temp_1;
 	char	*temp_2;
+	char	*newline_pos;
+
+	newline_pos = ft_strchr(*res, '\n');
+	if (!newline_pos)
+		return (-1);
+	*newline_pos = '\0';
+	*line = ft_strdup(*res);
 
 	temp_1 = *res;
-	temp_2 = ft_strchr(*res, '\n');
-	*temp_2 = '\0';
-	temp_2++;
-	*line = ft_strdup(*res);
-	*res = ft_strdup(temp_2);
+	temp_2 = ft_strdup(newline_pos + 1);
 	free(temp_1);
+	*res = temp_2;
+
 	return (1);
 }
 
@@ -31,17 +36,19 @@ int	get_next_line(int fd, char **line)
 	int			num;
 
 	if (fd < 0 || BUFFER_SIZE <= 0 || !line)
-		return (-1);
+		return (0);
 	if (!res)
 		res = ft_strdup("");
-	while (!(ft_strchr(res, '\n')) || !(ft_strchr(res, '\0')))
+	while (!ft_strchr(res, '\n'))
 	{
 		num = read(fd, buff, BUFFER_SIZE);
-		if (num <= 0)
-			break ;
+		if (num < 0)
+			return (0);
+		if (num == 0)
+			break;
 		buff[num] = '\0';
 		temp = res;
-		res = ft_strjoin(res, buff);
+		res = ft_strjoin(temp, buff);
 		free(temp);
 	}
 	if (ft_strchr(res, '\n'))
@@ -49,5 +56,5 @@ int	get_next_line(int fd, char **line)
 	if (num == 0)
 		return (gnl_find_eof(&res, line));
 	free(res);
-	return (-1);
+	return (0);
 }

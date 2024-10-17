@@ -16,6 +16,7 @@ int	main(int argc, char *argv[])
 	char	*tmp;
 
 	element_txt = (t_texture_element){0};
+	map = (t_map_data){0};
 	if (argc == 2)
 	{
 		tmp = ft_strnstr(argv[1], ".cub", ft_strlen(argv[1]));
@@ -27,7 +28,8 @@ int	main(int argc, char *argv[])
 			cub(&element_txt, &map);
 			exit(0);
 		}
-		ft_error("Error:\n");
+		ft_error("Error: not valid extension\n");
 	}
-	ft_error("Error:\n");
+	ft_error("Error: num of argument is invalid\n");
 }
+ 

@@ -1,6 +1,6 @@
 DEL			=	rm -f
 CC			=	cc
-CCFLAGS		=	-Wall -Wextra -Werror -g3 # -fsanitize=address
+CCFLAGS		=	-Wall -Wextra -Werror -Wuninitialized -g3  #-fsanitize=address,leak
 #MLX			=	-framework OpenGL -framework AppKit
  MLX			=	-lXext -lX11 -lm -lbsd 
 
@@ -92,7 +92,7 @@ run: re
 	./cub3d maps/map1.cub
 
 val: re
-	valgrind -s ./cub3d maps/map1.cub
+	valgrind -s --leak-check=full --show-leak-kinds=all --track-origins=yes --show-mismatched-frees=yes  ./cub3d maps/map1.cub
 
 
 re: fclean all

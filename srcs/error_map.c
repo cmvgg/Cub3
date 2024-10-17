@@ -12,7 +12,7 @@ static int	check_map_values(int read_stat, char *line_cont,
 			|| line_cont[index] == '\f' || line_cont[index] == '\v'
 			|| line_cont[index] == '\r')
 		{
-			ft_error("Error:\n");
+			ft_error("Error:1\n");
 		}
 		if (read_stat == -1 || (line_cont[index] != '0'
 				&& line_cont[index] != '1' && line_cont[index] != '2'
@@ -20,7 +20,7 @@ static int	check_map_values(int read_stat, char *line_cont,
 				&& line_cont[index] != 'S' && line_cont[index] != 'E'
 				&& line_cont[index] != 'W'))
 		{
-			ft_error("Error:\n");
+			ft_error("Error:2\n");
 		}
 		if ((int)ft_strlen(line_cont) > map_data->width)
 			map_data->width = ft_strlen(line_cont);
@@ -45,11 +45,11 @@ static void	elem_texture_to_map(int fd, t_map_data *map_data)
 			break ;
 		if (read_status == -1 || read_status == 0)
 		{
-			ft_error("Error:\n");
+			ft_error("Error:3\n");
 		}
 		free(current_line);
 	}
-	read_status = check_map_values(read_status, current_line, map_data);
+	check_map_values(read_status, current_line, map_data);
 	free(current_line);
 }
 

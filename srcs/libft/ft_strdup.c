@@ -1,20 +1,63 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cvarela- <cvarela-@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/09/21 12:24:59 by cvarela-          #+#    #+#             */
+/*   Updated: 2024/10/17 17:26:47 by cvarela-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../../includes/libft.h"
 
-char	*ft_strdup(const char *s1)
+char	*ft_strdup(const char *str)
 {
-	int		count;
-	char	*str;
+	size_t	len;
+	char	*copy;
 
-	count = ft_strlen(s1);
-	str = (char *)malloc((count + 1) * sizeof(char));
-	if (!str)
-		return (NULL);
-	count = 0;
-	while (s1[count])
+	len = ft_strlen(str);
+	copy = (char *)malloc(len + 1);
+	if (str == NULL)
 	{
-		str[count] = s1[count];
-		count++;
+		return (NULL);
 	}
-	str[count] = '\0';
-	return (str);
+	if (copy != NULL)
+	{
+		ft_memcpy(copy, str, len);
+		copy[len] = '\0';
+	}
+	return (copy);
 }
+
+/*
+int main() {
+    const char *cadena_original = "Hola, mundo!";
+    char *cadena_duplicada;
+	char *cadena_duplicada2;
+
+    cadena_duplicada = strdup(cadena_original);
+    cadena_duplicada2 = ft_strdup(cadena_original);
+
+    if (cadena_duplicada == NULL) {
+        printf("Error: No se pudo duplicar la cadena.\n");
+        return 1;
+    }
+
+    printf("Cadena original: %s\n", cadena_original);
+    printf("Cadena duplicada: %s\n", cadena_duplicada);
+
+	if (cadena_duplicada2 == NULL) {
+        printf("Error: No se pudo duplicar la cadena. ft_\n");
+        return 1;
+    }
+
+    printf("Cadena duplicada: %s ft_\n", cadena_duplicada2);
+
+    free(cadena_duplicada);
+    free(cadena_duplicada2);
+
+    return 0;
+}
+*/

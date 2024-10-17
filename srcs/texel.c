@@ -96,9 +96,10 @@ void	buff_wall(int x, int **buffer, t_data *dsp_dt)
 	int		tex_y;
 	int		y;
 
-	y = dsp_dt->spr.starty;
+	y = 0;
 	tex_y = 0;
 	color = NULL;
+	y = dsp_dt->spr.starty;
 	while (y < dsp_dt->spr.endy)
 	{
 		find_color(tex_y, &color, dsp_dt);

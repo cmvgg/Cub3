@@ -213,8 +213,7 @@ void				create_map(const char *str, t_map_data *map_data);
 
 /* read_map.c */
 void				validate_map_first_line(char **line, t_map_data *map_data);
-void				validate_map_lines(int fd, char **line,
-						t_map_data *map_data);
+void				validate_map_lines(int fd, char *line, t_map_data *map_data);
 void				validate_map_last_line(char **line, t_map_data *map_data);
 
 /* validate_map_lines.c */

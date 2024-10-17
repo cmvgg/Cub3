@@ -16,6 +16,7 @@ static void	init_sprites(t_data *dsp_dt, t_map_data *map_data)
 	int	z;
 
 	y = 0;
+	x = 0;
 	z = 0;
 	while (y < map_data->height)
 	{
@@ -24,7 +25,7 @@ static void	init_sprites(t_data *dsp_dt, t_map_data *map_data)
 		{
 			if (dsp_dt->map.board[y][x] == '2')
 			{
-				dsp_dt->spr.buf[z] = (double *)malloc(sizeof(double) * 2);
+				dsp_dt->spr.buf[z] = (double *)ft_calloc(sizeof(double), 2);
 				dsp_dt->spr.buf[z][0] = y + 0.5;
 				dsp_dt->spr.buf[z][1] = x + 0.5;
 				z++;
@@ -54,10 +55,10 @@ void	find_sprites(t_data *dsp_dt, t_map_data *map_data)
 		}
 		y++;
 	}
-	dsp_dt->spr.zbuf = (double *)malloc(sizeof(double) * dsp_dt->screen_w);
-	dsp_dt->spr.dist = (double *)malloc(sizeof(double) * dsp_dt->spr.tot);
-	dsp_dt->spr.buf = (double **)malloc(sizeof(double *) * dsp_dt->spr.tot);
-	dsp_dt->spr.order = (double *)malloc(sizeof(double) * dsp_dt->spr.tot);
+	dsp_dt->spr.zbuf = (double *)ft_calloc(sizeof(double), dsp_dt->screen_w);
+	dsp_dt->spr.dist = (double *)ft_calloc(sizeof(double), dsp_dt->spr.tot);
+	dsp_dt->spr.buf = (double **)ft_calloc(sizeof(double *), dsp_dt->spr.tot);
+	dsp_dt->spr.order = (double *)ft_calloc(sizeof(double), dsp_dt->spr.tot);
 	init_sprites(dsp_dt, map_data);
 }
 
@@ -69,6 +70,9 @@ void	sort_sprites(double *order, double *dist, int tot)
 	double	men_dis;
 
 	index = 0;
+	pos = 0;
+	find = 0;
+	men_dis = 0;
 	while (index < tot)
 	{
 		pos = index + 1;
@@ -77,9 +81,10 @@ void	sort_sprites(double *order, double *dist, int tot)
 		while (pos < tot)
 		{
 			if (dist[pos] > men_dis)
-				find = pos;
-			if (dist[pos] > men_dis)
-				men_dis = dist[pos];
+				{
+					find = pos;
+					men_dis = dist[pos];
+				}
 			pos++;
 		}
 		if (men_dis != dist[index])
