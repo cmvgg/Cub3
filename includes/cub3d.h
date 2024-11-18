@@ -6,7 +6,7 @@
 /*   By: cvarela- <cvarela-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 09:44:29 by cvarela-          #+#    #+#             */
-/*   Updated: 2024/11/18 10:19:41 by cvarela-         ###   ########.fr       */
+/*   Updated: 2024/11/18 10:38:47 by cvarela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -242,7 +242,7 @@ void				cub(t_texture_element *elems, t_map_data *map_data);
 
 /* findspr.c */
 void				find_sprites(t_data *dsp_dt, t_map_data *map_data);
-void				sort_sprites(double *order, double *dist, int tot, int index);
+void				sort_sprites(double *order, double *dist, int tot, int idx);
 
 /* renderframe.c */
 int					render_frame(t_data *dsp_dt);
