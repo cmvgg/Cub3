@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   cub.c                                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cvarela- <cvarela-@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/11/18 09:50:46 by cvarela-          #+#    #+#             */
+/*   Updated: 2024/11/18 10:07:55 by cvarela-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/cub3d.h"
 
 static int	close_cub3d(void)
@@ -61,7 +73,6 @@ static void	initialize_game_values(t_data *dsp_dt, t_texture_element *elem_txt,
 	dsp_dt->key.rot_left = 0;
 	dsp_dt->key.rot_right = 0;
 	dsp_dt->key.destroy = 0;
-	
 }
 
 static void	initialize_textures(t_data *dsp_dt, t_texture_element *elem_texture)
@@ -82,7 +93,6 @@ static void	initialize_textures(t_data *dsp_dt, t_texture_element *elem_texture)
 			dsp_dt->screen_w, dsp_dt->screen_h);
 	dsp_dt->mlx.addr = mlx_get_data_addr(dsp_dt->mlx.img,
 			&dsp_dt->mlx.bpp, &dsp_dt->mlx.length, &dsp_dt->mlx.end);
-	
 }
 
 void	cub(t_texture_element *elem_texture, t_map_data *map_data)
@@ -93,7 +103,6 @@ void	cub(t_texture_element *elem_texture, t_map_data *map_data)
 
 	screen_max_height = 0;
 	screen_max_width = 0;
-	
 	dsp_dt.mlx.mlx = mlx_init();
 	locate_player(&dsp_dt, map_data);
 	initialize_game_values(&dsp_dt, elem_texture, map_data);

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   cub3d.h                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cvarela- <cvarela-@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/11/18 09:44:29 by cvarela-          #+#    #+#             */
+/*   Updated: 2024/11/18 10:19:41 by cvarela-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef CUB3D_H
 # define CUB3D_H
 
@@ -7,6 +19,7 @@
 # include <math.h>
 # include <stdio.h>
 # include <unistd.h>
+# include <stdlib.h>
 
 # define PI 3.141592654
 
@@ -213,7 +226,7 @@ void				create_map(const char *str, t_map_data *map_data);
 
 /* read_map.c */
 void				validate_map_first_line(char **line, t_map_data *map_data);
-void				validate_map_lines(int fd, char *line, t_map_data *map_data);
+void				validate_map_lines(int fd, char *line, t_map_data *map_dat);
 void				validate_map_last_line(char **line, t_map_data *map_data);
 
 /* validate_map_lines.c */
@@ -229,7 +242,7 @@ void				cub(t_texture_element *elems, t_map_data *map_data);
 
 /* findspr.c */
 void				find_sprites(t_data *dsp_dt, t_map_data *map_data);
-void				sort_sprites(double *order, double *dist, int tot);
+void				sort_sprites(double *order, double *dist, int tot, int index);
 
 /* renderframe.c */
 int					render_frame(t_data *dsp_dt);

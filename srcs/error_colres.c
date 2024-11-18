@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   error_colres.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cvarela- <cvarela-@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/11/18 09:50:59 by cvarela-          #+#    #+#             */
+/*   Updated: 2024/11/18 10:07:24 by cvarela-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/cub3d.h"
 
 static int	copy_res(int loop, int ct, char **str, char **ln)
@@ -34,13 +46,15 @@ void	copy_path(int count, char **str, char **line)
 	char	*tmp1;
 	char	*tmp2;
 
+	tmp1 = NULL;
+	tmp2 = NULL;
 	(*str) = ft_strdup("");
 	while (((*line)[count] != ' ' || (*line)[count] != '\t')
 		&& (*line)[count] != '\0')
 	{
 		tmp1 = (*str);
 		tmp2 = ft_charstr((*line)[count++]);
-		if(*str)
+		if (*str)
 			(*str) = ft_strjoin(*str, tmp2);
 		free(tmp1);
 		free(tmp2);

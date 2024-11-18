@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   error_imap.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cvarela- <cvarela-@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/11/18 09:51:14 by cvarela-          #+#    #+#             */
+/*   Updated: 2024/11/18 10:05:46 by cvarela-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/cub3d.h"
 
 static void	elem_texture_to_map(int fd, char **current_line)
@@ -17,8 +29,8 @@ static void	elem_texture_to_map(int fd, char **current_line)
 static void	check_values(const char *map_use, t_map_data *map_data)
 {
 	static char	*current_line;
-	int		read_count;
-	int		fd;
+	int			read_count;
+	int			fd;
 
 	read_count = 0;
 	fd = 0;

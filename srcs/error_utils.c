@@ -1,8 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   error_utils.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cvarela- <cvarela-@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/11/18 09:51:34 by cvarela-          #+#    #+#             */
+/*   Updated: 2024/11/18 10:05:18 by cvarela-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/cub3d.h"
 
 static int	ext_look_color(int *tot, int count, char *color)
 {
-
 	if (color[count] == '\0')
 		ft_error("Error:\n");
 	if ((color[count] < '0' || color[count] > '9'))
@@ -38,7 +49,6 @@ void	validate_image_path(char *path)
 	tmp = path;
 	path = ft_strtrim(path, " \t");
 	fd = open(path, O_RDONLY);
-	//printf("\n\n%s\n", path);
 	free(tmp);
 	if (fd < 0)
 	{
@@ -70,9 +80,7 @@ int	look_color(int *red, int *green, char *color)
 		value = ext_look_color(&tot, count, color);
 		while (color[count] >= '0' && color[count] <= '9')
 			value = (value * 10) + (color[count++] - '0');
-		if ((tot < 2 && color[count] != ','))
-			ft_error("Error:\n");
-		if (value < 0 || value > 255)
+		if ((tot < 2 && color[count] != ',') || (value < 0 || value > 255))
 			ft_error("Error:\n");
 		if (tot == 0)
 			(*red) = value;

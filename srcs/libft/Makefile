@@ -19,7 +19,7 @@ BON_OB		= $(BON:.c=.o)
 
 NAME	= libft.a
 
-CFLAGS	= -Wall -Werror -Wextra
+CFLAGS	= -Wall -Werror -Wextra -fPIE
 
 RM		= rm -f
 

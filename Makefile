@@ -1,5 +1,5 @@
 DEL			=	rm -f
-CC			=	cc
+CC			=	gcc
 CCFLAGS		=	-Wall -Wextra -Werror -Wuninitialized -g3  #-fsanitize=address,leak
 #MLX			=	-framework OpenGL -framework AppKit
  MLX			=	-lXext -lX11 -lm -lbsd 
@@ -49,7 +49,7 @@ all:	minilibx libft $(NAME)
 
  
 $(NAME):$(OBJ)
-		$(CC)  $(OBJ) $(LIBS) -o $(NAME)
+		$(CC) $(CCFLAGS)  $(OBJ) $(LIBS) -o $(NAME)
 		@echo "CUB3D HAS BEEN COMPILED!$(NC)"
 
 $(OBJ_DIR)%.o: $(SRC_DIR)%.c

@@ -1,10 +1,24 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   sprites.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cvarela- <cvarela-@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/11/18 09:40:54 by cvarela-          #+#    #+#             */
+/*   Updated: 2024/11/18 10:25:08 by cvarela-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/cub3d.h"
 
 static void	get_sprites_dist(t_data *dsp_dt)
 {
 	int	y;
+	int	index;
 
 	y = 0;
+	index = 0;
 	while (y < dsp_dt->spr.tot)
 	{
 		dsp_dt->spr.order[y] = (double)y;
@@ -12,7 +26,7 @@ static void	get_sprites_dist(t_data *dsp_dt)
 		dsp_dt->spr.dist[y] += pow(dsp_dt->ply.posy - dsp_dt->spr.buf[y][0], 2);
 		y++;
 	}
-	sort_sprites(dsp_dt->spr.order, dsp_dt->spr.dist, dsp_dt->spr.tot);
+	sort_sprites(dsp_dt->spr.order, dsp_dt->spr.dist, dsp_dt->spr.tot, index);
 }
 
 static void	get_sprite_values(int y, t_data *dsp)

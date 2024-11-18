@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   findspr.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cvarela- <cvarela-@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/11/18 09:51:51 by cvarela-          #+#    #+#             */
+/*   Updated: 2024/11/18 10:19:27 by cvarela-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/cub3d.h"
 
 static void	swap_values(double *index, double *find)
@@ -62,17 +74,15 @@ void	find_sprites(t_data *dsp_dt, t_map_data *map_data)
 	init_sprites(dsp_dt, map_data);
 }
 
-void	sort_sprites(double *order, double *dist, int tot)
+void	sort_sprites(double *order, double *dist, int tot, int index)
 {
-	int		index;
 	int		pos;
-	int		find;
 	double	men_dis;
+	int		find;
 
-	index = 0;
 	pos = 0;
-	find = 0;
 	men_dis = 0;
+	find = 0;
 	while (index < tot)
 	{
 		pos = index + 1;
@@ -81,10 +91,10 @@ void	sort_sprites(double *order, double *dist, int tot)
 		while (pos < tot)
 		{
 			if (dist[pos] > men_dis)
-				{
-					find = pos;
-					men_dis = dist[pos];
-				}
+			{
+				find = pos;
+				men_dis = dist[pos];
+			}
 			pos++;
 		}
 		if (men_dis != dist[index])

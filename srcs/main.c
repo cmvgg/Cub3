@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cvarela- <cvarela-@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/11/18 09:32:15 by cvarela-          #+#    #+#             */
+/*   Updated: 2024/11/18 10:29:42 by cvarela-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/cub3d.h"
 
 void	ft_error(char *str)
@@ -8,12 +20,11 @@ void	ft_error(char *str)
 	exit(0);
 }
 
-
-int	main(int argc, char *argv[])
+int	main(int argc, char **argv)
 {
 	t_texture_element	element_txt;
-	t_map_data	map;
-	char	*tmp;
+	t_map_data			map;
+	char				*tmp;
 
 	element_txt = (t_texture_element){0};
 	map = (t_map_data){0};
@@ -32,4 +43,3 @@ int	main(int argc, char *argv[])
 	}
 	ft_error("Error: num of argument is invalid\n");
 }
- 
