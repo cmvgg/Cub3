@@ -6,7 +6,7 @@
 /*   By: cvarela- <cvarela-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 09:32:15 by cvarela-          #+#    #+#             */
-/*   Updated: 2024/11/18 10:29:42 by cvarela-         ###   ########.fr       */
+/*   Updated: 2025/01/02 23:30:57 by cvarela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,19 @@ void	ft_error(char *str)
 	exit(0);
 }
 
-int	main(int argc, char **argv)
+int main(int argc, char **argv)
 {
 	t_texture_element	element_txt;
 	t_map_data			map;
 	char				*tmp;
 
 	element_txt = (t_texture_element){0};
-	map = (t_map_data){0};
+	map = (t_map_data){
+		.matrix = NULL, 
+		.width = 0,
+		.height = 0,
+		.player = -1
+	};
 	if (argc == 2)
 	{
 		tmp = ft_strnstr(argv[1], ".cub", ft_strlen(argv[1]));

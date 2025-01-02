@@ -6,7 +6,7 @@
 /*   By: cvarela- <cvarela-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 09:51:43 by cvarela-          #+#    #+#             */
-/*   Updated: 2024/11/18 09:51:44 by cvarela-         ###   ########.fr       */
+/*   Updated: 2025/01/02 23:30:43 by cvarela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,9 +65,10 @@ static void	extract_map_textures(char **line, t_texture_element *elem_texture)
 static int	handle_identify(int read_stat, int identify_count, char **line,
 		t_texture_element *elem_texture)
 {
+	(void) identify_count;
 	if (read_stat == -1 || !(*line))
 		return (-1);
-	if (read_stat == 0 && identify_count < 7)
+	if (read_stat == 0)
 		ft_error("Error:\n");
 	if (**line == '\0')
 		return (0);
@@ -87,15 +88,16 @@ void	check_elem_texture(const char *map_use, t_texture_element *elem_txt)
 	fd = open(map_use, O_RDONLY);
 	if (fd < 0)
 		ft_error("Error:\n");
-	while (element_count < 8 && read_stat == 1)
+	while (read_stat == 1)
 	{
 		read_stat = get_next_line(fd, &line);
 		read_stat = handle_identify(read_stat, element_count, &line, elem_txt);
 		free(line);
 		if (read_stat == -1)
 			ft_error("Error:\n");
-		if (read_stat == 1)
-			element_count++;
+		element_count++;
+		if (read_stat != 1)
+			break;
 		read_stat = 1;
 	}
 	while (get_next_line(fd, &line) == 1)

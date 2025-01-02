@@ -6,7 +6,7 @@
 /*   By: cvarela- <cvarela-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 09:44:29 by cvarela-          #+#    #+#             */
-/*   Updated: 2024/11/18 10:38:47 by cvarela-         ###   ########.fr       */
+/*   Updated: 2025/01/02 23:31:34 by cvarela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include "../mlx/mlx.h"
 # include "./libft.h"
+# include <X11/X.h>
 # include <fcntl.h>
 # include <math.h>
 # include <stdio.h>
@@ -147,6 +148,8 @@ typedef struct s_map_content
 	int				sky;
 	int				wall;
 	int				floor;
+	int				width;
+	int				height;
 }					t_map_content;
 
 typedef struct s_textures
@@ -291,5 +294,11 @@ void				init_buffer(int mode, int ***buffer, t_data *dsp_dt);
 void				draw_buffer(int **buffer, t_data *dsp_dt);
 void				draw_sprites(int widsp_dth, int height, int **buffer,
 						t_data *dsp_dt);
+
+/* minimap_bonus.c */
+void				bonus_draw_minimap(t_data *dsp);
+
+/* mouse_bonus.c */
+void				bonus_init_mouse(t_data *dsp_dt);
 
 #endif

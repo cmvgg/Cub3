@@ -6,7 +6,7 @@
 /*   By: cvarela- <cvarela-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 09:40:54 by cvarela-          #+#    #+#             */
-/*   Updated: 2024/11/18 10:21:50 by cvarela-         ###   ########.fr       */
+/*   Updated: 2025/01/02 23:31:07 by cvarela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ void	validate_map_lines(int fd, char *line, t_map_data *map_data)
 
 	reads = 1;
 	pos = 1;
-	while (reads == 1)
+	while (reads >= 1 && line[pos])
 	{
 		reads = get_next_line(fd, &line);
 		if (pos == map_data->height - 1)

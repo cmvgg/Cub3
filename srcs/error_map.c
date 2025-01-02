@@ -6,7 +6,7 @@
 /*   By: cvarela- <cvarela-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 09:51:21 by cvarela-          #+#    #+#             */
-/*   Updated: 2024/11/18 09:51:22 by cvarela-         ###   ########.fr       */
+/*   Updated: 2025/01/02 23:30:23 by cvarela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,11 +73,11 @@ void	check_validate_map(const char *map_use, t_map_data *map_data)
 
 	read_count = 0;
 	fd = open(map_use, O_RDONLY);
-	while (read_count < 8)
+	while (1)
 	{
 		get_next_line(fd, &current_line);
-		if (*current_line != '\0')
-			read_count++;
+		if (*current_line == '\0')
+			break;
 		free(current_line);
 	}
 	elem_texture_to_map(fd, map_data);
