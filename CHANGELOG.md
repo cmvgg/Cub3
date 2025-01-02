@@ -1,3 +1,4 @@
+827d876 - cmvgg, 15 seconds ago : Correcciones de linting 02/01/2025--23:45
 8cb7418 - cmvgg, 14 minutes ago : Correcciones de linting 02/01/2025--23:31
 c84a176 - Cesar Manuel Varela Garcia, 7 weeks ago : clean .o 18/11/2024--10:39
 8f1b766 - Cesar Manuel Varela Garcia, 7 weeks ago : Correcciones de linting 18/11/2024--10:37
