@@ -3,7 +3,7 @@ NO ./textures/grey2.xpm
 SO ./textures/grey2.xpm
 WE ./textures/grey2.xpm
 EA ./textures/grey2.xpm
-S ./textures/grey2.xpm
+S ./textures/barrel.xpm
 F 100,100,20
 C 100,150,100
 

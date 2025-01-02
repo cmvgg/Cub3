@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cvarela- <cvarela-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ivromero <ivromero@student.42urduliz.c>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 09:50:46 by cvarela-          #+#    #+#             */
-/*   Updated: 2024/11/18 10:07:55 by cvarela-         ###   ########.fr       */
+/*   Updated: 2024/12/28 14:02:07 by ivromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,8 @@ static void	initialize_game_values(t_data *dsp_dt, t_texture_element *elem_txt,
 	green = 0;
 	blue = 0;
 	dsp_dt->map.board = map_dt->matrix;
+	dsp_dt->map.width = map_dt->width;
+	dsp_dt->map.height = map_dt->height;
 	dsp_dt->screen_w = elem_txt->resolution.width;
 	dsp_dt->screen_h = elem_txt->resolution.height;
 	red = elem_txt->color.cl_red << 16;
@@ -118,4 +120,5 @@ void	cub(t_texture_element *elem_texture, t_map_data *map_data)
 	mlx_hook(dsp_dt.mlx.win, 17, 1L << 17, close_cub3d, &dsp_dt);
 	mlx_loop_hook(dsp_dt.mlx.mlx, render_frame, &dsp_dt);
 	mlx_loop(dsp_dt.mlx.mlx);
+	bonus_init_mouse(&dsp_dt);
 }
