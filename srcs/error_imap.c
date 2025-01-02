@@ -6,7 +6,7 @@
 /*   By: cvarela- <cvarela-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 09:51:14 by cvarela-          #+#    #+#             */
-/*   Updated: 2025/01/02 23:30:15 by cvarela-         ###   ########.fr       */
+/*   Updated: 2025/01/02 23:34:25 by cvarela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ void	create_map(const char *map_use, t_map_data *map_data)
 	int	column_idx;
 
 	row_idx = 0;
-	map_data->matrix = (char **)calloc(sizeof(char *), (map_data->height + 2));
+	map_data->matrix = (char **)ft_calloc(sizeof(char *), (map_data->height + 2));
 	while (row_idx < map_data->height)
 	{
 		map_data->matrix[row_idx] = (char *)ft_calloc(sizeof(char), (map_data->width + 1));
