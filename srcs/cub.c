@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ivromero <ivromero@student.42urduliz.c>    +#+  +:+       +#+        */
+/*   By: cvarela- <cvarela-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 09:50:46 by cvarela-          #+#    #+#             */
-/*   Updated: 2024/12/28 14:02:07 by ivromero         ###   ########.fr       */
+/*   Updated: 2025/01/05 21:32:34 by cvarela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,13 +68,7 @@ static void	initialize_game_values(t_data *dsp_dt, t_texture_element *elem_txt,
 	green = elem_txt->color.fl_green << 8;
 	blue = elem_txt->color.fl_blue;
 	dsp_dt->map.floor = red + green + blue;
-	dsp_dt->key.move_up = 0;
-	dsp_dt->key.move_down = 0;
-	dsp_dt->key.move_right = 0;
-	dsp_dt->key.move_left = 0;
-	dsp_dt->key.rot_left = 0;
-	dsp_dt->key.rot_right = 0;
-	dsp_dt->key.destroy = 0;
+	dsp_dt->key = (typeof(dsp_dt->key)){0};
 }
 
 static void	initialize_textures(t_data *dsp_dt, t_texture_element *elem_texture)

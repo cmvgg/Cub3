@@ -6,7 +6,7 @@
 /*   By: cvarela- <cvarela-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 09:40:54 by cvarela-          #+#    #+#             */
-/*   Updated: 2025/01/02 23:31:07 by cvarela-         ###   ########.fr       */
+/*   Updated: 2025/01/05 21:40:25 by cvarela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,6 @@ void	validate_map_first_line(char **line, t_map_data *map_data)
 			map_data->matrix[0][count_x] = '1';
 		count_x++;
 	}
-	// free(*line);
 }
 
 void	validate_map_lines(int fd, char *line, t_map_data *map_data)
@@ -108,6 +107,4 @@ void	validate_map_last_line(char **line, t_map_data *map_data)
 		count_x++;
 	}
 	check_line(pos, line, map_data);
-	// if(*line)
-	// free(*line);
 }

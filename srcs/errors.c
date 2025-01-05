@@ -6,7 +6,7 @@
 /*   By: cvarela- <cvarela-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 09:51:43 by cvarela-          #+#    #+#             */
-/*   Updated: 2025/01/02 23:30:43 by cvarela-         ###   ########.fr       */
+/*   Updated: 2025/01/05 21:42:47 by cvarela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,7 @@ void	check_elem_texture(const char *map_use, t_texture_element *elem_txt)
 	fd = open(map_use, O_RDONLY);
 	if (fd < 0)
 		ft_error("Error:\n");
-	while (read_stat == 1)
+	while (1)
 	{
 		read_stat = get_next_line(fd, &line);
 		read_stat = handle_identify(read_stat, element_count, &line, elem_txt);
@@ -97,8 +97,7 @@ void	check_elem_texture(const char *map_use, t_texture_element *elem_txt)
 			ft_error("Error:\n");
 		element_count++;
 		if (read_stat != 1)
-			break;
-		read_stat = 1;
+			break ;
 	}
 	while (get_next_line(fd, &line) == 1)
 		free(line);

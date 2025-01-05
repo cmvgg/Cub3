@@ -6,7 +6,7 @@
 /*   By: cvarela- <cvarela-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 09:40:54 by cvarela-          #+#    #+#             */
-/*   Updated: 2025/01/02 23:31:10 by cvarela-         ###   ########.fr       */
+/*   Updated: 2025/01/05 21:39:27 by cvarela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,18 +68,16 @@ static void	dda_algorithm(t_data *dsp_dt)
 			dsp_dt->map.y += dsp_dt->ray.stepy;
 			dsp_dt->map.side = 1;
 		}
-		if ((dsp_dt->map.x < 0 || dsp_dt->map.x +1 >= dsp_dt->map.width) ||
-			(dsp_dt->map.y < 0 || dsp_dt->map.y +1 >= dsp_dt->map.height))
+		if ((dsp_dt->map.x < 0 || dsp_dt->map.x +1 >= dsp_dt->map.width)
+			|| (dsp_dt->map.y < 0 || dsp_dt->map.y +1 >= dsp_dt->map.height))
 		{
 			hit = 1;
-			return;
+			return ;
 		}
 		if (dsp_dt->map.board[dsp_dt->map.y][dsp_dt->map.x] == '1')
 			hit = 1;
 	}
 }
-
-
 
 static void	find_height_line(int **buffer, int x, t_data *dsp_dt)
 {

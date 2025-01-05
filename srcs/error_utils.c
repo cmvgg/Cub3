@@ -6,7 +6,7 @@
 /*   By: cvarela- <cvarela-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 09:51:34 by cvarela-          #+#    #+#             */
-/*   Updated: 2025/01/02 23:30:39 by cvarela-         ###   ########.fr       */
+/*   Updated: 2025/01/05 21:22:08 by cvarela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,6 @@ void	validate_image_path(char *path)
 	free(tmp);
 	if (fd < 0)
 	{
-		//close(fd);
 		ft_error("Error\n");
 	}
 	tmp = ft_strnstr(path + ft_strlen(path) - 4, ".xpm", ft_strlen(path));
