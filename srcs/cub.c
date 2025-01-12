@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cvarela- <cvarela-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ivromero <ivromero@student.42urduliz.c>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 09:50:46 by cvarela-          #+#    #+#             */
-/*   Updated: 2025/01/05 21:32:34 by cvarela-         ###   ########.fr       */
+/*   Updated: 2025/01/12 18:12:16 by ivromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,4 +115,5 @@ void	cub(t_texture_element *elem_texture, t_map_data *map_data)
 	mlx_hook(dsp_dt.mlx.win, 17, 1L << 17, close_cub3d, &dsp_dt);
 	mlx_loop_hook(dsp_dt.mlx.mlx, render_frame, &dsp_dt);
 	mlx_loop(dsp_dt.mlx.mlx);
+	bonus_init_mouse(&dsp_dt);
 }

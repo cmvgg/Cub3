@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   renderframe.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cvarela- <cvarela-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ivromero <ivromero@student.42urduliz.c>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 09:40:54 by cvarela-          #+#    #+#             */
-/*   Updated: 2025/01/05 21:39:27 by cvarela-         ###   ########.fr       */
+/*   Updated: 2025/01/12 18:12:39 by ivromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -126,6 +126,7 @@ int	render_frame(t_data *dsp)
 	sprites(buffer, dsp);
 	draw_buffer(buffer, dsp);
 	init_buffer(0, &buffer, dsp);
+    bonus_draw_minimap(dsp);
 	mlx_put_image_to_window(dsp->mlx.mlx, dsp->mlx.win, dsp->mlx.img, 0, 0);
 	mlx_do_sync(dsp->mlx.mlx);
 	return (0);
