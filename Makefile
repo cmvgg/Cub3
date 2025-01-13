@@ -25,6 +25,7 @@ SRC_FILES	=change_move \
 			renderframe \
 			setdir \
 			sprites \
+			sprites_2 \
 			texel \
 			textures \
 			error_utils \

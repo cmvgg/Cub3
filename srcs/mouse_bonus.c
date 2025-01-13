@@ -6,7 +6,7 @@
 /*   By: ivromero <ivromero@student.42urduliz.c>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 23:40:34 by ivromero          #+#    #+#             */
-/*   Updated: 2024/12/28 14:06:17 by ivromero         ###   ########.fr       */
+/*   Updated: 2025/01/12 19:19:17 by ivromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ static int	bonus_mouse_move(int x, int y, t_data *dsp_dt)
 }
 
 #ifdef BONUS
+
 void	bonus_init_mouse(t_data *dsp_dt)
 {
 	mlx_mouse_hide(dsp_dt->mlx.mlx, dsp_dt->mlx.win);
@@ -43,9 +44,10 @@ void	bonus_init_mouse(t_data *dsp_dt)
 		dsp_dt);
 }
 #else
+
 void	bonus_init_mouse(t_data *dsp_dt)
 {
 	(void)dsp_dt;
-    (void)bonus_mouse_move;
+	(void)bonus_mouse_move;
 }
 #endif

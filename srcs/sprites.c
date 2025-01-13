@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sprites.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cvarela- <cvarela-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ivromero <ivromero@student.42urduliz.c>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 09:40:54 by cvarela-          #+#    #+#             */
-/*   Updated: 2025/01/02 23:31:19 by cvarela-         ###   ########.fr       */
+/*   Updated: 2025/01/12 19:47:24 by ivromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static void	get_sprites_dist(t_data *dsp_dt)
 	int	index;
 
 	y = 0;
-	index = 0;
+	index = -1;
 	while (y < dsp_dt->spr.tot)
 	{
 		dsp_dt->spr.order[y] = (double)y;

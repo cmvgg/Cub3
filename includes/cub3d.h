@@ -6,7 +6,7 @@
 /*   By: ivromero <ivromero@student.42urduliz.c>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 09:44:29 by cvarela-          #+#    #+#             */
-/*   Updated: 2025/01/12 18:11:47 by ivromero         ###   ########.fr       */
+/*   Updated: 2025/01/12 18:26:09 by ivromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@
 # include <stdlib.h>
 
 # define PI 3.141592654
+# define MINIMAP_SCALE 10
 
 typedef struct s_graphics
 {
@@ -297,6 +298,7 @@ void				draw_sprites(int widsp_dth, int height, int **buffer,
 
 /* minimap_bonus.c */
 void				bonus_draw_minimap(t_data *dsp);
+void				bonus_draw_minimap_player(t_data *dsp);
 
 /* mouse_bonus.c */
 void				bonus_init_mouse(t_data *dsp_dt);

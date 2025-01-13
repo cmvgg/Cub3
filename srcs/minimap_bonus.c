@@ -6,66 +6,63 @@
 /*   By: ivromero <ivromero@student.42urduliz.c>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 23:40:34 by ivromero          #+#    #+#             */
-/*   Updated: 2024/12/28 18:50:57 by ivromero         ###   ########.fr       */
+/*   Updated: 2025/01/12 19:19:34 by ivromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/cub3d.h"
 
 #ifdef BONUS
+
 void	bonus_draw_minimap(t_data *dsp)
 {
 	int	map_x;
 	int	map_y;
-	int	scale;
-	int	color;
 	int	i;
 	int	j;
-	int	px;
-	int	py;
 
-	scale = 10;
-	map_y = 0;
-	while (map_y < dsp->map.height)
+	map_y = -1;
+	while (++map_y < dsp->map.height)
 	{
-		map_x = 0;
-		while (map_x < dsp->map.width)
+		map_x = -1;
+		while (++map_x < dsp->map.width)
 		{
 			if (dsp->map.board[map_y][map_x] == '1')
 			{
-				color = 0xFFFFFF;
 				i = 0;
-				while (i < scale)
+				while (i < MINIMAP_SCALE)
 				{
 					j = 0;
-					while (j < scale)
-					{
-						my_mlx_pixel_put(dsp, map_x * scale + i, map_y * scale
-							+ j, color);
-						j++;
-					}
+					while (j < MINIMAP_SCALE)
+						my_mlx_pixel_put(dsp, map_x * MINIMAP_SCALE + i, map_y
+							* MINIMAP_SCALE + j++, 0xFFFFFF);
 					i++;
 				}
 			}
-			map_x++;
 		}
-		map_y++;
 	}
-	px = dsp->ply.posx * scale;
-	py = dsp->ply.posy * scale;
+}
+
+void	bonus_draw_minimap_player(t_data *dsp)
+{
+	int	i;
+	int	j;
+
 	i = 0;
-	while (i < scale)
+	while (i < MINIMAP_SCALE)
 	{
 		j = 0;
-		while (j < scale)
+		while (j < MINIMAP_SCALE)
 		{
-			my_mlx_pixel_put(dsp, px + i, py + j, 0xFF0000);
+			my_mlx_pixel_put(dsp, dsp->ply.posx * MINIMAP_SCALE + i,
+				dsp->ply.posy * MINIMAP_SCALE + j, 0xFF0000);
 			j++;
 		}
 		i++;
 	}
 }
 #else
+
 void	bonus_draw_minimap(t_data *dsp)
 {
 	(void)dsp;

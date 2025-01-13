@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   findspr.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cvarela- <cvarela-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ivromero <ivromero@student.42urduliz.c>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 09:51:51 by cvarela-          #+#    #+#             */
-/*   Updated: 2025/01/02 23:30:46 by cvarela-         ###   ########.fr       */
+/*   Updated: 2025/01/12 19:50:04 by ivromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,24 +83,22 @@ void	sort_sprites(double *order, double *dist, int tot, int index)
 	pos = 0;
 	men_dis = 0;
 	find = 0;
-	while (index < tot)
+	while (++index < tot)
 	{
-		pos = index + 1;
+		pos = index;
 		find = index;
 		men_dis = dist[index];
-		while (pos < tot)
+		while (++pos < tot)
 		{
 			if (dist[pos] > men_dis)
 			{
 				find = pos;
 				men_dis = dist[pos];
 			}
-			pos++;
 		}
 		if (men_dis != dist[index])
 			swap_values(&order[index], &order[find]);
 		if (men_dis != dist[index])
 			swap_values(&dist[index], &dist[find]);
-		index++;
 	}
 }

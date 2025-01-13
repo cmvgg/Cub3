@@ -6,7 +6,7 @@
 /*   By: ivromero <ivromero@student.42urduliz.c>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 09:40:54 by cvarela-          #+#    #+#             */
-/*   Updated: 2025/01/12 18:12:39 by ivromero         ###   ########.fr       */
+/*   Updated: 2025/01/12 19:46:09 by ivromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,12 +68,9 @@ static void	dda_algorithm(t_data *dsp_dt)
 			dsp_dt->map.y += dsp_dt->ray.stepy;
 			dsp_dt->map.side = 1;
 		}
-		if ((dsp_dt->map.x < 0 || dsp_dt->map.x +1 >= dsp_dt->map.width)
-			|| (dsp_dt->map.y < 0 || dsp_dt->map.y +1 >= dsp_dt->map.height))
-		{
-			hit = 1;
+		if ((dsp_dt->map.x < 0 || dsp_dt->map.x + 1 >= dsp_dt->map.width)
+			|| (dsp_dt->map.y < 0 || dsp_dt->map.y + 1 >= dsp_dt->map.height))
 			return ;
-		}
 		if (dsp_dt->map.board[dsp_dt->map.y][dsp_dt->map.x] == '1')
 			hit = 1;
 	}
@@ -83,14 +80,14 @@ static void	find_height_line(int **buffer, int x, t_data *dsp_dt)
 {
 	if (dsp_dt->map.side == 0)
 	{
-		dsp_dt->ray.wall_dist = (dsp_dt->map.x - dsp_dt->ply.posx
-				+ (1 - dsp_dt->ray.stepx) / 2);
+		dsp_dt->ray.wall_dist = (dsp_dt->map.x - dsp_dt->ply.posx + (1
+					- dsp_dt->ray.stepx) / 2);
 		dsp_dt->ray.wall_dist /= dsp_dt->ray.dir_x;
 	}
 	else
 	{
-		dsp_dt->ray.wall_dist = (dsp_dt->map.y - dsp_dt->ply.posy
-				+ (1 - dsp_dt->ray.stepy) / 2);
+		dsp_dt->ray.wall_dist = (dsp_dt->map.y - dsp_dt->ply.posy + (1
+					- dsp_dt->ray.stepy) / 2);
 		dsp_dt->ray.wall_dist /= dsp_dt->ray.dir_y;
 	}
 	dsp_dt->ray.lineh = (int)(dsp_dt->screen_h / dsp_dt->ray.wall_dist);
@@ -126,7 +123,8 @@ int	render_frame(t_data *dsp)
 	sprites(buffer, dsp);
 	draw_buffer(buffer, dsp);
 	init_buffer(0, &buffer, dsp);
-    bonus_draw_minimap(dsp);
+	bonus_draw_minimap(dsp);
+	bonus_draw_minimap_player(dsp);
 	mlx_put_image_to_window(dsp->mlx.mlx, dsp->mlx.win, dsp->mlx.img, 0, 0);
 	mlx_do_sync(dsp->mlx.mlx);
 	return (0);
