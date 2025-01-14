@@ -1,5 +1,6 @@
-092d239 - Cesar Manuel Varela Garcia, 20 hours ago : Correcciones de linting 13/01/2025--19:04
-161cd50 - ivromero, 32 hours ago : Fix Norminette errors
+23f70da - Cesar Manuel Varela Garcia, 73 minutes ago : print error 14/01/2025--15:02
+092d239 - Cesar Manuel Varela Garcia, 21 hours ago : Correcciones de linting 13/01/2025--19:04
+161cd50 - ivromero, 33 hours ago : Fix Norminette errors
 c6d0f62 - ivromero, 2 days ago : Merge branch 'Bonus'
 87c07ee - ivromero, 2 days ago : update .gitignore
 bcafa2b - cmvgg, 9 days ago : Correcciones de linting 05/01/2025--21:50

@@ -1,8 +1,8 @@
 R 1920 1080 
-NO ./textures/grey.xpm
-SO ./textures/colorstone.xpm
-WE ./textures/brick.xpm
-EA ./textures/eagle.xpm
+NO ./textures/grey2.xpm
+SO ./textures/grey2.xpm
+WE ./textures/grey2.xpm
+EA ./textures/grey2.xpm
 S ./textures/barrel.xpm
 F 100,100,20
 C 100,150,100

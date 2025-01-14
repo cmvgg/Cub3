@@ -1,0 +1,429 @@
+
+
+line: 1111111111
+
+
+
+xxxxxxxxxx
+
+
+
+xxxxxxxxxx
+
+
+
+xxxxxxxxxx
+
+
+
+xxxxxxxxxx
+
+
+
+xxxxxxxxxx
+
+
+
+xxxxxxxxxx
+
+
+
+xxxxxxxxxx
+
+
+
+xxxxxxxxxx
+
+
+
+xxxxxxxxxx
+
+
+
+line: 100S000001
+
+
+
+xxxxxxxxxx
+
+
+
+line: 1000000001
+
+
+
+xxxxxxxxxx
+
+
+
+line: 1002200001
+
+
+
+xxxxxxxxxx
+
+
+
+line: 1000000001
+
+
+
+xxxxxxxxxx
+
+
+
+line: 1000000001
+
+
+
+xxxxxxxxxx
+
+
+
+line: 1000000001
+
+
+
+xxxxxxxxxx
+
+
+
+line: 1000000001
+
+
+
+xxxxxxxxxx
+
+
+
+line: 1000000001
+
+
+
+xxxxxxxxxx
+
+
+
+line: 1000200001
+
+
+
+xxxxxxxxxx
+
+
+
+line: 1000000001
+
+
+
+xxxxxxxxxx
+
+
+
+line: 1000200001
+
+
+
+xxxxxxxxxx
+
+
+
+line: 1000000001
+
+
+
+xxxxxxxxxx
+
+
+
+line: 1000000001
+
+
+
+xxxxxxxxxx
+
+
+
+line: 1000000001
+
+
+
+xxxxxxxxxx
+
+
+
+line: 1000000001
+
+
+
+xxxxxxxxxx
+
+
+
+line: 1000000001
+
+
+
+xxxxxxxxxx
+
+
+
+line: 1000000001
+
+
+
+xxxxxxxxxx
+
+
+
+line: 1000000001
+
+
+
+xxxxxxxxxx
+
+
+
+line: 1000000001
+
+
+
+xxxxxxxxxx
+
+
+
+line: 1000000001
+
+
+
+xxxxxxxxxx
+
+
+
+line: 1000000001
+
+
+
+xxxxxxxxxx
+
+
+
+line: 1000000001
+
+
+
+xxxxxxxxxx
+
+
+
+line: 1000000001
+
+
+
+xxxxxxxxxx
+
+
+
+line: 1000000001
+
+
+
+xxxxxxxxxx
+
+
+
+line: 1000000001
+
+
+
+xxxxxxxxxx
+
+
+
+line: 1000000001
+
+
+
+xxxxxxxxxx
+
+
+
+line: 1000000001
+
+
+
+xxxxxxxxxx
+
+
+
+line: 1000000001
+
+
+
+xxxxxxxxxx
+
+
+
+line: 1000000001
+
+
+
+xxxxxxxxxx
+
+
+
+line: 1000000001
+
+
+
+xxxxxxxxxx
+
+
+
+line: 1000000001
+
+
+
+xxxxxxxxxx
+
+
+
+line: 1000000001
+
+
+
+xxxxxxxxxx
+
+
+
+line: 1000000001
+
+
+
+xxxxxxxxxx
+
+
+
+line: 1000000001
+
+
+
+xxxxxxxxxx
+
+
+
+line: 1000000001
+
+
+
+xxxxxxxxxx
+
+
+
+line: 1000000001
+
+
+
+xxxxxxxxxx
+
+
+
+line: 1000000001
+
+
+
+xxxxxxxxxx
+
+
+
+line: 1000200001
+
+
+
+xxxxxxxxxx
+
+
+
+line: 1111111111
+
+
+
+xxxxxxxxxx
+
+
+
+xxxxxxxxxx
+
+
+
+xxxxxxxxxx
+
+
+
+xxxxxxxxxx
+
+
+
+xxxxxxxxxx
+
+
+
+xxxxxxxxxx
+
+
+
+xxxxxxxxxx
+
+
+
+xxxxxxxxxx
+
+
+
+xxxxxxxxxx
+
+current: 1111111111
+line vmll: 1111111111
+
+
+
+line: 1111111111
+
+
+
+11xxxxxxxx
+
+
+
+111xxxxxxx
+
+
+
+1111xxxxxx
+
+
+
+11111xxxxx
+
+
+
+111111xxxx
+
+
+
+1111111xxx
+
+
+
+11111111xx
+
+
+
+111111111x
+
+
+
+1111111111
+
+Cub3D cerrado con exito
+
