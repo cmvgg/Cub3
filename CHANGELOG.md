@@ -1,6 +1,7 @@
-3af730a - Cesar Manuel Varela Garcia, 6 minutes ago : Correcciones de linting 14/01/2025--16:15
-23f70da - Cesar Manuel Varela Garcia, 79 minutes ago : print error 14/01/2025--15:02
-092d239 - Cesar Manuel Varela Garcia, 21 hours ago : Correcciones de linting 13/01/2025--19:04
+e79ac49 - Cesar Manuel Varela Garcia, 23 minutes ago : Correcciones de linting 14/01/2025--16:22
+3af730a - Cesar Manuel Varela Garcia, 29 minutes ago : Correcciones de linting 14/01/2025--16:15
+23f70da - Cesar Manuel Varela Garcia, 2 hours ago : print error 14/01/2025--15:02
+092d239 - Cesar Manuel Varela Garcia, 22 hours ago : Correcciones de linting 13/01/2025--19:04
 161cd50 - ivromero, 33 hours ago : Fix Norminette errors
 c6d0f62 - ivromero, 2 days ago : Merge branch 'Bonus'
 87c07ee - ivromero, 2 days ago : update .gitignore

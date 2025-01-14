@@ -6,13 +6,13 @@
 /*   By: cvarela- <cvarela-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 09:53:03 by cvarela-          #+#    #+#             */
-/*   Updated: 2025/01/14 14:59:17 by cvarela-         ###   ########.fr       */
+/*   Updated: 2025/01/14 16:32:31 by cvarela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/cub3d.h"
 
-void	map_space(int pos, int count_x, char **line, t_map_data *map_data)
+void	map_space(int pos, int count_x, t_map_data *map_data)
 {
 	if (count_x < 0 || count_x >= map_data->width)
 		ft_error("Error: Invalid access in map_space\n");
@@ -26,8 +26,6 @@ void	map_space(int pos, int count_x, char **line, t_map_data *map_data)
 			ft_error("Error: Invalid map structure\n");
 		}
 	}
-	if ((*line)[count_x] == '1')
-		map_data->matrix[pos][count_x] = '1';
 }
 
 void	map_other(int pos, int count_x, char **line, t_map_data *map_data)
@@ -38,11 +36,11 @@ void	map_other(int pos, int count_x, char **line, t_map_data *map_data)
 	map_data->matrix[pos][count_x] = (*line)[count_x];
 }
 
-void	map_x(int pos, int count_x, char **line, t_map_data *map_data)
+void	map_x(int pos, int count_x, t_map_data *map_data)
 {
 	while ((count_x) < map_data->width && map_data->matrix[pos][count_x])
 	{
-		map_space(pos, count_x, line, map_data);
+		map_space(pos, count_x, map_data);
 		count_x++;
 	}
 }

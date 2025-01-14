@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ivromero <ivromero@student.42urduliz.c>    +#+  +:+       +#+        */
+/*   By: cvarela- <cvarela-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 09:44:29 by cvarela-          #+#    #+#             */
-/*   Updated: 2025/01/12 18:26:09 by ivromero         ###   ########.fr       */
+/*   Updated: 2025/01/14 16:32:47 by cvarela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -234,11 +234,11 @@ void				validate_map_lines(int fd, char *line, t_map_data *map_dat);
 void				validate_map_last_line(char **line, t_map_data *map_data);
 
 /* validate_map_lines.c */
-void				map_space(int pos, int count_x, char **line,
+void				map_space(int pos, int count_x,
 						t_map_data *map_data);
 void				map_other(int pos, int count_x, char **line,
 						t_map_data *map_data);
-void				map_x(int pos, int count_x, char **line,
+void				map_x(int pos, int count_x,
 						t_map_data *map_data);
 
 /* cub.c  */

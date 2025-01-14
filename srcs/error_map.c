@@ -6,7 +6,7 @@
 /*   By: cvarela- <cvarela-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 09:51:21 by cvarela-          #+#    #+#             */
-/*   Updated: 2025/01/13 18:45:14 by cvarela-         ###   ########.fr       */
+/*   Updated: 2025/01/14 16:36:06 by cvarela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,11 +82,13 @@ void	check_validate_map(const char *map_use, t_map_data *map_data)
 	}
 	elem_texture_to_map(fd, map_data);
 	read_count = 1;
+	free(current_line);
 	while (read_count == 1)
 	{
 		read_count = get_next_line(fd, &current_line);
 		read_count = check_map_values(read_count, current_line, map_data);
 		free(current_line);
 	}
+	
 	close(fd);
 }

@@ -6,7 +6,7 @@
 /*   By: cvarela- <cvarela-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 09:50:59 by cvarela-          #+#    #+#             */
-/*   Updated: 2025/01/05 21:40:01 by cvarela-         ###   ########.fr       */
+/*   Updated: 2025/01/14 16:39:06 by cvarela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ static int	copy_res(int loop, int ct, char **str, char **ln)
 	if (((*ln)[ct] == '\0' && loop == 1)
 		|| ((*ln)[ct] != '\0' && loop == 2))
 		ft_error("Error:c2\n");
+		
 	return (ct);
 }
 
@@ -83,6 +84,7 @@ void	error_resolution(char **line, t_texture_element *elem_texture)
 		ft_error("Error:c5n");
 	count = copy_res(1, count, &str, line);
 	elem_texture->resolution.width = ft_atoi(str);
+	free(str);
 	copy_res(2, count, &str, line);
 	elem_texture->resolution.height = ft_atoi(str);
 	free(str);
