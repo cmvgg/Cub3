@@ -6,7 +6,7 @@
 /*   By: cvarela- <cvarela-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 09:51:14 by cvarela-          #+#    #+#             */
-/*   Updated: 2025/01/14 16:10:39 by cvarela-         ###   ########.fr       */
+/*   Updated: 2025/01/14 16:20:04 by cvarela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ static void	elem_texture_to_map(int fd, char **current_line)
 static void	check_values(const char *map_use, t_map_data *map_data)
 {
 	static char	*current_line;
-	char *last;
+	char		*last;
 	int			fd;
 
 	fd = 0;
@@ -49,7 +49,6 @@ static void	check_values(const char *map_use, t_map_data *map_data)
 	validate_map_lines(fd, current_line, map_data);
 	if (map_data->player == 0)
 		ft_error("Error: No player\n");
-	printf("current: %s\n", last);
 	validate_map_last_line(&last, map_data);
 	close(fd);
 }

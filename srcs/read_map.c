@@ -6,7 +6,7 @@
 /*   By: cvarela- <cvarela-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 09:40:54 by cvarela-          #+#    #+#             */
-/*   Updated: 2025/01/14 16:13:38 by cvarela-         ###   ########.fr       */
+/*   Updated: 2025/01/14 16:21:04 by cvarela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,10 @@ static void	check_body_line(int pos, char **line, t_map_data *map_data)
 	int	count_x;
 
 	count_x = 1;
-	printf("\n\nline: %s\n\n", *line);
 	while ((*line)[count_x] != 0 && count_x < map_data->width)
 	{
 		if ((*line)[count_x] == '1')
-		{	
 			map_data->matrix[pos][count_x] = '1';
-			printf("\n\n%s\n\n", map_data->matrix[map_data->height - 1]); /*el error se produce aquí*/}
 		else if ((*line)[count_x] == ' ')
 			map_space(pos, count_x, line, map_data);
 		else
@@ -109,6 +106,4 @@ void	validate_map_last_line(char **line, t_map_data *map_data)
 			ft_error("Error:vmll\n");
 		count_x++;
 	}
-	printf("line vmll: %s\n\n", *line);
-	//check_line(pos, line, map_data);
 }
