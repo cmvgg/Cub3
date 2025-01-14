@@ -6,7 +6,7 @@
 /*   By: cvarela- <cvarela-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 09:51:14 by cvarela-          #+#    #+#             */
-/*   Updated: 2025/01/13 18:51:49 by cvarela-         ###   ########.fr       */
+/*   Updated: 2025/01/14 14:48:48 by cvarela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ static void	check_values(const char *map_use, t_map_data *map_data)
 		if (*current_line == '\0')
 			break ;
 		free(current_line);
-	}	
+	}
 	free(current_line);
 	elem_texture_to_map(fd, &current_line);
 	map_data->player = 0;
@@ -59,7 +59,7 @@ void	create_map(const char *map_use, t_map_data *map_data)
 	row_idx = 0;
 	map_data->matrix
 		= (char **)ft_calloc(sizeof(char *), (map_data->height + 2));
-	while (row_idx < map_data->height)
+	while (row_idx < (map_data->height))
 	{
 		map_data->matrix[row_idx]
 			= (char *)ft_calloc(sizeof(char), (map_data->width + 1));

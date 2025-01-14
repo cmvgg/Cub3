@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minimap_bonus.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ivromero <ivromero@student.42urduliz.c>    +#+  +:+       +#+        */
+/*   By: cvarela- <cvarela-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 23:40:34 by ivromero          #+#    #+#             */
-/*   Updated: 2025/01/12 19:19:34 by ivromero         ###   ########.fr       */
+/*   Updated: 2025/01/14 13:47:43 by cvarela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,25 +16,25 @@
 
 void	bonus_draw_minimap(t_data *dsp)
 {
-	int	map_x;
-	int	map_y;
+	int	x;
+	int	y;
 	int	i;
 	int	j;
 
-	map_y = -1;
-	while (++map_y < dsp->map.height)
+	y = -1;
+	while (++y < dsp->map.height - 1)
 	{
-		map_x = -1;
-		while (++map_x < dsp->map.width)
+		x = -1;
+		while (++x < dsp->map.width)
 		{
-			if (dsp->map.board[map_y][map_x] == '1')
+			if (dsp->map.board[y][x] == '1' || dsp->map.board[y][x] == '2')
 			{
 				i = 0;
 				while (i < MINIMAP_SCALE)
 				{
 					j = 0;
 					while (j < MINIMAP_SCALE)
-						my_mlx_pixel_put(dsp, map_x * MINIMAP_SCALE + i, map_y
+						my_mlx_pixel_put(dsp, x * MINIMAP_SCALE + i, y
 							* MINIMAP_SCALE + j++, 0xFFFFFF);
 					i++;
 				}

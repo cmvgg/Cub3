@@ -6,7 +6,7 @@
 /*   By: cvarela- <cvarela-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 09:51:43 by cvarela-          #+#    #+#             */
-/*   Updated: 2025/01/13 18:19:03 by cvarela-         ###   ########.fr       */
+/*   Updated: 2025/01/14 13:27:40 by cvarela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,8 +78,8 @@ static int	handle_identify(int read_stat, char **line,
 void	check_elem_texture(const char *map_use, t_texture_element *elem_txt)
 {
 	static char	*line;
-	int		read_stat;
-	int		fd;
+	int			read_stat;
+	int			fd;
 
 	read_stat = 1;
 	fd = open(map_use, O_RDONLY);

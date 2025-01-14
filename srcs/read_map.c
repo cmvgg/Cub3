@@ -6,7 +6,7 @@
 /*   By: cvarela- <cvarela-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 09:40:54 by cvarela-          #+#    #+#             */
-/*   Updated: 2025/01/13 18:56:50 by cvarela-         ###   ########.fr       */
+/*   Updated: 2025/01/14 15:00:50 by cvarela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,9 @@ static void	check_body_line(int pos, char **line, t_map_data *map_data)
 	while ((*line)[count_x] != 0 && count_x < map_data->width)
 	{
 		if ((*line)[count_x] == '1')
+		{	
 			map_data->matrix[pos][count_x] = '1';
+			printf("\n\n%s\n\n", map_data->matrix[map_data->height - 1]); /*el error se produce aquí*/}
 		else if ((*line)[count_x] == ' ')
 			map_space(pos, count_x, line, map_data);
 		else
