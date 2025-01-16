@@ -6,7 +6,7 @@
 /*   By: cvarela- <cvarela-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 23:40:34 by ivromero          #+#    #+#             */
-/*   Updated: 2025/01/14 13:47:43 by cvarela-         ###   ########.fr       */
+/*   Updated: 2025/01/16 09:58:05 by cvarela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,10 @@ void	bonus_draw_minimap_player(t_data *dsp)
 #else
 
 void	bonus_draw_minimap(t_data *dsp)
+{
+	(void)dsp;
+}
+void	bonus_draw_minimap_player(t_data *dsp)
 {
 	(void)dsp;
 }
