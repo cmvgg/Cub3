@@ -111,6 +111,6 @@ run: re
 	./cub3d maps/map1.cub
 
 val: re
-	valgrind -s --leak-check=full --show-leak-kinds=all --track-origins=yes --show-mismatched-frees=yes  ./cub3d maps/map1.cub
+	valgrind -s --leak-check=full --show-leak-kinds=all --track-origins=yes --show-mismatched-frees=yes  ./cub3d maps/map5.cub
 
 re: fclean all

@@ -6,7 +6,7 @@
 /*   By: cvarela- <cvarela-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 09:50:59 by cvarela-          #+#    #+#             */
-/*   Updated: 2025/01/14 16:39:06 by cvarela-         ###   ########.fr       */
+/*   Updated: 2025/01/16 10:00:33 by cvarela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,6 @@ static int	copy_res(int loop, int ct, char **str, char **ln)
 	if (((*ln)[ct] == '\0' && loop == 1)
 		|| ((*ln)[ct] != '\0' && loop == 2))
 		ft_error("Error:c2\n");
-		
 	return (ct);
 }
 

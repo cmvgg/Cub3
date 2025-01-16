@@ -1,3 +1,4 @@
+395d34f - Cesar Manuel Varela Garcia, 36 minutes ago : make compile 16/01/2025--09:59
 d57d188 - Cesar Manuel Varela Garcia, 2 days ago : No Leaks without --show-kinds 14/01/2025--16:45
 e79ac49 - Cesar Manuel Varela Garcia, 2 days ago : Correcciones de linting 14/01/2025--16:22
 3af730a - Cesar Manuel Varela Garcia, 2 days ago : Correcciones de linting 14/01/2025--16:15

@@ -6,7 +6,7 @@
 /*   By: cvarela- <cvarela-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 09:44:29 by cvarela-          #+#    #+#             */
-/*   Updated: 2025/01/14 16:32:47 by cvarela-         ###   ########.fr       */
+/*   Updated: 2025/01/16 10:27:06 by cvarela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,8 @@ typedef struct s_sprite
 	int				endx;
 	int				starty;
 	int				endy;
+	int				modify;
+	int				width2;
 }					t_sprite;
 
 typedef struct s_color
@@ -293,7 +295,7 @@ int					look_color(int *red, int *green, char *color);
 void				my_mlx_pixel_put(t_data *dsp_dt, int x, int y, int color);
 void				init_buffer(int mode, int ***buffer, t_data *dsp_dt);
 void				draw_buffer(int **buffer, t_data *dsp_dt);
-void				draw_sprites(int widsp_dth, int height, int **buffer,
+void				draw_sprites(int height, int **buffer,
 						t_data *dsp_dt);
 
 /* minimap_bonus.c */

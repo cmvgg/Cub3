@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sprites_2.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ivromero <ivromero@student.42urduliz.c>    +#+  +:+       +#+        */
+/*   By: cvarela- <cvarela-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 09:40:54 by cvarela-          #+#    #+#             */
-/*   Updated: 2025/01/12 23:58:04 by ivromero         ###   ########.fr       */
+/*   Updated: 2025/01/16 10:30:01 by cvarela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,38 +31,38 @@ static int	calculate_tex_cor(int mode, int cor, int size, t_data *dsp_dt)
 	return (-1);
 }
 
-static void	draw_sprite_column(int stripe, int width, int height, int **buffer,
+static void	draw_sprite_column(int stripe, int height, int **buffer,
 		t_data *dsp_dt)
 {
 	char	*color;
 	int		tex_x;
 	int		tex_y;
-	int		y;
 
-	tex_x = calculate_tex_cor(0, stripe, width, dsp_dt);
+	tex_x = calculate_tex_cor(0, stripe, dsp_dt->spr.width2, dsp_dt);
 	if (dsp_dt->spr.dir_y > 0 && stripe > 0 && stripe < dsp_dt->screen_w
 		&& dsp_dt->spr.dir_y < dsp_dt->spr.zbuf[stripe])
 	{
-		y = dsp_dt->spr.starty;
-		while (y < dsp_dt->spr.endy)
+		dsp_dt->spr.modify = dsp_dt->spr.starty;
+		while (dsp_dt->spr.modify < dsp_dt->spr.endy)
 		{
-			tex_y = calculate_tex_cor(1, y, height, dsp_dt);
+			tex_y = calculate_tex_cor(1, dsp_dt->spr.modify, height, dsp_dt);
 			color = dsp_dt->spr.addr + (tex_y * dsp_dt->spr.length);
 			color += (tex_x * (dsp_dt->spr.bpp / 8));
-			if (y++ && (*(unsigned int *)color & 0x00FFFFFF) != 0)
-				buffer[y - 1][stripe] = *(unsigned int *)color;
+			if (dsp_dt->spr.modify++
+				&& (*(unsigned int *)color & 0x00FFFFFF) != 0)
+				buffer[dsp_dt->spr.modify - 1][stripe] = *(unsigned int *)color;
 		}
 	}
 }
 
-void	draw_sprites(int width, int height, int **buffer, t_data *dsp_dt)
+void	draw_sprites(int height, int **buffer, t_data *dsp_dt)
 {
 	int	stripe;
 
 	stripe = dsp_dt->spr.startx;
 	while (stripe < dsp_dt->spr.endx)
 	{
-		draw_sprite_column(stripe, width, height, buffer, dsp_dt);
+		draw_sprite_column(stripe, height, buffer, dsp_dt);
 		stripe++;
 	}
 }

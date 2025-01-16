@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sprites.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ivromero <ivromero@student.42urduliz.c>    +#+  +:+       +#+        */
+/*   By: cvarela- <cvarela-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 09:40:54 by cvarela-          #+#    #+#             */
-/*   Updated: 2025/01/12 19:47:24 by ivromero         ###   ########.fr       */
+/*   Updated: 2025/01/16 10:26:01 by cvarela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,15 +56,15 @@ static void	get_sprite_height(int *height, t_data *dsp_dt)
 		dsp_dt->spr.endy = dsp_dt->screen_h - 1;
 }
 
-static void	get_sprite_width(int *width, t_data *dsp_dt)
+static void	get_sprite_width(t_data *dsp_dt)
 {
 	(dsp_dt->spr.screenx) = (int)((dsp_dt->screen_w / 2)
 			* (1 + dsp_dt->spr.dir_x / dsp_dt->spr.dir_y));
-	(*width) = abs((int)(dsp_dt->screen_h / dsp_dt->spr.dir_y));
-	dsp_dt->spr.startx = (dsp_dt->spr.screenx) - (*width) / 2;
+	(dsp_dt->spr.width2) = abs((int)(dsp_dt->screen_h / dsp_dt->spr.dir_y));
+	dsp_dt->spr.startx = (dsp_dt->spr.screenx) - (dsp_dt->spr.width2) / 2;
 	if (dsp_dt->spr.startx < 0)
 		dsp_dt->spr.startx = 0;
-	dsp_dt->spr.endx = (dsp_dt->spr.screenx) + (*width) / 2;
+	dsp_dt->spr.endx = (dsp_dt->spr.screenx) + (dsp_dt->spr.width2) / 2;
 	if (dsp_dt->spr.endx >= dsp_dt->screen_w)
 		dsp_dt->spr.endx = dsp_dt->screen_w - 1;
 }
@@ -73,7 +73,6 @@ void	sprites(int **buffer, t_data *dsp_dt)
 {
 	int	y;
 	int	height;
-	int	width;
 
 	get_sprites_dist(dsp_dt);
 	y = 0;
@@ -81,8 +80,8 @@ void	sprites(int **buffer, t_data *dsp_dt)
 	{
 		get_sprite_values(y, dsp_dt);
 		get_sprite_height(&height, dsp_dt);
-		get_sprite_width(&width, dsp_dt);
-		draw_sprites(width, height, buffer, dsp_dt);
+		get_sprite_width(dsp_dt);
+		draw_sprites(height, buffer, dsp_dt);
 		y++;
 	}
 }
