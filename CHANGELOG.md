@@ -1,12 +1,13 @@
-1725b8e - Cesar Manuel Varela Garcia, 31 hours ago : no leak 16/01/2025--10:35
-60036ea - Cesar Manuel Varela Garcia, 31 hours ago : Correcciones de linting 16/01/2025--10:35
-395d34f - Cesar Manuel Varela Garcia, 32 hours ago : make compile 16/01/2025--09:59
+ecf18a5 - Cesar Manuel Varela Garcia, 5 hours ago : Correcciones de linting 17/01/2025--17:53
+1725b8e - Cesar Manuel Varela Garcia, 2 days ago : no leak 16/01/2025--10:35
+60036ea - Cesar Manuel Varela Garcia, 2 days ago : Correcciones de linting 16/01/2025--10:35
+395d34f - Cesar Manuel Varela Garcia, 2 days ago : make compile 16/01/2025--09:59
 d57d188 - Cesar Manuel Varela Garcia, 3 days ago : No Leaks without --show-kinds 14/01/2025--16:45
 e79ac49 - Cesar Manuel Varela Garcia, 3 days ago : Correcciones de linting 14/01/2025--16:22
 3af730a - Cesar Manuel Varela Garcia, 3 days ago : Correcciones de linting 14/01/2025--16:15
 23f70da - Cesar Manuel Varela Garcia, 3 days ago : print error 14/01/2025--15:02
 092d239 - Cesar Manuel Varela Garcia, 4 days ago : Correcciones de linting 13/01/2025--19:04
-161cd50 - ivromero, 4 days ago : Fix Norminette errors
+161cd50 - ivromero, 5 days ago : Fix Norminette errors
 c6d0f62 - ivromero, 5 days ago : Merge branch 'Bonus'
 87c07ee - ivromero, 5 days ago : update .gitignore
 bcafa2b - cmvgg, 12 days ago : Correcciones de linting 05/01/2025--21:50
