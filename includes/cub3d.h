@@ -6,7 +6,7 @@
 /*   By: cvarela- <cvarela-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 09:44:29 by cvarela-          #+#    #+#             */
-/*   Updated: 2025/01/16 10:27:06 by cvarela-         ###   ########.fr       */
+/*   Updated: 2025/01/17 17:27:19 by cvarela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -201,6 +201,7 @@ typedef struct s_data
 	t_texture		eas;
 	t_texture		wes;
 	t_sprite		spr;
+	t_map_data		map_d;
 }					t_data;
 
 /* main.c */
