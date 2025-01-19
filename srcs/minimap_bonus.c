@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minimap_bonus.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cvarela- <cvarela-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ivromero <ivromero@student.42urduliz.c>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 23:40:34 by ivromero          #+#    #+#             */
-/*   Updated: 2025/01/17 17:58:13 by cvarela-         ###   ########.fr       */
+/*   Updated: 2025/01/19 13:52:15 by ivromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,56 +14,64 @@
 
 #ifdef BONUS
 
-void	bonus_print_minimap(int x, int y, t_data *dsp)
+void	check_and_draw_pixel(t_data *dsp, t_coords c)
 {
-	int	i;
-	int	j;
-				if ((dsp->map.board[y][x] == '1' || dsp->map.board[y][x] == '2')
-			&& ((x <= (dsp->ply.posx + 4) && x >= (dsp->ply.posx - 4))
-			&& (y <= (dsp->ply.posy + 4) && y >= (dsp->ply.posy - 4))))
-			{
-				i = 0;
-				while (i < MINIMAP_SCALE)
-				{
-					j = 0;
-					while (j < MINIMAP_SCALE)
-						my_mlx_pixel_put(dsp, x * MINIMAP_SCALE + i, y
-							* MINIMAP_SCALE + j++, 0xFFFFFF);
-					i++;
-				}
-			}
+	if (c.map_x >= 0 && c.map_x < dsp->map.width && c.map_y >= 0
+		&& c.map_y < dsp->map.height)
+	{
+		if (dsp->map.board[c.map_y][c.map_x] == '1')
+			my_mlx_pixel_put(dsp, c.real_x, c.real_y, 0xFFFFFF);
+		else if (dsp->map.board[c.map_y][c.map_x] == '0')
+			my_mlx_pixel_put(dsp, c.real_x, c.real_y, 0x000000);
+		else if (dsp->map.board[c.map_y][c.map_x] == '2')
+			my_mlx_pixel_put(dsp, c.real_x, c.real_y, 0x00BB00);
+	}
 }
 
 void	bonus_draw_minimap(t_data *dsp)
 {
-	int	x;
-	int	y;
+	int			x;
+	int			y;
+	t_coords	c;
 
-
-	y = -1;
-	while (++y < dsp->map.height - 1)
+	y = 0;
+	while (y < MINIMAP_SIZE)
 	{
-		x = -1;
-		while (++x < dsp->map.width)
+		x = 0;
+		while (x < MINIMAP_SIZE)
 		{
-			bonus_print_minimap(x, y, dsp);
+			c.map_x = (int)(dsp->ply.posx - MINIMAP_SIZE / (2 * MINIMAP_SCALE)
+					+ x / MINIMAP_SCALE);
+			c.map_y = (int)(dsp->ply.posy - MINIMAP_SIZE / (2 * MINIMAP_SCALE)
+					+ y / MINIMAP_SCALE);
+			c.real_x = MINIMAP_START_X + x;
+			c.real_y = MINIMAP_START_Y + y;
+			check_and_draw_pixel(dsp, c);
+			x++;
 		}
+		y++;
 	}
 }
 
 void	bonus_draw_minimap_player(t_data *dsp)
 {
+	int	player_radius;
+	int	center_x;
+	int	center_y;
 	int	i;
 	int	j;
 
-	i = 0;
-	while (i < MINIMAP_SCALE)
+	player_radius = MINIMAP_SCALE / 2;
+	center_x = 10 + 100 / 2 + MINIMAP_SCALE / 2;
+	center_y = 10 + 100 / 2 + MINIMAP_SCALE / 2;
+	i = -player_radius;
+	while (i <= player_radius)
 	{
-		j = 0;
-		while (j < MINIMAP_SCALE)
+		j = -player_radius;
+		while (j <= player_radius)
 		{
-			my_mlx_pixel_put(dsp, dsp->ply.posx * MINIMAP_SCALE + i,
-				dsp->ply.posy * MINIMAP_SCALE + j, 0xFF0000);
+			if (i * i + j * j <= player_radius * player_radius)
+				my_mlx_pixel_put(dsp, center_x + i, center_y + j, 0xFF0000);
 			j++;
 		}
 		i++;

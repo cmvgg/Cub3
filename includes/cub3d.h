@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cvarela- <cvarela-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ivromero <ivromero@student.42urduliz.c>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 09:44:29 by cvarela-          #+#    #+#             */
-/*   Updated: 2025/01/17 17:27:19 by cvarela-         ###   ########.fr       */
+/*   Updated: 2025/01/18 22:12:13 by ivromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,14 @@
 # include <fcntl.h>
 # include <math.h>
 # include <stdio.h>
-# include <unistd.h>
 # include <stdlib.h>
+# include <unistd.h>
 
 # define PI 3.141592654
 # define MINIMAP_SCALE 10
+# define MINIMAP_SIZE 100
+# define MINIMAP_START_X 10
+# define MINIMAP_START_Y 10
 
 typedef struct s_graphics
 {
@@ -204,6 +207,14 @@ typedef struct s_data
 	t_map_data		map_d;
 }					t_data;
 
+typedef struct s_coords
+{
+	int				map_x;
+	int				map_y;
+	int				real_x;
+	int				real_y;
+}					t_coords;
+
 /* main.c */
 void				ft_error(char *str);
 
@@ -237,12 +248,10 @@ void				validate_map_lines(int fd, char *line, t_map_data *map_dat);
 void				validate_map_last_line(char **line, t_map_data *map_data);
 
 /* validate_map_lines.c */
-void				map_space(int pos, int count_x,
-						t_map_data *map_data);
+void				map_space(int pos, int count_x, t_map_data *map_data);
 void				map_other(int pos, int count_x, char **line,
 						t_map_data *map_data);
-void				map_x(int pos, int count_x,
-						t_map_data *map_data);
+void				map_x(int pos, int count_x, t_map_data *map_data);
 
 /* cub.c  */
 void				cub(t_texture_element *elems, t_map_data *map_data);
@@ -296,8 +305,7 @@ int					look_color(int *red, int *green, char *color);
 void				my_mlx_pixel_put(t_data *dsp_dt, int x, int y, int color);
 void				init_buffer(int mode, int ***buffer, t_data *dsp_dt);
 void				draw_buffer(int **buffer, t_data *dsp_dt);
-void				draw_sprites(int height, int **buffer,
-						t_data *dsp_dt);
+void				draw_sprites(int height, int **buffer, t_data *dsp_dt);
 
 /* minimap_bonus.c */
 void				bonus_draw_minimap(t_data *dsp);

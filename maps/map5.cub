@@ -1,11 +1,11 @@
 R 1920 1080
-NO ./textures/grey2.xpm
-SO ./textures/grey2.xpm
-WE ./textures/grey2.xpm
-EA ./textures/grey2.xpm
+NO ./textures/wn.xpm
+SO ./textures/ws.xpm
+WE ./textures/ww.xpm
+EA ./textures/we.xpm
 S ./textures/barrel.xpm
-F 100,100,20
-C 100,150,100
+F 117,106,104
+C 162,202,228
 
  1     1
 1011111111
