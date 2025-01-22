@@ -6,7 +6,7 @@
 /*   By: cvarela- <cvarela-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 09:40:54 by cvarela-          #+#    #+#             */
-/*   Updated: 2025/01/02 23:44:51 by cvarela-         ###   ########.fr       */
+/*   Updated: 2025/01/22 10:19:23 by cvarela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	north_texture(t_data *dsp_dt)
 
 	count = ft_strlen(dsp_dt->nor.path) - 3;
 	verif = ft_strncmp(dsp_dt->nor.path + count, "xpm", count);
-	if (verif == 0)
+	if (verif <= 0)
 		dsp_dt->nor.img = mlx_xpm_file_to_image(dsp_dt->mlx.mlx,
 				dsp_dt->nor.path, &dsp_dt->nor.width, &dsp_dt->nor.height);
 	else

@@ -1,7 +1,6 @@
-R 1920 1080
-NO ./textures/wn.xpm
 SO ./textures/ws.xpm
 WE ./textures/ww.xpm
+NO ./textures/wn.xpm
 EA ./textures/we.xpm
 S ./textures/barrel.xpm
 F 117,106,104

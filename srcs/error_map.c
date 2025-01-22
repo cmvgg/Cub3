@@ -6,11 +6,25 @@
 /*   By: cvarela- <cvarela-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 09:51:21 by cvarela-          #+#    #+#             */
-/*   Updated: 2025/01/16 10:00:57 by cvarela-         ###   ########.fr       */
+/*   Updated: 2025/01/22 12:28:01 by cvarela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/cub3d.h"
+
+static void	errors(char *line_cont)
+{
+	if (line_cont[index] == '\t' || line_cont[index] == '\n'
+		|| line_cont[index] == '\f' || line_cont[index] == '\v'
+		|| line_cont[index] == '\r')
+		ft_error("Error:1\n");
+	if (read_stat == -1 || (line_cont[index] != '0'
+			&& line_cont[index] != ' ' && line_cont[index] != 'N'
+			&& line_cont[index] != 'S' && line_cont[index] != 'E'
+			&& line_cont[index] != 'W' && line_cont[index] != 'A'
+			&& line_cont[index] != 'F'))
+		ft_error("Error:2\n");
+}
 
 static int	check_map_values(int read_stat, char *line_cont,
 		t_map_data *map_data)
@@ -18,25 +32,17 @@ static int	check_map_values(int read_stat, char *line_cont,
 	int	index;
 
 	index = 0;
+	if ((line_cont[index] == 'F' && line_cont[index + 1] == ' ')
+		|| (line_cont[index] == 'C' && line_cont[index + 1] == ' '))
+		return (0);
 	while (line_cont[index])
 	{
-		if (line_cont[index] == '\t' || line_cont[index] == '\n'
-			|| line_cont[index] == '\f' || line_cont[index] == '\v'
-			|| line_cont[index] == '\r')
-		{
-			ft_error("Error:1\n");
-		}
-		if (read_stat == -1 || (line_cont[index] != '0'
-				&& line_cont[index] != '1' && line_cont[index] != '2'
-				&& line_cont[index] != ' ' && line_cont[index] != 'N'
-				&& line_cont[index] != 'S' && line_cont[index] != 'E'
-				&& line_cont[index] != 'W'))
-		{
-			ft_error("Error:2\n");
-		}
+		errors(line_cont[index]);
 		if ((int)ft_strlen(line_cont) > map_data->width)
 			map_data->width = ft_strlen(line_cont);
 		index++;
+		if (line_cont[index] == '.' && line_cont[index + 1] == '/')
+			break ;
 	}
 	map_data->height++;
 	return (read_stat);
@@ -56,12 +62,11 @@ static void	elem_texture_to_map(int fd, t_map_data *map_data)
 		if (*current_line != '\0')
 			break ;
 		if (read_status == -1 || read_status == 0)
-		{
 			ft_error("Error:3\n");
-		}
 		free(current_line);
+		current_line = NULL;
 	}
-	check_map_values(read_status, current_line, map_data);
+	read_status = check_map_values(read_status, current_line, map_data);
 	free(current_line);
 }
 
@@ -73,16 +78,18 @@ void	check_validate_map(const char *map_use, t_map_data *map_data)
 
 	read_count = 0;
 	fd = open(map_use, O_RDONLY);
-	while (1)
+	while (read_count <= 7)
 	{
 		get_next_line(fd, &current_line);
-		if (*current_line == '\0')
+		if (*current_line != '\0')
+			read_count++;
+		if (read_count == 7)
 			break ;
 		free(current_line);
 	}
 	elem_texture_to_map(fd, map_data);
-	read_count = 1;
 	free(current_line);
+	read_count = 1;
 	while (read_count == 1)
 	{
 		read_count = get_next_line(fd, &current_line);

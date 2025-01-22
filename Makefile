@@ -1,6 +1,6 @@
 DEL			=	rm -f
 CC			=	gcc
-CCFLAGS		=	-Wall -Wextra -Werror -Wuninitialized -g3  #-fsanitize=address,leak
+CCFLAGS		=	-Wall -Wextra -Werror -Wuninitialized -g3 -fsanitize=address,leak
 BONUSFLAGS	=	-D BONUS=1
 #MLX			=	-framework OpenGL -framework AppKit
  MLX			=	-lXext -lX11 -lm -lbsd 
@@ -88,7 +88,7 @@ minilibx:
 	@echo "MINILIBX HAS BEEN COMPILED$(NC)"
 
 fclean_mlx:
-	@make fclean -C ./$(MINILIBX)
+	@make clean -C ./$(MINILIBX)
 	@echo "MINILIBX FULL CLEANED!$(NC)"
 
 
@@ -103,7 +103,7 @@ clean:
 	@echo "$(RED)OBJS AND DIRECTORY CLEANED!$(NC)"
 
 
-fclean: clean  fclean_libft
+fclean: clean  fclean_libft fclean_mlx
 	@$(RM) $(NAME) $(NAME)_bonus
 	@echo "$(RED)EXECUTABLE CLEANED!$(NC)"
 

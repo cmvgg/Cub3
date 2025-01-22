@@ -1,11 +1,16 @@
-R 1920 1080
-NO ./textures/wn.xpm
-SO ./textures/ws.xpm
-WE ./textures/ww.xpm
-EA ./textures/we.xpm
-S ./textures/barrel.xpm
-F 117,106,104
 C 162,202,228
+
+
+SO ./textures/ws.xpm
+NO ./textures/ww.xpm
+EA ./textures/we.xpm
+
+
+WE ./textures/wn.xpm
+S ./textures/barrel.xpm
+
+F 117,106,104
+
 
  1     1
 1011111111

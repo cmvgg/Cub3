@@ -6,7 +6,7 @@
 /*   By: cvarela- <cvarela-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 09:50:46 by cvarela-          #+#    #+#             */
-/*   Updated: 2025/01/14 13:49:43 by cvarela-         ###   ########.fr       */
+/*   Updated: 2025/01/22 12:29:54 by cvarela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,8 +58,8 @@ static void	initialize_game_values(t_data *dsp_dt, t_texture_element *elem_txt,
 	dsp_dt->map.board = map_dt->matrix;
 	dsp_dt->map.width = map_dt->width;
 	dsp_dt->map.height = map_dt->height;
-	dsp_dt->screen_w = elem_txt->resolution.width;
-	dsp_dt->screen_h = elem_txt->resolution.height;
+	dsp_dt->screen_w = 1920;
+	dsp_dt->screen_h = 1080;
 	red = elem_txt->color.cl_red << 16;
 	green = elem_txt->color.cl_green << 8;
 	blue = elem_txt->color.cl_blue;
@@ -73,12 +73,12 @@ static void	initialize_game_values(t_data *dsp_dt, t_texture_element *elem_txt,
 
 static void	initialize_textures(t_data *dsp_dt, t_texture_element *elem_texture)
 {
-	dsp_dt->nor.path = ft_strtrim(elem_texture->north_texture.path, " \t");
-	north_texture(dsp_dt);
-	dsp_dt->sou.path = ft_strtrim(elem_texture->south_texture.path, " \t");
-	south_texture(dsp_dt);
 	dsp_dt->eas.path = ft_strtrim(elem_texture->east_texture.path, " \t");
 	east_texture(dsp_dt);
+	dsp_dt->sou.path = ft_strtrim(elem_texture->south_texture.path, " \t");
+	south_texture(dsp_dt);
+	dsp_dt->nor.path = ft_strtrim(elem_texture->north_texture.path, " \t");
+	north_texture(dsp_dt);
 	dsp_dt->wes.path = ft_strtrim(elem_texture->west_texture.path, " \t");
 	west_texture(dsp_dt);
 	dsp_dt->spr.path = ft_strtrim(elem_texture->sprite.path, " \t");

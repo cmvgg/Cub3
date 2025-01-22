@@ -6,7 +6,7 @@
 /*   By: cvarela- <cvarela-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 09:51:14 by cvarela-          #+#    #+#             */
-/*   Updated: 2025/01/14 16:20:04 by cvarela-         ###   ########.fr       */
+/*   Updated: 2025/01/22 12:28:47 by cvarela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ static void	elem_texture_to_map(int fd, char **current_line)
 	int		read_status;
 
 	read_status = 1;
+	free(*current_line);
 	while (read_status == 1)
 	{
 		read_status = get_next_line(fd, current_line);
@@ -28,28 +29,30 @@ static void	elem_texture_to_map(int fd, char **current_line)
 
 static void	check_values(const char *map_use, t_map_data *map_data)
 {
-	static char	*current_line;
-	char		*last;
-	int			fd;
+	char	*current_line;
+	int		count;
+	int		fd;
 
-	fd = 0;
+	count = 0;
 	fd = open(map_use, O_RDONLY);
-	while (1)
+	while (count <= 7)
 	{
 		get_next_line(fd, &current_line);
-		if (*current_line == '\0')
+		if (*current_line != '\0')
+			count ++;
+		if (count == 7)
 			break ;
 		free(current_line);
 	}
-	last = map_data->matrix[map_data->height - 2];
-	free(current_line);
 	elem_texture_to_map(fd, &current_line);
 	map_data->player = 0;
 	validate_map_first_line(&current_line, map_data);
-	validate_map_lines(fd, current_line, map_data);
+	validate_map_lines(fd, &current_line, map_data);
 	if (map_data->player == 0)
 		ft_error("Error: No player\n");
-	validate_map_last_line(&last, map_data);
+	validate_map_last_line(&current_line, map_data);
+	free(current_line);
+	current_line = NULL;
 	close(fd);
 }
 

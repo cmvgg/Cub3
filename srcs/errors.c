@@ -6,7 +6,7 @@
 /*   By: cvarela- <cvarela-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 09:51:43 by cvarela-          #+#    #+#             */
-/*   Updated: 2025/01/14 13:27:40 by cvarela-         ###   ########.fr       */
+/*   Updated: 2025/01/22 12:14:50 by cvarela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,7 @@
 static void	validate_texture_data(int idx, char ident, char **ln,
 		t_texture_element *elem_texture)
 {
-	if (ident == 'R' && ((*ln)[idx + 1] == ' ' || (*ln)[idx + 1] == '\t'))
-		error_resolution(ln, elem_texture);
-	else if (ident == 'N' && ((*ln)[idx + 2] == ' ' || (*ln)[idx + 2] == '\t'))
+	if (ident == 'N' && ((*ln)[idx + 2] == ' ' || (*ln)[idx + 2] == '\t'))
 		error_north(ln, elem_texture);
 	else if (ident == 'S' && ((*ln)[idx + 2] == ' ' || (*ln)[idx + 2] == '\t'))
 		error_south(ln, elem_texture);
@@ -40,7 +38,8 @@ static void	extract_map_textures(char **line, t_texture_element *elem_texture)
 	int	index;
 
 	index = 0;
-	while ((*line)[index] == ' ' || (*line)[index] == '\t')
+	while ((*line)[index] == ' ' || (*line)[index] == '\n'
+	|| (*line)[index] == '\t')
 		index++;
 	if ((*line)[index] == 'R')
 		validate_texture_data(index, 'R', line, elem_texture);
@@ -80,20 +79,22 @@ void	check_elem_texture(const char *map_use, t_texture_element *elem_txt)
 	static char	*line;
 	int			read_stat;
 	int			fd;
+	int			count;
 
 	read_stat = 1;
+	count = 0;
 	fd = open(map_use, O_RDONLY);
 	if (fd < 0)
 		ft_error("Error:\n");
-	while (1)
+	while (count < 7)
 	{
 		read_stat = get_next_line(fd, &line);
 		read_stat = handle_identify(read_stat, &line, elem_txt);
 		free(line);
 		if (read_stat == -1)
 			ft_error("Error:\n");
-		if (read_stat != 1)
-			break ;
+		if (read_stat >= 1)
+			count++;
 	}
 	while (get_next_line(fd, &line) == 1)
 		free(line);

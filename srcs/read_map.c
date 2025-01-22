@@ -6,7 +6,7 @@
 /*   By: cvarela- <cvarela-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 09:40:54 by cvarela-          #+#    #+#             */
-/*   Updated: 2025/01/14 16:40:24 by cvarela-         ###   ########.fr       */
+/*   Updated: 2025/01/22 12:14:23 by cvarela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,24 +73,24 @@ void	validate_map_first_line(char **line, t_map_data *map_data)
 	}
 }
 
-void	validate_map_lines(int fd, char *line, t_map_data *map_data)
+void	validate_map_lines(int fd, char **line, t_map_data *map_data)
 {
 	int	reads;
 	int	pos;
 
 	reads = 1;
 	pos = 1;
+	free(*line);
 	while (reads >= 1)
 	{
-		reads = get_next_line(fd, &line);
+		reads = get_next_line(fd, line);
 		if (pos == map_data->height - 1)
 			break ;
-		if (reads)
-			check_line(pos, &line, map_data);
-		free(line);
+		check_line(pos, line, map_data);
+		if (*line != NULL)
+			free(*line);
 		pos++;
 	}
-	free(line);
 }
 
 void	validate_map_last_line(char **line, t_map_data *map_data)
