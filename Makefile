@@ -7,7 +7,7 @@ BONUSFLAGS	=	-D BONUS=1
 
 
 
-NAME		=	cub3d
+NAME		=	cub3D
 
 
 SRC_FILES	=change_move \
