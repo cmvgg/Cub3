@@ -6,7 +6,7 @@
 /*   By: cvarela- <cvarela-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 09:40:54 by cvarela-          #+#    #+#             */
-/*   Updated: 2025/01/22 12:14:23 by cvarela-         ###   ########.fr       */
+/*   Updated: 2025/01/22 13:06:30 by cvarela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,28 +83,31 @@ void	validate_map_lines(int fd, char **line, t_map_data *map_data)
 	free(*line);
 	while (reads >= 1)
 	{
-		reads = get_next_line(fd, line);
-		if (pos == map_data->height - 1)
+		reads = get_next_line(fd, &line[0]);
+		if (pos == map_data->height - 1 || reads <= 0)
 			break ;
 		check_line(pos, line, map_data);
+		if (pos == map_data->height - 2 || reads <= 0)
+			break ;
 		if (*line != NULL)
 			free(*line);
 		pos++;
 	}
 }
 
-void	validate_map_last_line(char **line, t_map_data *map_data)
+void	validate_map_last_line(char *line, t_map_data *map_data)
 {
 	int	pos;
 	int	count_x;
 
 	pos = map_data->height - 1;
 	count_x = 0;
-	while ((*line)[count_x] && map_data->matrix[pos][count_x])
+		printf("last line: %s", line);
+	while ((line)[count_x] != 0 && map_data->matrix[pos][count_x])
 	{
-		if ((*line)[count_x] == '\0')
+		if ((line)[count_x] == '\0')
 			break ;
-		if ((*line)[count_x] != '1' && (*line)[count_x] != 'x')
+		if ((line)[count_x] != '1' && (line)[count_x] != ' ')
 			ft_error("Error:vmll\n");
 		count_x++;
 	}
