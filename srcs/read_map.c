@@ -6,7 +6,7 @@
 /*   By: cvarela- <cvarela-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 09:40:54 by cvarela-          #+#    #+#             */
-/*   Updated: 2025/01/22 13:06:30 by cvarela-         ###   ########.fr       */
+/*   Updated: 2025/01/22 13:20:17 by cvarela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ static void	check_body_line(int pos, char **line, t_map_data *map_data)
 			{
 				map_data->player++;
 			}
-			if (map_data->player > 2)
+			if (map_data->player >= 2)
 				ft_error("Error:cbl\n");
 			map_other(pos, count_x, line, map_data);
 		}
@@ -46,14 +46,12 @@ static void	check_line(int pos, char **line, t_map_data *map_data)
 	int	last;
 
 	count_x = 0;
-	if ((*line)[count_x] != '1' && (*line)[count_x] != ' '
-		&& (*line)[count_x] != '\0')
+	if ((*line)[count_x] != '1' && (*line)[count_x] != ' ')
 		ft_error("Error:cl\n");
 	if ((*line)[count_x] == '1')
 		map_data->matrix[pos][count_x] = '1';
 	last = ft_strlen(*line) - 1;
-	if ((*line)[last] != '1' && (*line)[last] != ' '
-		&& (*line)[count_x] != '\0')
+	if ((*line)[last] != '1' && (*line)[last] != ' ')
 		ft_error("Error:cl1\n");
 	check_body_line(pos, line, map_data);
 }
@@ -102,7 +100,6 @@ void	validate_map_last_line(char *line, t_map_data *map_data)
 
 	pos = map_data->height - 1;
 	count_x = 0;
-		printf("last line: %s", line);
 	while ((line)[count_x] != 0 && map_data->matrix[pos][count_x])
 	{
 		if ((line)[count_x] == '\0')

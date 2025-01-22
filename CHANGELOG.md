@@ -1,6 +1,7 @@
-718c7a0 - Cesar Manuel Varela Garcia, 2 minutes ago : Correcciones de linting 22/01/2025--13:07
-b562b3b - Cesar Manuel Varela Garcia, 26 minutes ago : Correcciones de linting 22/01/2025--12:43
-2221481 - Cesar Manuel Varela Garcia, 39 minutes ago : Correcciones de linting 22/01/2025--12:30
+8484fd7 - Cesar Manuel Varela Garcia, 15 minutes ago : Correcciones de linting 22/01/2025--13:09
+718c7a0 - Cesar Manuel Varela Garcia, 17 minutes ago : Correcciones de linting 22/01/2025--13:07
+b562b3b - Cesar Manuel Varela Garcia, 41 minutes ago : Correcciones de linting 22/01/2025--12:43
+2221481 - Cesar Manuel Varela Garcia, 54 minutes ago : Correcciones de linting 22/01/2025--12:30
 a89e31a - ivromero, 3 days ago : fix minimap
 972c6ec - Cesar Manuel Varela Garcia, 5 days ago : Correcciones de linting 17/01/2025--22:28
 ecf18a5 - Cesar Manuel Varela Garcia, 5 days ago : Correcciones de linting 17/01/2025--17:53
