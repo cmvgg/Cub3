@@ -1,3 +1,4 @@
+2221481 - Cesar Manuel Varela Garcia, 13 minutes ago : Correcciones de linting 22/01/2025--12:30
 a89e31a - ivromero, 3 days ago : fix minimap
 972c6ec - Cesar Manuel Varela Garcia, 5 days ago : Correcciones de linting 17/01/2025--22:28
 ecf18a5 - Cesar Manuel Varela Garcia, 5 days ago : Correcciones de linting 17/01/2025--17:53
