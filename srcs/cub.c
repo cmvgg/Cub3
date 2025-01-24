@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mero <mero@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: ivromero <ivromero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 09:50:46 by cvarela-          #+#    #+#             */
-/*   Updated: 2025/01/24 19:16:31 by mero             ###   ########.fr       */
+/*   Updated: 2025/01/24 20:29:47 by ivromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 static int	close_cub3d(void)
 {
 	printf("\033[0;32mCub3D cerrado con éxito :)\n\033[0;32m\n");
+	ft_error("", NULL);
 	exit(0);
 }
 
@@ -98,27 +99,29 @@ static void	initialize_textures(t_data *dsp_dt, t_texture_element *elem_texture)
 
 void	cub(t_texture_element *elem_texture, t_map_data *map_data)
 {
-	t_data	dsp_dt;
+	t_data	*dsp_dt;
 	int		screen_max_width;
 	int		screen_max_height;
 
+	dsp_dt = get_dsp_data();
 	screen_max_height = 0;
 	screen_max_width = 0;
-	dsp_dt = (t_data){0};
-	dsp_dt.mlx.mlx = mlx_init();
-	locate_player(&dsp_dt, map_data);
-	initialize_game_values(&dsp_dt, elem_texture, map_data);
-	initialize_textures(&dsp_dt, elem_texture);
-	find_sprites(&dsp_dt, map_data);
-	mlx_get_screen_size(dsp_dt.mlx.mlx, &screen_max_width, &screen_max_height);
-	if (dsp_dt.screen_w > screen_max_width)
-		dsp_dt.screen_w = screen_max_width;
-	if (dsp_dt.screen_h > screen_max_height)
-		dsp_dt.screen_h = screen_max_height;
-	mlx_hook(dsp_dt.mlx.win, 2, 1L << 0, key_press, &dsp_dt);
-	mlx_hook(dsp_dt.mlx.win, 3, 1L << 1, key_release, &dsp_dt);
-	mlx_hook(dsp_dt.mlx.win, 17, 1L << 17, close_cub3d, &dsp_dt);
-	mlx_loop_hook(dsp_dt.mlx.mlx, render_frame, &dsp_dt);
-	mlx_loop(dsp_dt.mlx.mlx);
-	bonus_init_mouse(&dsp_dt);
+	dsp_dt->screen_w = 0;
+	dsp_dt->screen_h = 0;
+	dsp_dt->mlx.mlx = mlx_init();
+	locate_player(dsp_dt, map_data);
+	initialize_game_values(dsp_dt, elem_texture, map_data);
+	initialize_textures(dsp_dt, elem_texture);
+	find_sprites(dsp_dt, map_data);
+	mlx_get_screen_size(dsp_dt->mlx.mlx, &screen_max_width, &screen_max_height);
+	if (dsp_dt->screen_w > screen_max_width)
+		dsp_dt->screen_w = screen_max_width;
+	if (dsp_dt->screen_h > screen_max_height)
+		dsp_dt->screen_h = screen_max_height;
+	mlx_hook(dsp_dt->mlx.win, 2, 1L << 0, key_press, dsp_dt);
+	mlx_hook(dsp_dt->mlx.win, 3, 1L << 1, key_release, dsp_dt);
+	mlx_hook(dsp_dt->mlx.win, 17, 1L << 17, close_cub3d, dsp_dt);
+	mlx_loop_hook(dsp_dt->mlx.mlx, render_frame, dsp_dt);
+	mlx_loop(dsp_dt->mlx.mlx);
+	bonus_init_mouse(dsp_dt);
 }

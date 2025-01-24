@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   read_map.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cvarela- <cvarela-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ivromero <ivromero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 09:40:54 by cvarela-          #+#    #+#             */
-/*   Updated: 2025/01/24 18:31:06 by cvarela-         ###   ########.fr       */
+/*   Updated: 2025/01/24 21:07:15 by ivromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ void	validate_map_lines(int fd, char **line, t_map_data *map_data)
 	free(*line);
 	while (reads >= 1)
 	{
-		reads = get_next_line(fd, &line[0]);
+		reads = get_next_line(fd, line);
 		if (pos == map_data->height - 1 || reads <= 0)
 			break ;
 		check_line(pos, line, map_data);

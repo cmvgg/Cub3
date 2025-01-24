@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   error_map.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cvarela- <cvarela-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ivromero <ivromero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 09:51:21 by cvarela-          #+#    #+#             */
-/*   Updated: 2025/01/24 18:22:49 by cvarela-         ###   ########.fr       */
+/*   Updated: 2025/01/24 20:57:24 by ivromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,9 +89,9 @@ void	check_validate_map(const char *map_use, t_map_data *map_data)
 			break ;
 		free(current_line);
 	}
+	free(current_line);
 	elem_texture_to_map(fd, map_data);
 	read_count = 1;
-	free(current_line);
 	while (read_count == 1)
 	{
 		read_count = get_next_line(fd, &current_line);

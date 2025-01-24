@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   error_colres.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cvarela- <cvarela-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ivromero <ivromero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 09:50:59 by cvarela-          #+#    #+#             */
-/*   Updated: 2025/01/24 18:24:17 by cvarela-         ###   ########.fr       */
+/*   Updated: 2025/01/24 20:24:12 by ivromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,7 @@ void	error_floor(char **line, t_texture_element *elem_texture)
 	elem_texture->color.fl_blue = look_color(&red, &green, str);
 	elem_texture->color.fl_green = green;
 	elem_texture->color.fl_red = red;
+	free(str);
 }
 
 void	error_skying(char **line, t_texture_element *elem_texture)
@@ -88,4 +89,5 @@ void	error_skying(char **line, t_texture_element *elem_texture)
 	elem_texture->color.cl_blue = look_color(&red, &green, str);
 	elem_texture->color.cl_green = green;
 	elem_texture->color.cl_red = red;
+	free(str);
 }
