@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ivromero <ivromero@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mero <mero@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 09:32:15 by cvarela-          #+#    #+#             */
-/*   Updated: 2025/01/24 21:58:05 by ivromero         ###   ########.fr       */
+/*   Updated: 2025/01/24 22:43:56 by mero             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,12 +49,15 @@ void	ft_error(char *str, char *line)
 	t_map_data	*map;
 	t_data		*dsp_dt;
 
+	dsp_dt = get_dsp_data();
 	if (line)
 	{
 		printf("\033[0;31mError\n");
 		printf("%s", str);
 		printf("\n\n\033[0m");
 	}
+	if(line != NULL && line[0] != '\0')
+		free_dsptext(dsp_dt->elem_txt);
 	if (line && *line)
 		free(line);
 	map = get_map_data();
@@ -62,13 +65,10 @@ void	ft_error(char *str, char *line)
 		while (map->height >= 0)
 			free(map->matrix[map->height--]);
 	free(map->matrix);
-	dsp_dt = get_dsp_data();
 	free(dsp_dt->spr.zbuf);
 	free(dsp_dt->spr.dist);
 	free(dsp_dt->spr.buf);
 	free(dsp_dt->spr.order);
-	if(line && line[0] != '\0')
-		free_dsptext(&dsp_dt->elem_txt);
 	exit(0);
 }
 
@@ -88,8 +88,8 @@ int	main(int argc, char **argv)
 		tmp = ft_strnstr(argv[1], ".cub", ft_strlen(argv[1]));
 		if (tmp && ft_strncmp(tmp, ".cub", ft_strlen(tmp)) == 0)
 		{
+			dsp_dt->elem_txt = &element_txt;
 			check_elem_texture(argv[1], &element_txt);
-			dsp_dt->elem_txt = element_txt;
 			check_validate_map(argv[1], map);
 			create_map(argv[1], map);
 			cub(&element_txt, map);

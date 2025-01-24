@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   error_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cvarela- <cvarela-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mero <mero@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 09:51:34 by cvarela-          #+#    #+#             */
-/*   Updated: 2025/01/24 18:28:47 by cvarela-         ###   ########.fr       */
+/*   Updated: 2025/01/24 22:43:11 by mero             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ static void	final_color(int count, char *str)
 		ft_error("Error:\n", str);
 }
 
-void	validate_image_path(char *path)
+void	validate_image_path(char *path, char *line)
 {
 	char	*tmp;
 	int		fd;
@@ -52,14 +52,18 @@ void	validate_image_path(char *path)
 	free(tmp);
 	if (fd < 0)
 	{
-		ft_error("Error\n", path);
+		free(path);
+		ft_error("Error\n", line);
 	}
 	tmp = ft_strnstr(path + ft_strlen(path) - 4, ".xpm", ft_strlen(path));
 	if (!tmp || ft_strncmp(tmp, ".xpm", ft_strlen(tmp)) != 0)
 	{
 		tmp = ft_strnstr(path + ft_strlen(path) - 4, ".xpm", ft_strlen(path));
 		if (!tmp || ft_strncmp(tmp, ".xpm", ft_strlen(tmp)) != 0)
-			ft_error("Error:\n", path);
+			{
+				free(path);
+				ft_error("Error\n", line);
+			}
 	}
 	free(path);
 	close(fd);

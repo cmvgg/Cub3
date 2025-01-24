@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   error_txts.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ivromero <ivromero@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mero <mero@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 09:51:27 by cvarela-          #+#    #+#             */
-/*   Updated: 2025/01/24 21:43:55 by ivromero         ###   ########.fr       */
+/*   Updated: 2025/01/24 22:45:26 by mero             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,8 @@ void	error_north(char **line, t_texture_element *elem_texture)
 	if ((*line)[count] == '\0')
 		ft_error("Error:\n", *line);
 	copy_path(count, &str, line);
-	elem_texture->north_texture.path = ft_strdup(str);
-	validate_image_path(elem_texture->north_texture.path);
 	elem_texture->north_texture.path = str;
+	validate_image_path(ft_strdup(str), *line);
 }
 
 void	error_south(char **line, t_texture_element *elem_texture)
@@ -53,9 +52,8 @@ void	error_south(char **line, t_texture_element *elem_texture)
 	if ((*line)[count] == '\0')
 		ft_error("Error: \n", *line);
 	copy_path(count, &str, line);
-	elem_texture->south_texture.path = ft_strdup(str);
-	validate_image_path(elem_texture->south_texture.path);
 	elem_texture->south_texture.path = str;
+	validate_image_path(ft_strdup(str), *line);
 }
 
 void	error_west(char **line, t_texture_element *elem_texture)
@@ -76,9 +74,8 @@ void	error_west(char **line, t_texture_element *elem_texture)
 	if ((*line)[count] == '\0')
 		ft_error("Error: \n", *line);
 	copy_path(count, &str, line);
-	elem_texture->west_texture.path = ft_strdup(str);
-	validate_image_path(elem_texture->west_texture.path);
 	elem_texture->west_texture.path = str;
+	validate_image_path(ft_strdup(str), *line);
 }
 
 void	error_east(char **line, t_texture_element *elem_texture)
@@ -99,9 +96,8 @@ void	error_east(char **line, t_texture_element *elem_texture)
 	if ((*line)[count] == '\0')
 		ft_error("Error:\n", *line);
 	copy_path(count, &str, line);
-	elem_texture->east_texture.path = ft_strdup(str);
-	validate_image_path(elem_texture->east_texture.path);
 	elem_texture->east_texture.path = str;
+	validate_image_path(ft_strdup(str), *line);
 }
 
 void	error_sprite(char **line, t_texture_element *elem_texture)
@@ -122,7 +118,6 @@ void	error_sprite(char **line, t_texture_element *elem_texture)
 	if ((*line)[count] == '\0')
 		ft_error("Error:\n", *line);
 	copy_path(count, &str, line);
-	elem_texture->sprite.path = ft_strdup(str);
-	validate_image_path(elem_texture->sprite.path);
 	elem_texture->sprite.path = str;
+	validate_image_path(ft_strdup(str), *line);
 }

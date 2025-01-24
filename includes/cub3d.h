@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ivromero <ivromero@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mero <mero@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 09:44:29 by cvarela-          #+#    #+#             */
-/*   Updated: 2025/01/24 21:46:50 by ivromero         ###   ########.fr       */
+/*   Updated: 2025/01/24 22:42:17 by mero             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -205,7 +205,7 @@ typedef struct s_data
 	t_texture			wes;
 	t_sprite			spr;
 	t_map_data			map_d;
-	t_texture_element	elem_txt;
+	t_texture_element	*elem_txt;
 }						t_data;
 
 typedef struct s_coords
@@ -306,7 +306,7 @@ void					rot_right(double rot, t_data *dsp_dt);
 void					rot_left(double rot, t_data *dsp_dt);
 
 /* error_utils.c */
-void					validate_image_path(char *path);
+void					validate_image_path(char *path, char *line);
 int						look_color(int *red, int *green, char *color);
 
 /* utils.c */
