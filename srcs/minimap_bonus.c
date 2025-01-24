@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minimap_bonus.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cvarela- <cvarela-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ivromero <ivromero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 23:40:34 by ivromero          #+#    #+#             */
-/*   Updated: 2025/01/24 17:10:40 by cvarela-         ###   ########.fr       */
+/*   Updated: 2025/01/24 21:12:51 by ivromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,6 @@ void	bonus_draw_minimap(t_data *dsp)
 	t_coords	c;
 
 	y = 0;
-
 	while (y < MINIMAP_SIZE)
 	{
 		x = 0;

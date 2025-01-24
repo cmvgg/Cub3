@@ -6,7 +6,7 @@
 /*   By: cvarela- <cvarela-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 09:51:34 by cvarela-          #+#    #+#             */
-/*   Updated: 2025/01/05 21:22:08 by cvarela-         ###   ########.fr       */
+/*   Updated: 2025/01/24 18:28:47 by cvarela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 static int	ext_look_color(int *tot, int count, char *color)
 {
 	if (color[count] == '\0')
-		ft_error("Error:\n");
+		ft_error("Error:\n", color);
 	if ((color[count] < '0' || color[count] > '9'))
-		ft_error("Error:\n");
+		ft_error("Error:\n", color);
 	count = 0;
 	while (color[count])
 	{
@@ -26,19 +26,19 @@ static int	ext_look_color(int *tot, int count, char *color)
 		if ((color[count] < '0' || color[count] > '9')
 			&& (color[count] != ',')
 			&& color[count] != ' ' && color[count] != '\t')
-			ft_error("Error:\n");
+			ft_error("Error:\n", color);
 		count++;
 	}
 	tot++;
 	return (0);
 }
 
-static void	final_color(int count, char const *str)
+static void	final_color(int count, char *str)
 {
 	while (str[count] == ' ' || str[count] == '\t')
 		count++;
 	if (str[count] != '\0')
-		ft_error("Error:\n");
+		ft_error("Error:\n", str);
 }
 
 void	validate_image_path(char *path)
@@ -52,14 +52,14 @@ void	validate_image_path(char *path)
 	free(tmp);
 	if (fd < 0)
 	{
-		ft_error("Error\n");
+		ft_error("Error\n", path);
 	}
 	tmp = ft_strnstr(path + ft_strlen(path) - 4, ".xpm", ft_strlen(path));
 	if (!tmp || ft_strncmp(tmp, ".xpm", ft_strlen(tmp)) != 0)
 	{
 		tmp = ft_strnstr(path + ft_strlen(path) - 4, ".xpm", ft_strlen(path));
 		if (!tmp || ft_strncmp(tmp, ".xpm", ft_strlen(tmp)) != 0)
-			ft_error("Error:\n");
+			ft_error("Error:\n", path);
 	}
 	free(path);
 	close(fd);
@@ -80,7 +80,7 @@ int	look_color(int *red, int *green, char *color)
 		while (color[count] >= '0' && color[count] <= '9')
 			value = (value * 10) + (color[count++] - '0');
 		if ((tot < 2 && color[count] != ',') || (value < 0 || value > 255))
-			ft_error("Error:\n");
+			ft_error("Error:\n", color);
 		if (tot == 0)
 			(*red) = value;
 		else if (tot == 1)

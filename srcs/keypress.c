@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   keypress.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cvarela- <cvarela-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ivromero <ivromero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 09:52:00 by cvarela-          #+#    #+#             */
-/*   Updated: 2025/01/02 23:30:52 by cvarela-         ###   ########.fr       */
+/*   Updated: 2025/01/24 20:29:04 by ivromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ int	key_press(int keycode, t_data *dsp_dt)
 	{
 		printf("Cub3D cerrado con exito");
 		printf("\n\n");
+		ft_error("", NULL);
 		exit(0);
 	}
 	else if (keycode == 119)

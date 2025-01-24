@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cvarela- <cvarela-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ivromero <ivromero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 09:44:29 by cvarela-          #+#    #+#             */
-/*   Updated: 2025/01/24 17:37:45 by cvarela-         ###   ########.fr       */
+/*   Updated: 2025/01/24 20:00:45 by ivromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -216,7 +216,8 @@ typedef struct s_coords
 }					t_coords;
 
 /* main.c */
-void				ft_error(char *str);
+t_map_data			*get_map_data(void);
+void				ft_error(char *str, char *line);
 
 /* errors.c */
 void				check_elem_texture(const char *str,
@@ -303,6 +304,7 @@ void				validate_image_path(char *path);
 int					look_color(int *red, int *green, char *color);
 
 /* utils.c */
+t_data				*get_dsp_data(void);
 void				my_mlx_pixel_put(t_data *dsp_dt, int x, int y, int color);
 void				init_buffer(int mode, int ***buffer, t_data *dsp_dt);
 void				draw_buffer(int **buffer, t_data *dsp_dt);

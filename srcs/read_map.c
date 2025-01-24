@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   read_map.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cvarela- <cvarela-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ivromero <ivromero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 09:40:54 by cvarela-          #+#    #+#             */
-/*   Updated: 2025/01/24 17:37:02 by cvarela-         ###   ########.fr       */
+/*   Updated: 2025/01/24 21:07:15 by ivromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,7 @@ static void	check_body_line(int pos, char **line, t_map_data *map_data)
 				map_data->player++;
 			}
 			if (map_data->player >= 2)
-			{
-				free(line[0]);
-				ft_error("Error:cbl\n");
-			}
+				ft_error("Error:cbl\n", *line);
 			map_other(pos, count_x, line, map_data);
 		}
 		count_x++;
@@ -50,18 +47,12 @@ static void	check_line(int pos, char **line, t_map_data *map_data)
 
 	count_x = 0;
 	if ((*line)[count_x] != '1' && (*line)[count_x] != ' ')
-	{
-		free(line[0]);
-		ft_error("Error:cl\n");
-	}
+		ft_error("Error:cl\n", *line);
 	if ((*line)[count_x] == '1')
 		map_data->matrix[pos][count_x] = '1';
 	last = ft_strlen(*line) - 1;
 	if ((*line)[last] != '1' && (*line)[last] != ' ')
-	{
-		free(line[0]);
-		ft_error("Error:cl1\n");
-	}
+		ft_error("Error:cl1\n", *line);
 	check_body_line(pos, line, map_data);
 }
 
@@ -73,7 +64,7 @@ void	validate_map_first_line(char **line, t_map_data *map_data)
 	while ((*line)[count_x] && map_data->matrix[0][count_x])
 	{
 		if ((*line)[count_x] != '1' && (*line)[count_x] != ' ')
-			ft_error("Error:vmfl\n");
+			ft_error("Error:vmfl\n", *line);
 		if ((*line)[count_x] == '1')
 			map_data->matrix[0][count_x] = '1';
 		count_x++;
@@ -90,14 +81,13 @@ void	validate_map_lines(int fd, char **line, t_map_data *map_data)
 	free(*line);
 	while (reads >= 1)
 	{
-		reads = get_next_line(fd, &line[0]);
+		reads = get_next_line(fd, line);
 		if (pos == map_data->height - 1 || reads <= 0)
 			break ;
 		check_line(pos, line, map_data);
 		if (pos == map_data->height - 2 || reads <= 0)
 			break ;
-		if (*line != NULL)
-			free(*line);
+		free(line[0]);
 		pos++;
 	}
 }
@@ -115,8 +105,7 @@ void	validate_map_last_line(char *line, t_map_data *map_data)
 			break ;
 		if ((line)[count_x] != '1' && (line)[count_x] != ' ')
 		{
-			free(line);
-			ft_error("Error:vmll\n");
+			ft_error("Error:vmll\n", line);
 		}
 		count_x++;
 	}

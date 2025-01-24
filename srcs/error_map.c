@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   error_map.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cvarela- <cvarela-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ivromero <ivromero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 09:51:21 by cvarela-          #+#    #+#             */
-/*   Updated: 2025/01/22 12:42:53 by cvarela-         ###   ########.fr       */
+/*   Updated: 2025/01/24 20:57:24 by ivromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,14 +32,14 @@ static int	check_map_values(int read_stat, char *line_cont,
 		if (line_cont[index] == '\t' || line_cont[index] == '\n'
 			|| line_cont[index] == '\f' || line_cont[index] == '\v'
 			|| line_cont[index] == '\r')
-			ft_error("Error:1\n");
+			ft_error("Error:1\n", line_cont);
 		if (read_stat == -1 || (line_cont[index] != '0'
 				&& line_cont[index] != '1' && line_cont[index] != '2'
 				&& line_cont[index] != ' ' && line_cont[index] != 'N'
 				&& line_cont[index] != 'S' && line_cont[index] != 'E'
 				&& line_cont[index] != 'W' && line_cont[index] != 'A'
 				&& line_cont[index] != 'F'))
-			ft_error("Error:2\n");
+			ft_error("Error:2\n", line_cont);
 		if ((int)ft_strlen(line_cont) > map_data->width)
 			map_data->width = ft_strlen(line_cont);
 		index++;
@@ -64,7 +64,7 @@ static void	elem_texture_to_map(int fd, t_map_data *map_data)
 		if (*current_line != '\0')
 			break ;
 		if (read_status == -1 || read_status == 0)
-			ft_error("Error:3\n");
+			ft_error("Error:3\n", current_line);
 		free(current_line);
 		current_line = NULL;
 	}
@@ -89,9 +89,9 @@ void	check_validate_map(const char *map_use, t_map_data *map_data)
 			break ;
 		free(current_line);
 	}
+	free(current_line);
 	elem_texture_to_map(fd, map_data);
 	read_count = 1;
-	free(current_line);
 	while (read_count == 1)
 	{
 		read_count = get_next_line(fd, &current_line);

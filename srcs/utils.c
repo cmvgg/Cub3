@@ -3,14 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cvarela- <cvarela-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ivromero <ivromero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 09:40:52 by cvarela-          #+#    #+#             */
-/*   Updated: 2025/01/17 17:11:05 by cvarela-         ###   ########.fr       */
+/*   Updated: 2025/01/24 20:05:10 by ivromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/cub3d.h"
+
+t_data	*get_dsp_data(void)
+{
+	static t_data	dsp;
+
+	return (&dsp);
+}
 
 void	my_mlx_pixel_put(t_data *dsp_dt, int x, int y, int color)
 {
