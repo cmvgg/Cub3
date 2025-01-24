@@ -6,7 +6,7 @@
 /*   By: cvarela- <cvarela-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 09:44:29 by cvarela-          #+#    #+#             */
-/*   Updated: 2025/01/24 17:37:45 by cvarela-         ###   ########.fr       */
+/*   Updated: 2025/01/24 18:17:32 by cvarela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -216,7 +216,7 @@ typedef struct s_coords
 }					t_coords;
 
 /* main.c */
-void				ft_error(char *str);
+void				ft_error(char *str, char *line);
 
 /* errors.c */
 void				check_elem_texture(const char *str,

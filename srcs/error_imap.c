@@ -6,7 +6,7 @@
 /*   By: cvarela- <cvarela-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 09:51:14 by cvarela-          #+#    #+#             */
-/*   Updated: 2025/01/24 17:22:55 by cvarela-         ###   ########.fr       */
+/*   Updated: 2025/01/24 18:23:21 by cvarela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ static void	check_values(const char *map_use, t_map_data *map_data)
 	if (map_data->player == 0)
 		{
 			free(current_line);
-			ft_error("Error: No player\n");
+			ft_error("Error: No player\n", current_line);
 		}
 	validate_map_last_line(current_line, map_data);
 	free(current_line);

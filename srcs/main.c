@@ -6,14 +6,16 @@
 /*   By: cvarela- <cvarela-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 09:32:15 by cvarela-          #+#    #+#             */
-/*   Updated: 2025/01/19 17:22:13 by cvarela-         ###   ########.fr       */
+/*   Updated: 2025/01/24 18:17:15 by cvarela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/cub3d.h"
 
-void	ft_error(char *str)
+void	ft_error(char *str, char *line)
 {
+	if (*line)
+		free(line);
 	printf("\033[0;31mError\n");
 	printf("%s", str);
 	printf("\n\n\033[0m");
@@ -44,7 +46,7 @@ int	main(int argc, char **argv)
 			cub(&element_txt, &map);
 			exit(0);
 		}
-		ft_error("Error: not valid extension\n");
+		ft_error("Error: not valid extension\n", *argv);
 	}
-	ft_error("Error: num of argument is invalid\n");
+	ft_error("Error: num of argument is invalid\n", *argv);
 }
