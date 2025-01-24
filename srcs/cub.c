@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cvarela- <cvarela-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mero <mero@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 09:50:46 by cvarela-          #+#    #+#             */
-/*   Updated: 2025/01/22 12:29:54 by cvarela-         ###   ########.fr       */
+/*   Updated: 2025/01/24 19:16:31 by mero             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,14 +75,19 @@ static void	initialize_textures(t_data *dsp_dt, t_texture_element *elem_texture)
 {
 	dsp_dt->eas.path = ft_strtrim(elem_texture->east_texture.path, " \t");
 	east_texture(dsp_dt);
+	free(elem_texture->east_texture.path);
 	dsp_dt->sou.path = ft_strtrim(elem_texture->south_texture.path, " \t");
 	south_texture(dsp_dt);
+	free(elem_texture->south_texture.path);
 	dsp_dt->nor.path = ft_strtrim(elem_texture->north_texture.path, " \t");
 	north_texture(dsp_dt);
+	free(elem_texture->north_texture.path);
 	dsp_dt->wes.path = ft_strtrim(elem_texture->west_texture.path, " \t");
 	west_texture(dsp_dt);
+	free(elem_texture->west_texture.path);
 	dsp_dt->spr.path = ft_strtrim(elem_texture->sprite.path, " \t");
 	sprite_texture(dsp_dt);
+	free(elem_texture->sprite.path);
 	dsp_dt->mlx.win = mlx_new_window(dsp_dt->mlx.mlx,
 			dsp_dt->screen_w, dsp_dt->screen_h, "cub");
 	dsp_dt->mlx.img = mlx_new_image(dsp_dt->mlx.mlx,

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cvarela- <cvarela-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mero <mero@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 09:44:29 by cvarela-          #+#    #+#             */
-/*   Updated: 2025/01/24 18:17:32 by cvarela-         ###   ########.fr       */
+/*   Updated: 2025/01/24 19:48:34 by mero             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -216,6 +216,7 @@ typedef struct s_coords
 }					t_coords;
 
 /* main.c */
+t_map_data			*get_map_data(void);
 void				ft_error(char *str, char *line);
 
 /* errors.c */
