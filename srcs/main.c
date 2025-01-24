@@ -6,7 +6,7 @@
 /*   By: ivromero <ivromero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 09:32:15 by cvarela-          #+#    #+#             */
-/*   Updated: 2025/01/24 21:12:35 by ivromero         ###   ########.fr       */
+/*   Updated: 2025/01/24 21:58:05 by ivromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,19 @@ static void	init_map_data(void)
 	(void)map;
 }
 
+static void free_dsptext(t_texture_element *element_txt)
+{
+	if (element_txt->north_texture.path)
+		free(element_txt->north_texture.path);
+	if (element_txt->south_texture.path)
+		free(element_txt->south_texture.path);
+	if (element_txt->west_texture.path)
+		free(element_txt->west_texture.path);
+	if (element_txt->east_texture.path)
+		free(element_txt->east_texture.path);
+	if (element_txt->sprite.path)
+		free(element_txt->sprite.path);
+}
 void	ft_error(char *str, char *line)
 {
 	t_map_data	*map;
@@ -45,14 +58,17 @@ void	ft_error(char *str, char *line)
 	if (line && *line)
 		free(line);
 	map = get_map_data();
-	while (map->height >= 0)
-		free(map->matrix[map->height--]);
+	if (map->height > 0)
+		while (map->height >= 0)
+			free(map->matrix[map->height--]);
 	free(map->matrix);
 	dsp_dt = get_dsp_data();
 	free(dsp_dt->spr.zbuf);
 	free(dsp_dt->spr.dist);
 	free(dsp_dt->spr.buf);
 	free(dsp_dt->spr.order);
+	if(line && line[0] != '\0')
+		free_dsptext(&dsp_dt->elem_txt);
 	exit(0);
 }
 
@@ -61,7 +77,9 @@ int	main(int argc, char **argv)
 	t_texture_element	element_txt;
 	t_map_data			*map;
 	char				*tmp;
+	t_data				*dsp_dt;
 
+	dsp_dt = get_dsp_data();
 	element_txt = (t_texture_element){0};
 	map = get_map_data();
 	init_map_data();
@@ -71,6 +89,7 @@ int	main(int argc, char **argv)
 		if (tmp && ft_strncmp(tmp, ".cub", ft_strlen(tmp)) == 0)
 		{
 			check_elem_texture(argv[1], &element_txt);
+			dsp_dt->elem_txt = element_txt;
 			check_validate_map(argv[1], map);
 			create_map(argv[1], map);
 			cub(&element_txt, map);

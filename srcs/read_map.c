@@ -6,7 +6,7 @@
 /*   By: ivromero <ivromero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 09:40:54 by cvarela-          #+#    #+#             */
-/*   Updated: 2025/01/24 21:07:15 by ivromero         ###   ########.fr       */
+/*   Updated: 2025/01/24 21:43:55 by ivromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,7 @@ void	validate_map_lines(int fd, char **line, t_map_data *map_data)
 		check_line(pos, line, map_data);
 		if (pos == map_data->height - 2 || reads <= 0)
 			break ;
-		free(line[0]);
+		free(*line);
 		pos++;
 	}
 }

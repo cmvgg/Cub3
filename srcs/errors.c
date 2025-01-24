@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   errors.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cvarela- <cvarela-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ivromero <ivromero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 09:51:43 by cvarela-          #+#    #+#             */
-/*   Updated: 2025/01/24 18:25:09 by cvarela-         ###   ########.fr       */
+/*   Updated: 2025/01/24 21:52:11 by ivromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ static void	validate_texture_data(int idx, char ident, char **ln,
 	else if (ident == 'C' && ((*ln)[idx + 1] == ' ' || (*ln)[idx + 1] == '\t'))
 		error_skying(ln, elem_texture);
 	else
-		ft_error("Error:\n", &ident);
+		ft_error("Error:\n", ft_strdup(""));
 }
 
 static void	extract_map_textures(char **line, t_texture_element *elem_texture)
