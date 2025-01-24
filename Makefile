@@ -1,6 +1,6 @@
 DEL			=	rm -f
 CC			=	gcc
-CCFLAGS		=	-Wall -Wextra -Werror -Wuninitialized -g3 -fsanitize=address,leak
+CCFLAGS		=	-Wall -Wextra -Werror -Wuninitialized -g3 #-fsanitize=address,leak
 BONUSFLAGS	=	-D BONUS=1
 #MLX			=	-framework OpenGL -framework AppKit
  MLX			=	-lXext -lX11 -lm -lbsd 
@@ -108,9 +108,9 @@ fclean: clean  fclean_libft fclean_mlx
 	@echo "$(RED)EXECUTABLE CLEANED!$(NC)"
 
 run: re
-	./cub3d maps/map1.cub
+	./cub3D maps/map1.cub
 
 val: re
-	valgrind -s --leak-check=full --show-leak-kinds=all --track-origins=yes --show-mismatched-frees=yes  ./cub3d maps/map5.cub
+	valgrind -s --leak-check=full --show-leak-kinds=all --track-origins=yes --show-mismatched-frees=yes  ./cub3D maps/map5.cub
 
 re: fclean all

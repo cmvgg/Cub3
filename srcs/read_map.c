@@ -6,7 +6,7 @@
 /*   By: cvarela- <cvarela-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 09:40:54 by cvarela-          #+#    #+#             */
-/*   Updated: 2025/01/22 13:20:17 by cvarela-         ###   ########.fr       */
+/*   Updated: 2025/01/24 17:37:02 by cvarela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static void	check_body_line(int pos, char **line, t_map_data *map_data)
 		if ((*line)[count_x] == '1')
 			map_data->matrix[pos][count_x] = '1';
 		else if ((*line)[count_x] == ' ')
-			map_space(pos, count_x, map_data);
+			map_space(pos, count_x, map_data, line);
 		else
 		{
 			if ((*line)[count_x] != '0' && (*line)[count_x] != '2'
@@ -31,13 +31,16 @@ static void	check_body_line(int pos, char **line, t_map_data *map_data)
 				map_data->player++;
 			}
 			if (map_data->player >= 2)
+			{
+				free(line[0]);
 				ft_error("Error:cbl\n");
+			}
 			map_other(pos, count_x, line, map_data);
 		}
 		count_x++;
 	}
 	if ((*line)[count_x] == '\0' && count_x < map_data->width)
-		map_x(pos, count_x, map_data);
+		map_x(pos, count_x, map_data, line);
 }
 
 static void	check_line(int pos, char **line, t_map_data *map_data)
@@ -47,12 +50,18 @@ static void	check_line(int pos, char **line, t_map_data *map_data)
 
 	count_x = 0;
 	if ((*line)[count_x] != '1' && (*line)[count_x] != ' ')
+	{
+		free(line[0]);
 		ft_error("Error:cl\n");
+	}
 	if ((*line)[count_x] == '1')
 		map_data->matrix[pos][count_x] = '1';
 	last = ft_strlen(*line) - 1;
 	if ((*line)[last] != '1' && (*line)[last] != ' ')
+	{
+		free(line[0]);
 		ft_error("Error:cl1\n");
+	}
 	check_body_line(pos, line, map_data);
 }
 
@@ -105,7 +114,10 @@ void	validate_map_last_line(char *line, t_map_data *map_data)
 		if ((line)[count_x] == '\0')
 			break ;
 		if ((line)[count_x] != '1' && (line)[count_x] != ' ')
+		{
+			free(line);
 			ft_error("Error:vmll\n");
+		}
 		count_x++;
 	}
 }
