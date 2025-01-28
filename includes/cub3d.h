@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cvarela- <cvarela-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ivromero <ivromero@student.42urduliz.c>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 09:44:29 by cvarela-          #+#    #+#             */
-/*   Updated: 2025/01/28 18:10:58 by cvarela-         ###   ########.fr       */
+/*   Updated: 2025/01/28 19:09:32 by ivromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -193,6 +193,7 @@ typedef struct s_data
 {
 	int					screen_w;
 	int					screen_h;
+	int					fd;
 	t_player_data		ply;
 	t_rayc				ray;
 	t_map_content		map;

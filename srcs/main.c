@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cvarela- <cvarela-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ivromero <ivromero@student.42urduliz.c>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 09:32:15 by cvarela-          #+#    #+#             */
-/*   Updated: 2025/01/28 18:50:01 by cvarela-         ###   ########.fr       */
+/*   Updated: 2025/01/28 19:07:38 by ivromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,10 @@ void	ft_error(char *str, char *line)
 	if (dsp_dt->spr.buf && dsp_dt->spr.buf[0])
 		ft_free(dsp_dt->spr.buf);
 	free(dsp_dt->spr.order);
+	while (get_next_line(get_dsp_data()->fd, &line) > 0)
+		free(line);
+	get_next_line(get_dsp_data()->fd, &line);
+	free(line);
 	exit(0);
 }
 
