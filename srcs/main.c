@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mero <mero@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: cvarela- <cvarela-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 09:32:15 by cvarela-          #+#    #+#             */
-/*   Updated: 2025/01/24 22:43:56 by mero             ###   ########.fr       */
+/*   Updated: 2025/01/28 18:50:01 by cvarela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ static void	init_map_data(void)
 	(void)map;
 }
 
-static void free_dsptext(t_texture_element *element_txt)
+static void	free_dsptext(t_texture_element *element_txt)
 {
 	if (element_txt->north_texture.path)
 		free(element_txt->north_texture.path);
@@ -44,6 +44,7 @@ static void free_dsptext(t_texture_element *element_txt)
 	if (element_txt->sprite.path)
 		free(element_txt->sprite.path);
 }
+
 void	ft_error(char *str, char *line)
 {
 	t_map_data	*map;
@@ -56,7 +57,7 @@ void	ft_error(char *str, char *line)
 		printf("%s", str);
 		printf("\n\n\033[0m");
 	}
-	if(line != NULL && line[0] != '\0')
+	if (line != NULL && line[0] != '\0')
 		free_dsptext(dsp_dt->elem_txt);
 	if (line && *line)
 		free(line);
@@ -67,7 +68,8 @@ void	ft_error(char *str, char *line)
 	free(map->matrix);
 	free(dsp_dt->spr.zbuf);
 	free(dsp_dt->spr.dist);
-	free(dsp_dt->spr.buf);
+	if (dsp_dt->spr.buf && dsp_dt->spr.buf[0])
+		ft_free(dsp_dt->spr.buf);
 	free(dsp_dt->spr.order);
 	exit(0);
 }
@@ -96,7 +98,7 @@ int	main(int argc, char **argv)
 			ft_error("", NULL);
 			exit(0);
 		}
-		ft_error("Error: not valid extension\n", *argv);
+		ft_error("Error: not valid extension\n", "");
 	}
-	ft_error("Error: num of argument is invalid\n", *argv);
+	ft_error("Error: num of argument is invalid\n", "");
 }

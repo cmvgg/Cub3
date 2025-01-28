@@ -6,7 +6,7 @@
 /*   By: cvarela- <cvarela-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 09:44:50 by cvarela-          #+#    #+#             */
-/*   Updated: 2024/11/18 09:45:20 by cvarela-         ###   ########.fr       */
+/*   Updated: 2025/01/28 17:53:39 by cvarela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include <unistd.h>
 
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 42
+#  define BUFFER_SIZE 1
 # endif
 
 typedef struct s_list
@@ -122,6 +122,8 @@ char				*ft_hextoa(unsigned long n, char **str);
 char				*ft_charstr(char c);
 
 int					ft_pow(int n, int pot);
+
+void				ft_free(double **split);
 
 int					get_next_line(int fd, char **line);
 

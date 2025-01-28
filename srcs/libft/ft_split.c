@@ -6,7 +6,7 @@
 /*   By: cvarela- <cvarela-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 12:21:58 by cvarela-          #+#    #+#             */
-/*   Updated: 2024/11/18 09:48:12 by cvarela-         ###   ########.fr       */
+/*   Updated: 2025/01/28 16:03:08 by cvarela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ static void	ft_strscpy(char **split, const char *s, char c)
 	}
 }
 
-static char	**ft_free(char **split, int *tab, int i)
+static char	**ft_free2(char **split, int *tab, int i)
 {
 	int	n;
 
@@ -86,7 +86,7 @@ char	**ft_split(const char *s, char c)
 	{
 		split[i] = ft_calloc(tab[i] + 1, sizeof(char));
 		if (!(split[i]))
-			return (ft_free(split, tab, i), NULL);
+			return (ft_free2(split, tab, i), NULL);
 		i++;
 	}
 	free(tab);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mero <mero@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: cvarela- <cvarela-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 09:44:29 by cvarela-          #+#    #+#             */
-/*   Updated: 2025/01/24 22:42:17 by mero             ###   ########.fr       */
+/*   Updated: 2025/01/28 18:10:58 by cvarela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -233,7 +233,6 @@ void					error_sprite(char **line, t_texture_element *elems);
 
 /* error_colres.c */
 void					copy_path(int count, char **str, char **line);
-void					error_resolution(char **line, t_texture_element *elems);
 void					error_floor(char **line, t_texture_element *elems);
 void					error_skying(char **line, t_texture_element *elems);
 

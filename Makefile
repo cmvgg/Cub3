@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: cvarela- <cvarela-@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2025/01/28 15:45:40 by cvarela-          #+#    #+#              #
+#    Updated: 2025/01/28 18:12:50 by cvarela-         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 DEL			=	rm -f
 CC			=	gcc
 CCFLAGS		=	-Wall -Wextra -Werror -Wuninitialized -g3 #-fsanitize=address,leak
@@ -111,6 +123,9 @@ run: re
 	./cub3D maps/map1.cub
 
 val: re
-	valgrind -s --leak-check=full --show-leak-kinds=all --track-origins=yes --log-file=valgrind.txt ./cub3D maps/map5.cub
+	valgrind -s --leak-check=full --show-leak-kinds=all --track-origins=yes --log-file=valgrind.txt ./cub3D maps/map5.cub #
+
+norm: 
+	norminette srcs includes
 
 re: fclean all

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   read_map.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ivromero <ivromero@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cvarela- <cvarela-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 09:40:54 by cvarela-          #+#    #+#             */
-/*   Updated: 2025/01/24 21:43:55 by ivromero         ###   ########.fr       */
+/*   Updated: 2025/01/28 16:33:43 by cvarela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ static void	check_body_line(int pos, char **line, t_map_data *map_data)
 				map_data->player++;
 			}
 			if (map_data->player >= 2)
-				ft_error("Error:cbl\n", *line);
+				ft_error("Error: Only can use one player\n", *line);
 			map_other(pos, count_x, line, map_data);
 		}
 		count_x++;
@@ -47,12 +47,12 @@ static void	check_line(int pos, char **line, t_map_data *map_data)
 
 	count_x = 0;
 	if ((*line)[count_x] != '1' && (*line)[count_x] != ' ')
-		ft_error("Error:cl\n", *line);
+		ft_error("Error: Open map struct\n", *line);
 	if ((*line)[count_x] == '1')
 		map_data->matrix[pos][count_x] = '1';
 	last = ft_strlen(*line) - 1;
 	if ((*line)[last] != '1' && (*line)[last] != ' ')
-		ft_error("Error:cl1\n", *line);
+		ft_error("Error: Open map struct\n", *line);
 	check_body_line(pos, line, map_data);
 }
 
@@ -64,7 +64,7 @@ void	validate_map_first_line(char **line, t_map_data *map_data)
 	while ((*line)[count_x] && map_data->matrix[0][count_x])
 	{
 		if ((*line)[count_x] != '1' && (*line)[count_x] != ' ')
-			ft_error("Error:vmfl\n", *line);
+			ft_error("Error: Invalid first line\n", *line);
 		if ((*line)[count_x] == '1')
 			map_data->matrix[0][count_x] = '1';
 		count_x++;
@@ -105,7 +105,7 @@ void	validate_map_last_line(char *line, t_map_data *map_data)
 			break ;
 		if ((line)[count_x] != '1' && (line)[count_x] != ' ')
 		{
-			ft_error("Error:vmll\n", line);
+			ft_error("Error: Invalid last line\n", line);
 		}
 		count_x++;
 	}

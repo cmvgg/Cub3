@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   errors.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mero <mero@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: cvarela- <cvarela-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 09:51:43 by cvarela-          #+#    #+#             */
-/*   Updated: 2025/01/24 22:17:24 by mero             ###   ########.fr       */
+/*   Updated: 2025/01/28 18:49:25 by cvarela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ static void	validate_texture_data(int idx, char ident, char **ln,
 	else if (ident == 'C' && ((*ln)[idx + 1] == ' ' || (*ln)[idx + 1] == '\t'))
 		error_skying(ln, elem_texture);
 	else
-		ft_error("Error:\n", ft_strdup(""));
+		ft_error("Error: Texture format not valid\n", *ln);
 }
 
 static void	extract_map_textures(char **line, t_texture_element *elem_texture)
@@ -58,7 +58,7 @@ static void	extract_map_textures(char **line, t_texture_element *elem_texture)
 	else if ((*line)[index] == 'C')
 		validate_texture_data(index, 'C', line, elem_texture);
 	else
-		ft_error("Error:\n", *line);
+		ft_error("Error: Texture format not valid\n", *line);
 }
 
 static int	handle_identify(int read_stat, char **line,
@@ -67,7 +67,7 @@ static int	handle_identify(int read_stat, char **line,
 	if (read_stat == -1 || !(*line))
 		return (-1);
 	if (read_stat == 0)
-		ft_error("Error:\n", *line);
+		ft_error("Error: Invalid format\n", *line);
 	if (**line == '\0')
 		return (0);
 	extract_map_textures(line, elem_texture);
@@ -85,19 +85,18 @@ void	check_elem_texture(const char *map_use, t_texture_element *elem_txt)
 	count = 0;
 	fd = open(map_use, O_RDONLY);
 	if (fd < 0)
-		ft_error("Error:\n", line);
+		ft_error("Error:  Map path not valid\n", line);
 	while (count < 7)
 	{
 		read_stat = get_next_line(fd, &line);
 		read_stat = handle_identify(read_stat, &line, elem_txt);
 		free(line);
 		if (read_stat == -1)
-			ft_error("Error:\n", line);
+			ft_error("Error: Invalid identify\n", line);
 		if (read_stat >= 1)
 			count++;
 	}
 	while (get_next_line(fd, &line) == 1)
 		free(line);
-	free(line);
 	close(fd);
 }
