@@ -6,7 +6,7 @@
 /*   By: cvarela- <cvarela-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 09:44:50 by cvarela-          #+#    #+#             */
-/*   Updated: 2025/01/28 17:53:39 by cvarela-         ###   ########.fr       */
+/*   Updated: 2025/01/29 11:21:33 by cvarela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -124,6 +124,8 @@ char				*ft_charstr(char c);
 int					ft_pow(int n, int pot);
 
 void				ft_free(double **split);
+
+void				ft_free_gnl_static(void);
 
 int					get_next_line(int fd, char **line);
 

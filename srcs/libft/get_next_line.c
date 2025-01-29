@@ -6,7 +6,7 @@
 /*   By: cvarela- <cvarela-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 09:49:53 by cvarela-          #+#    #+#             */
-/*   Updated: 2025/01/28 18:19:44 by cvarela-         ###   ########.fr       */
+/*   Updated: 2025/01/29 11:35:18 by cvarela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,11 @@ static int	gnl_find_nl(char **res, char **line)
 	temp_2 = ft_strdup(newline_pos + 1);
 	free(temp_1);
 	*res = temp_2;
+	if (!*res || !**res)
+	{
+		free(*res);
+		*res = NULL;
+	}
 	return (1);
 }
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ivromero <ivromero@student.42urduliz.c>    +#+  +:+       +#+        */
+/*   By: cvarela- <cvarela-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 09:32:15 by cvarela-          #+#    #+#             */
-/*   Updated: 2025/01/28 19:07:38 by ivromero         ###   ########.fr       */
+/*   Updated: 2025/01/29 11:27:18 by cvarela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,8 +54,7 @@ void	ft_error(char *str, char *line)
 	if (line)
 	{
 		printf("\033[0;31mError\n");
-		printf("%s", str);
-		printf("\n\n\033[0m");
+		printf("%s\n\n\033[0m", str);
 	}
 	if (line != NULL && line[0] != '\0')
 		free_dsptext(dsp_dt->elem_txt);
@@ -71,10 +70,7 @@ void	ft_error(char *str, char *line)
 	if (dsp_dt->spr.buf && dsp_dt->spr.buf[0])
 		ft_free(dsp_dt->spr.buf);
 	free(dsp_dt->spr.order);
-	while (get_next_line(get_dsp_data()->fd, &line) > 0)
-		free(line);
-	get_next_line(get_dsp_data()->fd, &line);
-	free(line);
+	ft_free_gnl_static();
 	exit(0);
 }
 

@@ -1,0 +1,569 @@
+==1138692== Memcheck, a memory error detector
+==1138692== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==1138692== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==1138692== Command: ./cub3D maps/map5.cub
+==1138692== Parent PID: 1138691
+==1138692== 
+==1138692== 
+==1138692== HEAP SUMMARY:
+==1138692==     in use at exit: 93,428 bytes in 79 blocks
+==1138692==   total heap usage: 8,846 allocs, 8,767 frees, 42,734,690 bytes allocated
+==1138692== 
+==1138692== 3 bytes in 1 blocks are still reachable in loss record 1 of 57
+==1138692==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1138692==    by 0x4B5558E: strdup (strdup.c:42)
+==1138692==    by 0x48B5B45: XOpenDisplay (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==1138692==    by 0x115727: mlx_init (in /sgoinfre/students/cvarela-/cursus/cub_entrega1/cub3D)
+==1138692==    by 0x1101F5: cub (cub.c:111)
+==1138692==    by 0x1153AB: main (main.c:97)
+==1138692== 
+==1138692== 8 bytes in 1 blocks are still reachable in loss record 2 of 57
+==1138692==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1138692==    by 0x4B5558E: strdup (strdup.c:42)
+==1138692==    by 0x48B29AE: XInitExtension (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==1138692==    by 0x4877820: XextAddDisplay (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==1138692==    by 0x487C9E2: XShmQueryVersion (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==1138692==    by 0x115563: mlx_int_deal_shm (in /sgoinfre/students/cvarela-/cursus/cub_entrega1/cub3D)
+==1138692==    by 0x1157E1: mlx_init (in /sgoinfre/students/cvarela-/cursus/cub_entrega1/cub3D)
+==1138692==    by 0x1101F5: cub (cub.c:111)
+==1138692==    by 0x1153AB: main (main.c:97)
+==1138692== 
+==1138692== 8 bytes in 1 blocks are still reachable in loss record 3 of 57
+==1138692==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1138692==    by 0x4875B34: ??? (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==1138692==    by 0x48779DF: XextAddDisplay (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==1138692==    by 0x487C9E2: XShmQueryVersion (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==1138692==    by 0x115563: mlx_int_deal_shm (in /sgoinfre/students/cvarela-/cursus/cub_entrega1/cub3D)
+==1138692==    by 0x1157E1: mlx_init (in /sgoinfre/students/cvarela-/cursus/cub_entrega1/cub3D)
+==1138692==    by 0x1101F5: cub (cub.c:111)
+==1138692==    by 0x1153AB: main (main.c:97)
+==1138692== 
+==1138692== 10 bytes in 1 blocks are still reachable in loss record 4 of 57
+==1138692==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1138692==    by 0x4B5558E: strdup (strdup.c:42)
+==1138692==    by 0x48B29AE: XInitExtension (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==1138692==    by 0x491C213: XkbUseExtension (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==1138692==    by 0x48B66A8: XOpenDisplay (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==1138692==    by 0x115727: mlx_init (in /sgoinfre/students/cvarela-/cursus/cub_entrega1/cub3D)
+==1138692==    by 0x1101F5: cub (cub.c:111)
+==1138692==    by 0x1153AB: main (main.c:97)
+==1138692== 
+==1138692== 16 bytes in 1 blocks are still reachable in loss record 5 of 57
+==1138692==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1138692==    by 0x4CE72EE: xcb_connect_to_fd (in /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0)
+==1138692==    by 0x4CE7E6B: xcb_connect_to_display_with_auth_info (in /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0)
+==1138692==    by 0x48C5EE9: _XConnectXCB (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==1138692==    by 0x48B5B68: XOpenDisplay (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==1138692==    by 0x115727: mlx_init (in /sgoinfre/students/cvarela-/cursus/cub_entrega1/cub3D)
+==1138692==    by 0x1101F5: cub (cub.c:111)
+==1138692==    by 0x1153AB: main (main.c:97)
+==1138692== 
+==1138692== 21 bytes in 1 blocks are still reachable in loss record 6 of 57
+==1138692==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1138692==    by 0x48B603E: XOpenDisplay (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==1138692==    by 0x115727: mlx_init (in /sgoinfre/students/cvarela-/cursus/cub_entrega1/cub3D)
+==1138692==    by 0x1101F5: cub (cub.c:111)
+==1138692==    by 0x1153AB: main (main.c:97)
+==1138692== 
+==1138692== 24 bytes in 1 blocks are still reachable in loss record 7 of 57
+==1138692==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1138692==    by 0x4877041: XextCreateExtension (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==1138692==    by 0x48774CC: ??? (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==1138692==    by 0x48779C8: XextAddDisplay (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==1138692==    by 0x487C9E2: XShmQueryVersion (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==1138692==    by 0x115563: mlx_int_deal_shm (in /sgoinfre/students/cvarela-/cursus/cub_entrega1/cub3D)
+==1138692==    by 0x1157E1: mlx_init (in /sgoinfre/students/cvarela-/cursus/cub_entrega1/cub3D)
+==1138692==    by 0x1101F5: cub (cub.c:111)
+==1138692==    by 0x1153AB: main (main.c:97)
+==1138692== 
+==1138692== 24 bytes in 1 blocks are still reachable in loss record 8 of 57
+==1138692==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1138692==    by 0x4B5558E: strdup (strdup.c:42)
+==1138692==    by 0x48B29AE: XInitExtension (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==1138692==    by 0x4877820: XextAddDisplay (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==1138692==    by 0x487750A: ??? (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==1138692==    by 0x48779C8: XextAddDisplay (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==1138692==    by 0x487C9E2: XShmQueryVersion (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==1138692==    by 0x115563: mlx_int_deal_shm (in /sgoinfre/students/cvarela-/cursus/cub_entrega1/cub3D)
+==1138692==    by 0x1157E1: mlx_init (in /sgoinfre/students/cvarela-/cursus/cub_entrega1/cub3D)
+==1138692==    by 0x1101F5: cub (cub.c:111)
+==1138692==    by 0x1153AB: main (main.c:97)
+==1138692== 
+==1138692== 24 bytes in 1 blocks are still reachable in loss record 9 of 57
+==1138692==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1138692==    by 0x48779F5: XextAddDisplay (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==1138692==    by 0x487C9E2: XShmQueryVersion (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==1138692==    by 0x115563: mlx_int_deal_shm (in /sgoinfre/students/cvarela-/cursus/cub_entrega1/cub3D)
+==1138692==    by 0x1157E1: mlx_init (in /sgoinfre/students/cvarela-/cursus/cub_entrega1/cub3D)
+==1138692==    by 0x1101F5: cub (cub.c:111)
+==1138692==    by 0x1153AB: main (main.c:97)
+==1138692== 
+==1138692== 24 bytes in 1 blocks are still reachable in loss record 10 of 57
+==1138692==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1138692==    by 0x48C3A65: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==1138692==    by 0x48CC2C6: _XReply (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==1138692==    by 0x48CC77E: XSync (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==1138692==    by 0x1130A6: render_frame (renderframe.c:129)
+==1138692==    by 0x115ACC: mlx_loop (in /sgoinfre/students/cvarela-/cursus/cub_entrega1/cub3D)
+==1138692==    by 0x110363: cub (cub.c:126)
+==1138692==    by 0x1153AB: main (main.c:97)
+==1138692== 
+==1138692== 29 bytes in 1 blocks are still reachable in loss record 11 of 57
+==1138692==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1138692==    by 0x48AF0CD: _XUpdateAtomCache (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==1138692==    by 0x48B1929: XInternAtom (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==1138692==    by 0x1157D2: mlx_init (in /sgoinfre/students/cvarela-/cursus/cub_entrega1/cub3D)
+==1138692==    by 0x1101F5: cub (cub.c:111)
+==1138692==    by 0x1153AB: main (main.c:97)
+==1138692== 
+==1138692== 32 bytes in 1 blocks are still reachable in loss record 12 of 57
+==1138692==    at 0x48487A9: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1138692==    by 0x4CEB15E: ??? (in /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0)
+==1138692==    by 0x4CEB237: xcb_get_extension_data (in /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0)
+==1138692==    by 0x4CEB2EE: xcb_prefetch_maximum_request_length (in /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0)
+==1138692==    by 0x4CEB364: xcb_get_maximum_request_length (in /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0)
+==1138692==    by 0x48B652B: XOpenDisplay (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==1138692==    by 0x115727: mlx_init (in /sgoinfre/students/cvarela-/cursus/cub_entrega1/cub3D)
+==1138692==    by 0x1101F5: cub (cub.c:111)
+==1138692==    by 0x1153AB: main (main.c:97)
+==1138692== 
+==1138692== 32 bytes in 1 blocks are still reachable in loss record 13 of 57
+==1138692==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1138692==    by 0x4CE41B7: ??? (in /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0)
+==1138692==    by 0x4CE4A08: ??? (in /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0)
+==1138692==    by 0x4CE4EB0: ??? (in /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0)
+==1138692==    by 0x4CE5E44: xcb_wait_for_reply (in /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0)
+==1138692==    by 0x4CEB292: xcb_get_extension_data (in /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0)
+==1138692==    by 0x4CEB2EE: xcb_prefetch_maximum_request_length (in /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0)
+==1138692==    by 0x4CEB364: xcb_get_maximum_request_length (in /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0)
+==1138692==    by 0x48B652B: XOpenDisplay (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==1138692==    by 0x115727: mlx_init (in /sgoinfre/students/cvarela-/cursus/cub_entrega1/cub3D)
+==1138692==    by 0x1101F5: cub (cub.c:111)
+==1138692==    by 0x1153AB: main (main.c:97)
+==1138692== 
+==1138692== 32 bytes in 1 blocks are still reachable in loss record 14 of 57
+==1138692==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1138692==    by 0x48777FF: XextAddDisplay (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==1138692==    by 0x487C9E2: XShmQueryVersion (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==1138692==    by 0x115563: mlx_int_deal_shm (in /sgoinfre/students/cvarela-/cursus/cub_entrega1/cub3D)
+==1138692==    by 0x1157E1: mlx_init (in /sgoinfre/students/cvarela-/cursus/cub_entrega1/cub3D)
+==1138692==    by 0x1101F5: cub (cub.c:111)
+==1138692==    by 0x1153AB: main (main.c:97)
+==1138692== 
+==1138692== 32 bytes in 1 blocks are still reachable in loss record 15 of 57
+==1138692==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1138692==    by 0x48777FF: XextAddDisplay (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==1138692==    by 0x487750A: ??? (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==1138692==    by 0x48779C8: XextAddDisplay (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==1138692==    by 0x487C9E2: XShmQueryVersion (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==1138692==    by 0x115563: mlx_int_deal_shm (in /sgoinfre/students/cvarela-/cursus/cub_entrega1/cub3D)
+==1138692==    by 0x1157E1: mlx_init (in /sgoinfre/students/cvarela-/cursus/cub_entrega1/cub3D)
+==1138692==    by 0x1101F5: cub (cub.c:111)
+==1138692==    by 0x1153AB: main (main.c:97)
+==1138692== 
+==1138692== 33 bytes in 1 blocks are still reachable in loss record 16 of 57
+==1138692==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1138692==    by 0x48AF0CD: _XUpdateAtomCache (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==1138692==    by 0x48B1929: XInternAtom (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==1138692==    by 0x1157BB: mlx_init (in /sgoinfre/students/cvarela-/cursus/cub_entrega1/cub3D)
+==1138692==    by 0x1101F5: cub (cub.c:111)
+==1138692==    by 0x1153AB: main (main.c:97)
+==1138692== 
+==1138692== 40 bytes in 1 blocks are still reachable in loss record 17 of 57
+==1138692==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1138692==    by 0x48C61F1: _XPollfdCacheInit (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==1138692==    by 0x48B5E71: XOpenDisplay (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==1138692==    by 0x115727: mlx_init (in /sgoinfre/students/cvarela-/cursus/cub_entrega1/cub3D)
+==1138692==    by 0x1101F5: cub (cub.c:111)
+==1138692==    by 0x1153AB: main (main.c:97)
+==1138692== 
+==1138692== 48 bytes in 1 blocks are still reachable in loss record 18 of 57
+==1138692==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1138692==    by 0x48C5E71: _XConnectXCB (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==1138692==    by 0x48B5B68: XOpenDisplay (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==1138692==    by 0x115727: mlx_init (in /sgoinfre/students/cvarela-/cursus/cub_entrega1/cub3D)
+==1138692==    by 0x1101F5: cub (cub.c:111)
+==1138692==    by 0x1153AB: main (main.c:97)
+==1138692== 
+==1138692== 48 bytes in 1 blocks are still reachable in loss record 19 of 57
+==1138692==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1138692==    by 0x48C5E87: _XConnectXCB (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==1138692==    by 0x48B5B68: XOpenDisplay (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==1138692==    by 0x115727: mlx_init (in /sgoinfre/students/cvarela-/cursus/cub_entrega1/cub3D)
+==1138692==    by 0x1101F5: cub (cub.c:111)
+==1138692==    by 0x1153AB: main (main.c:97)
+==1138692== 
+==1138692== 72 bytes in 1 blocks are still reachable in loss record 20 of 57
+==1138692==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1138692==    by 0x48B5F20: XOpenDisplay (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==1138692==    by 0x115727: mlx_init (in /sgoinfre/students/cvarela-/cursus/cub_entrega1/cub3D)
+==1138692==    by 0x1101F5: cub (cub.c:111)
+==1138692==    by 0x1153AB: main (main.c:97)
+==1138692== 
+==1138692== 88 bytes in 1 blocks are still reachable in loss record 21 of 57
+==1138692==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1138692==    by 0x115DCB: mlx_int_new_xshm_image (in /sgoinfre/students/cvarela-/cursus/cub_entrega1/cub3D)
+==1138692==    by 0x1160F2: mlx_new_image (in /sgoinfre/students/cvarela-/cursus/cub_entrega1/cub3D)
+==1138692==    by 0x1169C7: mlx_int_parse_xpm (in /sgoinfre/students/cvarela-/cursus/cub_entrega1/cub3D)
+==1138692==    by 0x116E01: mlx_xpm_file_to_image (in /sgoinfre/students/cvarela-/cursus/cub_entrega1/cub3D)
+==1138692==    by 0x11466D: east_texture (textures.c:59)
+==1138692==    by 0x10FFE4: initialize_textures (cub.c:78)
+==1138692==    by 0x11023D: cub (cub.c:114)
+==1138692==    by 0x1153AB: main (main.c:97)
+==1138692== 
+==1138692== 88 bytes in 1 blocks are still reachable in loss record 22 of 57
+==1138692==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1138692==    by 0x115DCB: mlx_int_new_xshm_image (in /sgoinfre/students/cvarela-/cursus/cub_entrega1/cub3D)
+==1138692==    by 0x1160F2: mlx_new_image (in /sgoinfre/students/cvarela-/cursus/cub_entrega1/cub3D)
+==1138692==    by 0x1169C7: mlx_int_parse_xpm (in /sgoinfre/students/cvarela-/cursus/cub_entrega1/cub3D)
+==1138692==    by 0x116E01: mlx_xpm_file_to_image (in /sgoinfre/students/cvarela-/cursus/cub_entrega1/cub3D)
+==1138692==    by 0x11453F: south_texture (textures.c:41)
+==1138692==    by 0x110025: initialize_textures (cub.c:81)
+==1138692==    by 0x11023D: cub (cub.c:114)
+==1138692==    by 0x1153AB: main (main.c:97)
+==1138692== 
+==1138692== 88 bytes in 1 blocks are still reachable in loss record 23 of 57
+==1138692==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1138692==    by 0x115DCB: mlx_int_new_xshm_image (in /sgoinfre/students/cvarela-/cursus/cub_entrega1/cub3D)
+==1138692==    by 0x1160F2: mlx_new_image (in /sgoinfre/students/cvarela-/cursus/cub_entrega1/cub3D)
+==1138692==    by 0x1169C7: mlx_int_parse_xpm (in /sgoinfre/students/cvarela-/cursus/cub_entrega1/cub3D)
+==1138692==    by 0x116E01: mlx_xpm_file_to_image (in /sgoinfre/students/cvarela-/cursus/cub_entrega1/cub3D)
+==1138692==    by 0x114411: north_texture (textures.c:23)
+==1138692==    by 0x110063: initialize_textures (cub.c:84)
+==1138692==    by 0x11023D: cub (cub.c:114)
+==1138692==    by 0x1153AB: main (main.c:97)
+==1138692== 
+==1138692== 88 bytes in 1 blocks are still reachable in loss record 24 of 57
+==1138692==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1138692==    by 0x115DCB: mlx_int_new_xshm_image (in /sgoinfre/students/cvarela-/cursus/cub_entrega1/cub3D)
+==1138692==    by 0x1160F2: mlx_new_image (in /sgoinfre/students/cvarela-/cursus/cub_entrega1/cub3D)
+==1138692==    by 0x1169C7: mlx_int_parse_xpm (in /sgoinfre/students/cvarela-/cursus/cub_entrega1/cub3D)
+==1138692==    by 0x116E01: mlx_xpm_file_to_image (in /sgoinfre/students/cvarela-/cursus/cub_entrega1/cub3D)
+==1138692==    by 0x11479B: west_texture (textures.c:77)
+==1138692==    by 0x1100A4: initialize_textures (cub.c:87)
+==1138692==    by 0x11023D: cub (cub.c:114)
+==1138692==    by 0x1153AB: main (main.c:97)
+==1138692== 
+==1138692== 88 bytes in 1 blocks are still reachable in loss record 25 of 57
+==1138692==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1138692==    by 0x115DCB: mlx_int_new_xshm_image (in /sgoinfre/students/cvarela-/cursus/cub_entrega1/cub3D)
+==1138692==    by 0x1160F2: mlx_new_image (in /sgoinfre/students/cvarela-/cursus/cub_entrega1/cub3D)
+==1138692==    by 0x1169C7: mlx_int_parse_xpm (in /sgoinfre/students/cvarela-/cursus/cub_entrega1/cub3D)
+==1138692==    by 0x116E01: mlx_xpm_file_to_image (in /sgoinfre/students/cvarela-/cursus/cub_entrega1/cub3D)
+==1138692==    by 0x1148C9: sprite_texture (textures.c:95)
+==1138692==    by 0x1100E8: initialize_textures (cub.c:90)
+==1138692==    by 0x11023D: cub (cub.c:114)
+==1138692==    by 0x1153AB: main (main.c:97)
+==1138692== 
+==1138692== 88 bytes in 1 blocks are still reachable in loss record 26 of 57
+==1138692==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1138692==    by 0x115DCB: mlx_int_new_xshm_image (in /sgoinfre/students/cvarela-/cursus/cub_entrega1/cub3D)
+==1138692==    by 0x1160F2: mlx_new_image (in /sgoinfre/students/cvarela-/cursus/cub_entrega1/cub3D)
+==1138692==    by 0x11014F: initialize_textures (cub.c:94)
+==1138692==    by 0x11023D: cub (cub.c:114)
+==1138692==    by 0x1153AB: main (main.c:97)
+==1138692== 
+==1138692== 112 bytes in 1 blocks are still reachable in loss record 27 of 57
+==1138692==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1138692==    by 0x48C5D72: _XConnectXCB (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==1138692==    by 0x48B5B68: XOpenDisplay (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==1138692==    by 0x115727: mlx_init (in /sgoinfre/students/cvarela-/cursus/cub_entrega1/cub3D)
+==1138692==    by 0x1101F5: cub (cub.c:111)
+==1138692==    by 0x1153AB: main (main.c:97)
+==1138692== 
+==1138692== 112 bytes in 1 blocks are still reachable in loss record 28 of 57
+==1138692==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1138692==    by 0x48B6200: XOpenDisplay (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==1138692==    by 0x115727: mlx_init (in /sgoinfre/students/cvarela-/cursus/cub_entrega1/cub3D)
+==1138692==    by 0x1101F5: cub (cub.c:111)
+==1138692==    by 0x1153AB: main (main.c:97)
+==1138692== 
+==1138692== 128 bytes in 1 blocks are still reachable in loss record 29 of 57
+==1138692==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1138692==    by 0x48B612E: XOpenDisplay (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==1138692==    by 0x115727: mlx_init (in /sgoinfre/students/cvarela-/cursus/cub_entrega1/cub3D)
+==1138692==    by 0x1101F5: cub (cub.c:111)
+==1138692==    by 0x1153AB: main (main.c:97)
+==1138692== 
+==1138692== 128 bytes in 1 blocks are still reachable in loss record 30 of 57
+==1138692==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1138692==    by 0x48B299E: XInitExtension (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==1138692==    by 0x491C213: XkbUseExtension (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==1138692==    by 0x48B66A8: XOpenDisplay (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==1138692==    by 0x115727: mlx_init (in /sgoinfre/students/cvarela-/cursus/cub_entrega1/cub3D)
+==1138692==    by 0x1101F5: cub (cub.c:111)
+==1138692==    by 0x1153AB: main (main.c:97)
+==1138692== 
+==1138692== 128 bytes in 1 blocks are still reachable in loss record 31 of 57
+==1138692==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1138692==    by 0x48B299E: XInitExtension (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==1138692==    by 0x4877820: XextAddDisplay (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==1138692==    by 0x487C9E2: XShmQueryVersion (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==1138692==    by 0x115563: mlx_int_deal_shm (in /sgoinfre/students/cvarela-/cursus/cub_entrega1/cub3D)
+==1138692==    by 0x1157E1: mlx_init (in /sgoinfre/students/cvarela-/cursus/cub_entrega1/cub3D)
+==1138692==    by 0x1101F5: cub (cub.c:111)
+==1138692==    by 0x1153AB: main (main.c:97)
+==1138692== 
+==1138692== 128 bytes in 1 blocks are still reachable in loss record 32 of 57
+==1138692==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1138692==    by 0x48B299E: XInitExtension (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==1138692==    by 0x4877820: XextAddDisplay (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==1138692==    by 0x487750A: ??? (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==1138692==    by 0x48779C8: XextAddDisplay (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==1138692==    by 0x487C9E2: XShmQueryVersion (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==1138692==    by 0x115563: mlx_int_deal_shm (in /sgoinfre/students/cvarela-/cursus/cub_entrega1/cub3D)
+==1138692==    by 0x1157E1: mlx_init (in /sgoinfre/students/cvarela-/cursus/cub_entrega1/cub3D)
+==1138692==    by 0x1101F5: cub (cub.c:111)
+==1138692==    by 0x1153AB: main (main.c:97)
+==1138692== 
+==1138692== 136 bytes in 1 blocks are still reachable in loss record 33 of 57
+==1138692==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1138692==    by 0x11570F: mlx_init (in /sgoinfre/students/cvarela-/cursus/cub_entrega1/cub3D)
+==1138692==    by 0x1101F5: cub (cub.c:111)
+==1138692==    by 0x1153AB: main (main.c:97)
+==1138692== 
+==1138692== 136 bytes in 1 blocks are still reachable in loss record 34 of 57
+==1138692==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1138692==    by 0x48760C3: XShmCreateImage (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==1138692==    by 0x115DF6: mlx_int_new_xshm_image (in /sgoinfre/students/cvarela-/cursus/cub_entrega1/cub3D)
+==1138692==    by 0x1160F2: mlx_new_image (in /sgoinfre/students/cvarela-/cursus/cub_entrega1/cub3D)
+==1138692==    by 0x1169C7: mlx_int_parse_xpm (in /sgoinfre/students/cvarela-/cursus/cub_entrega1/cub3D)
+==1138692==    by 0x116E01: mlx_xpm_file_to_image (in /sgoinfre/students/cvarela-/cursus/cub_entrega1/cub3D)
+==1138692==    by 0x11466D: east_texture (textures.c:59)
+==1138692==    by 0x10FFE4: initialize_textures (cub.c:78)
+==1138692==    by 0x11023D: cub (cub.c:114)
+==1138692==    by 0x1153AB: main (main.c:97)
+==1138692== 
+==1138692== 136 bytes in 1 blocks are still reachable in loss record 35 of 57
+==1138692==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1138692==    by 0x48760C3: XShmCreateImage (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==1138692==    by 0x115DF6: mlx_int_new_xshm_image (in /sgoinfre/students/cvarela-/cursus/cub_entrega1/cub3D)
+==1138692==    by 0x1160F2: mlx_new_image (in /sgoinfre/students/cvarela-/cursus/cub_entrega1/cub3D)
+==1138692==    by 0x1169C7: mlx_int_parse_xpm (in /sgoinfre/students/cvarela-/cursus/cub_entrega1/cub3D)
+==1138692==    by 0x116E01: mlx_xpm_file_to_image (in /sgoinfre/students/cvarela-/cursus/cub_entrega1/cub3D)
+==1138692==    by 0x11453F: south_texture (textures.c:41)
+==1138692==    by 0x110025: initialize_textures (cub.c:81)
+==1138692==    by 0x11023D: cub (cub.c:114)
+==1138692==    by 0x1153AB: main (main.c:97)
+==1138692== 
+==1138692== 136 bytes in 1 blocks are still reachable in loss record 36 of 57
+==1138692==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1138692==    by 0x48760C3: XShmCreateImage (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==1138692==    by 0x115DF6: mlx_int_new_xshm_image (in /sgoinfre/students/cvarela-/cursus/cub_entrega1/cub3D)
+==1138692==    by 0x1160F2: mlx_new_image (in /sgoinfre/students/cvarela-/cursus/cub_entrega1/cub3D)
+==1138692==    by 0x1169C7: mlx_int_parse_xpm (in /sgoinfre/students/cvarela-/cursus/cub_entrega1/cub3D)
+==1138692==    by 0x116E01: mlx_xpm_file_to_image (in /sgoinfre/students/cvarela-/cursus/cub_entrega1/cub3D)
+==1138692==    by 0x114411: north_texture (textures.c:23)
+==1138692==    by 0x110063: initialize_textures (cub.c:84)
+==1138692==    by 0x11023D: cub (cub.c:114)
+==1138692==    by 0x1153AB: main (main.c:97)
+==1138692== 
+==1138692== 136 bytes in 1 blocks are still reachable in loss record 37 of 57
+==1138692==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1138692==    by 0x48760C3: XShmCreateImage (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==1138692==    by 0x115DF6: mlx_int_new_xshm_image (in /sgoinfre/students/cvarela-/cursus/cub_entrega1/cub3D)
+==1138692==    by 0x1160F2: mlx_new_image (in /sgoinfre/students/cvarela-/cursus/cub_entrega1/cub3D)
+==1138692==    by 0x1169C7: mlx_int_parse_xpm (in /sgoinfre/students/cvarela-/cursus/cub_entrega1/cub3D)
+==1138692==    by 0x116E01: mlx_xpm_file_to_image (in /sgoinfre/students/cvarela-/cursus/cub_entrega1/cub3D)
+==1138692==    by 0x11479B: west_texture (textures.c:77)
+==1138692==    by 0x1100A4: initialize_textures (cub.c:87)
+==1138692==    by 0x11023D: cub (cub.c:114)
+==1138692==    by 0x1153AB: main (main.c:97)
+==1138692== 
+==1138692== 136 bytes in 1 blocks are still reachable in loss record 38 of 57
+==1138692==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1138692==    by 0x48760C3: XShmCreateImage (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==1138692==    by 0x115DF6: mlx_int_new_xshm_image (in /sgoinfre/students/cvarela-/cursus/cub_entrega1/cub3D)
+==1138692==    by 0x1160F2: mlx_new_image (in /sgoinfre/students/cvarela-/cursus/cub_entrega1/cub3D)
+==1138692==    by 0x1169C7: mlx_int_parse_xpm (in /sgoinfre/students/cvarela-/cursus/cub_entrega1/cub3D)
+==1138692==    by 0x116E01: mlx_xpm_file_to_image (in /sgoinfre/students/cvarela-/cursus/cub_entrega1/cub3D)
+==1138692==    by 0x1148C9: sprite_texture (textures.c:95)
+==1138692==    by 0x1100E8: initialize_textures (cub.c:90)
+==1138692==    by 0x11023D: cub (cub.c:114)
+==1138692==    by 0x1153AB: main (main.c:97)
+==1138692== 
+==1138692== 136 bytes in 1 blocks are still reachable in loss record 39 of 57
+==1138692==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1138692==    by 0x48760C3: XShmCreateImage (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==1138692==    by 0x115DF6: mlx_int_new_xshm_image (in /sgoinfre/students/cvarela-/cursus/cub_entrega1/cub3D)
+==1138692==    by 0x1160F2: mlx_new_image (in /sgoinfre/students/cvarela-/cursus/cub_entrega1/cub3D)
+==1138692==    by 0x11014F: initialize_textures (cub.c:94)
+==1138692==    by 0x11023D: cub (cub.c:114)
+==1138692==    by 0x1153AB: main (main.c:97)
+==1138692== 
+==1138692== 152 bytes in 1 blocks are still reachable in loss record 40 of 57
+==1138692==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1138692==    by 0x491C40E: XkbUseExtension (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==1138692==    by 0x48B66A8: XOpenDisplay (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==1138692==    by 0x115727: mlx_init (in /sgoinfre/students/cvarela-/cursus/cub_entrega1/cub3D)
+==1138692==    by 0x1101F5: cub (cub.c:111)
+==1138692==    by 0x1153AB: main (main.c:97)
+==1138692== 
+==1138692== 160 bytes in 1 blocks are still reachable in loss record 41 of 57
+==1138692==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1138692==    by 0x48A49EF: XCreateGC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==1138692==    by 0x48B65A4: XOpenDisplay (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==1138692==    by 0x115727: mlx_init (in /sgoinfre/students/cvarela-/cursus/cub_entrega1/cub3D)
+==1138692==    by 0x1101F5: cub (cub.c:111)
+==1138692==    by 0x1153AB: main (main.c:97)
+==1138692== 
+==1138692== 160 bytes in 1 blocks are still reachable in loss record 42 of 57
+==1138692==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1138692==    by 0x48B6710: XOpenDisplay (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==1138692==    by 0x115727: mlx_init (in /sgoinfre/students/cvarela-/cursus/cub_entrega1/cub3D)
+==1138692==    by 0x1101F5: cub (cub.c:111)
+==1138692==    by 0x1153AB: main (main.c:97)
+==1138692== 
+==1138692== 160 bytes in 1 blocks are still reachable in loss record 43 of 57
+==1138692==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1138692==    by 0x48A49EF: XCreateGC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==1138692==    by 0x11595E: mlx_new_window (in /sgoinfre/students/cvarela-/cursus/cub_entrega1/cub3D)
+==1138692==    by 0x110122: initialize_textures (cub.c:92)
+==1138692==    by 0x11023D: cub (cub.c:114)
+==1138692==    by 0x1153AB: main (main.c:97)
+==1138692== 
+==1138692== 168 bytes in 1 blocks are still reachable in loss record 44 of 57
+==1138692==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1138692==    by 0x48B60B2: XOpenDisplay (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==1138692==    by 0x115727: mlx_init (in /sgoinfre/students/cvarela-/cursus/cub_entrega1/cub3D)
+==1138692==    by 0x1101F5: cub (cub.c:111)
+==1138692==    by 0x1153AB: main (main.c:97)
+==1138692== 
+==1138692== 208 bytes in 1 blocks are still reachable in loss record 45 of 57
+==1138692==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1138692==    by 0x4875AE9: ??? (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==1138692==    by 0x48779DF: XextAddDisplay (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==1138692==    by 0x487C9E2: XShmQueryVersion (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==1138692==    by 0x115563: mlx_int_deal_shm (in /sgoinfre/students/cvarela-/cursus/cub_entrega1/cub3D)
+==1138692==    by 0x1157E1: mlx_init (in /sgoinfre/students/cvarela-/cursus/cub_entrega1/cub3D)
+==1138692==    by 0x1101F5: cub (cub.c:111)
+==1138692==    by 0x1153AB: main (main.c:97)
+==1138692== 
+==1138692== 208 bytes in 1 blocks are still reachable in loss record 46 of 57
+==1138692==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1138692==    by 0x48C7FAE: _XEnq (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==1138692==    by 0x48CABB6: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==1138692==    by 0x48CBEC0: _XReadEvents (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==1138692==    by 0x48CC205: XWindowEvent (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==1138692==    by 0x115C65: mlx_int_wait_first_expose (in /sgoinfre/students/cvarela-/cursus/cub_entrega1/cub3D)
+==1138692==    by 0x11599D: mlx_new_window (in /sgoinfre/students/cvarela-/cursus/cub_entrega1/cub3D)
+==1138692==    by 0x110122: initialize_textures (cub.c:92)
+==1138692==    by 0x11023D: cub (cub.c:114)
+==1138692==    by 0x1153AB: main (main.c:97)
+==1138692== 
+==1138692== 416 bytes in 2 blocks are still reachable in loss record 47 of 57
+==1138692==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1138692==    by 0x48C7FAE: _XEnq (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==1138692==    by 0x48CABB6: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==1138692==    by 0x48CBEC0: _XReadEvents (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==1138692==    by 0x48CC1D0: XWindowEvent (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==1138692==    by 0x115C65: mlx_int_wait_first_expose (in /sgoinfre/students/cvarela-/cursus/cub_entrega1/cub3D)
+==1138692==    by 0x11599D: mlx_new_window (in /sgoinfre/students/cvarela-/cursus/cub_entrega1/cub3D)
+==1138692==    by 0x110122: initialize_textures (cub.c:92)
+==1138692==    by 0x11023D: cub (cub.c:114)
+==1138692==    by 0x1153AB: main (main.c:97)
+==1138692== 
+==1138692== 512 bytes in 1 blocks are still reachable in loss record 48 of 57
+==1138692==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1138692==    by 0x48B146A: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==1138692==    by 0x48B184E: XInternAtom (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==1138692==    by 0x1157BB: mlx_init (in /sgoinfre/students/cvarela-/cursus/cub_entrega1/cub3D)
+==1138692==    by 0x1101F5: cub (cub.c:111)
+==1138692==    by 0x1153AB: main (main.c:97)
+==1138692== 
+==1138692== 832 bytes in 4 blocks are still reachable in loss record 49 of 57
+==1138692==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1138692==    by 0x48C7FAE: _XEnq (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==1138692==    by 0x48CABB6: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==1138692==    by 0x48CC40C: _XReply (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==1138692==    by 0x48CC77E: XSync (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==1138692==    by 0x115EB7: mlx_int_new_xshm_image (in /sgoinfre/students/cvarela-/cursus/cub_entrega1/cub3D)
+==1138692==    by 0x1160F2: mlx_new_image (in /sgoinfre/students/cvarela-/cursus/cub_entrega1/cub3D)
+==1138692==    by 0x11014F: initialize_textures (cub.c:94)
+==1138692==    by 0x11023D: cub (cub.c:114)
+==1138692==    by 0x1153AB: main (main.c:97)
+==1138692== 
+==1138692== 936 bytes in 1 blocks are still reachable in loss record 50 of 57
+==1138692==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1138692==    by 0x1158C0: mlx_new_window (in /sgoinfre/students/cvarela-/cursus/cub_entrega1/cub3D)
+==1138692==    by 0x110122: initialize_textures (cub.c:92)
+==1138692==    by 0x11023D: cub (cub.c:114)
+==1138692==    by 0x1153AB: main (main.c:97)
+==1138692== 
+==1138692== 1,456 bytes in 7 blocks are still reachable in loss record 51 of 57
+==1138692==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1138692==    by 0x48C7FAE: _XEnq (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==1138692==    by 0x48CABB6: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==1138692==    by 0x48CBF01: _XReadEvents (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==1138692==    by 0x48CC1D0: XWindowEvent (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==1138692==    by 0x115C65: mlx_int_wait_first_expose (in /sgoinfre/students/cvarela-/cursus/cub_entrega1/cub3D)
+==1138692==    by 0x11599D: mlx_new_window (in /sgoinfre/students/cvarela-/cursus/cub_entrega1/cub3D)
+==1138692==    by 0x110122: initialize_textures (cub.c:92)
+==1138692==    by 0x11023D: cub (cub.c:114)
+==1138692==    by 0x1153AB: main (main.c:97)
+==1138692== 
+==1138692== 2,496 bytes in 12 blocks are still reachable in loss record 52 of 57
+==1138692==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1138692==    by 0x48C7FAE: _XEnq (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==1138692==    by 0x48CABB6: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==1138692==    by 0x48CBF01: _XReadEvents (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==1138692==    by 0x48CC205: XWindowEvent (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==1138692==    by 0x115C65: mlx_int_wait_first_expose (in /sgoinfre/students/cvarela-/cursus/cub_entrega1/cub3D)
+==1138692==    by 0x11599D: mlx_new_window (in /sgoinfre/students/cvarela-/cursus/cub_entrega1/cub3D)
+==1138692==    by 0x110122: initialize_textures (cub.c:92)
+==1138692==    by 0x11023D: cub (cub.c:114)
+==1138692==    by 0x1153AB: main (main.c:97)
+==1138692== 
+==1138692== 4,704 bytes in 1 blocks are still reachable in loss record 53 of 57
+==1138692==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1138692==    by 0x48B5B31: XOpenDisplay (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==1138692==    by 0x115727: mlx_init (in /sgoinfre/students/cvarela-/cursus/cub_entrega1/cub3D)
+==1138692==    by 0x1101F5: cub (cub.c:111)
+==1138692==    by 0x1153AB: main (main.c:97)
+==1138692== 
+==1138692== 12,308 bytes in 1 blocks are still reachable in loss record 54 of 57
+==1138692==    at 0x484DCD3: realloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1138692==    by 0x4CE74FB: xcb_connect_to_fd (in /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0)
+==1138692==    by 0x4CE7E6B: xcb_connect_to_display_with_auth_info (in /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0)
+==1138692==    by 0x48C5EE9: _XConnectXCB (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==1138692==    by 0x48B5B68: XOpenDisplay (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==1138692==    by 0x115727: mlx_init (in /sgoinfre/students/cvarela-/cursus/cub_entrega1/cub3D)
+==1138692==    by 0x1101F5: cub (cub.c:111)
+==1138692==    by 0x1153AB: main (main.c:97)
+==1138692== 
+==1138692== 16,384 bytes in 1 blocks are still reachable in loss record 55 of 57
+==1138692==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1138692==    by 0x48B5EBE: XOpenDisplay (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==1138692==    by 0x115727: mlx_init (in /sgoinfre/students/cvarela-/cursus/cub_entrega1/cub3D)
+==1138692==    by 0x1101F5: cub (cub.c:111)
+==1138692==    by 0x1153AB: main (main.c:97)
+==1138692== 
+==1138692== 21,168 bytes in 1 blocks are still reachable in loss record 56 of 57
+==1138692==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1138692==    by 0x4CE7204: xcb_connect_to_fd (in /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0)
+==1138692==    by 0x4CE7E6B: xcb_connect_to_display_with_auth_info (in /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0)
+==1138692==    by 0x48C5EE9: _XConnectXCB (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==1138692==    by 0x48B5B68: XOpenDisplay (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==1138692==    by 0x115727: mlx_init (in /sgoinfre/students/cvarela-/cursus/cub_entrega1/cub3D)
+==1138692==    by 0x1101F5: cub (cub.c:111)
+==1138692==    by 0x1153AB: main (main.c:97)
+==1138692== 
+==1138692== 28,224 bytes in 2 blocks are still reachable in loss record 57 of 57
+==1138692==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1138692==    by 0x48B6290: XOpenDisplay (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==1138692==    by 0x115727: mlx_init (in /sgoinfre/students/cvarela-/cursus/cub_entrega1/cub3D)
+==1138692==    by 0x1101F5: cub (cub.c:111)
+==1138692==    by 0x1153AB: main (main.c:97)
+==1138692== 
+==1138692== LEAK SUMMARY:
+==1138692==    definitely lost: 0 bytes in 0 blocks
+==1138692==    indirectly lost: 0 bytes in 0 blocks
+==1138692==      possibly lost: 0 bytes in 0 blocks
+==1138692==    still reachable: 93,428 bytes in 79 blocks
+==1138692==         suppressed: 0 bytes in 0 blocks
+==1138692== 
+==1138692== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 6 from 1)
+--1138692-- 
+--1138692-- used_suppression:      6 X on SUSE11 writev uninit padding /usr/libexec/valgrind/default.supp:377
+==1138692== 
+==1138692== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 6 from 1)

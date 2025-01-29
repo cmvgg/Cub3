@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   error_imap.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ivromero <ivromero@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cvarela- <cvarela-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 09:51:14 by cvarela-          #+#    #+#             */
-/*   Updated: 2025/01/24 21:13:25 by ivromero         ###   ########.fr       */
+/*   Updated: 2025/01/29 11:53:11 by cvarela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,12 @@ static void	elem_texture_to_map(int fd, char **current_line)
 	{
 		read_status = get_next_line(fd, current_line);
 		if (**current_line != '\0')
+		{
+			ft_free_gnl_static();
 			break ;
+		}
 		free(*current_line);
+		ft_free_gnl_static();
 	}
 }
 
@@ -35,14 +39,14 @@ static void	check_values(const char *map_use, t_map_data *map_data)
 
 	count = 0;
 	fd = open(map_use, O_RDONLY);
-	while (count <= 7)
+	while (count <= 7 && get_next_line(fd, &current_line))
 	{
-		get_next_line(fd, &current_line);
-		if (*current_line != '\0')
-			count ++;
+		if (*current_line)
+			count++;
 		if (count == 7)
 			break ;
 		free(current_line);
+		ft_free_gnl_static();
 	}
 	elem_texture_to_map(fd, &current_line);
 	map_data->player = 0;

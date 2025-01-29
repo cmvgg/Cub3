@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   errors.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ivromero <ivromero@student.42urduliz.c>    +#+  +:+       +#+        */
+/*   By: cvarela- <cvarela-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 09:51:43 by cvarela-          #+#    #+#             */
-/*   Updated: 2025/01/28 19:07:02 by ivromero         ###   ########.fr       */
+/*   Updated: 2025/01/29 11:40:28 by cvarela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,6 +92,7 @@ void	check_elem_texture(const char *map_use, t_texture_element *elem_txt)
 		read_stat = get_next_line(fd, &line);
 		read_stat = handle_identify(read_stat, &line, elem_txt);
 		free(line);
+		ft_free_gnl_static();
 		if (read_stat == -1)
 			ft_error("Error: Invalid identify\n", line);
 		if (read_stat >= 1)
@@ -99,5 +100,7 @@ void	check_elem_texture(const char *map_use, t_texture_element *elem_txt)
 	}
 	while (get_next_line(fd, &line) == 1)
 		free(line);
+	free(line);
+	ft_free_gnl_static();
 	close(fd);
 }

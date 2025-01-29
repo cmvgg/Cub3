@@ -6,7 +6,7 @@
 /*   By: cvarela- <cvarela-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 09:51:21 by cvarela-          #+#    #+#             */
-/*   Updated: 2025/01/28 16:27:48 by cvarela-         ###   ########.fr       */
+/*   Updated: 2025/01/29 11:50:10 by cvarela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,14 +62,19 @@ static void	elem_texture_to_map(int fd, t_map_data *map_data)
 	{
 		read_status = get_next_line(fd, &current_line);
 		if (*current_line != '\0')
+		{
+			ft_free_gnl_static();
 			break ;
+		}
 		if (read_status == -1 || read_status == 0)
 			ft_error("Error: Don´t have decription of map\n", current_line);
 		free(current_line);
+		ft_free_gnl_static();
 		current_line = NULL;
 	}
 	read_status = check_map_values(read_status, current_line, map_data);
 	free(current_line);
+	ft_free_gnl_static();
 }
 
 void	check_validate_map(const char *map_use, t_map_data *map_data)
@@ -80,16 +85,17 @@ void	check_validate_map(const char *map_use, t_map_data *map_data)
 
 	read_count = 0;
 	fd = open(map_use, O_RDONLY);
-	while (read_count <= 7)
+	while (read_count <= 7 && get_next_line(fd, &current_line))
 	{
-		get_next_line(fd, &current_line);
-		if (*current_line != '\0')
+		if (*current_line)
 			read_count++;
 		if (read_count == 7)
 			break ;
 		free(current_line);
+		ft_free_gnl_static();
 	}
 	free(current_line);
+	ft_free_gnl_static();
 	elem_texture_to_map(fd, map_data);
 	read_count = 1;
 	while (read_count == 1)
@@ -97,6 +103,7 @@ void	check_validate_map(const char *map_use, t_map_data *map_data)
 		read_count = get_next_line(fd, &current_line);
 		read_count = check_map_values(read_count, current_line, map_data);
 		free(current_line);
+		ft_free_gnl_static();
 	}
 	close(fd);
 }
