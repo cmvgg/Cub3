@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   errors.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mero <mero@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: ivromero <ivromero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 09:51:43 by cvarela-          #+#    #+#             */
-/*   Updated: 2025/01/29 18:59:08 by mero             ###   ########.fr       */
+/*   Updated: 2025/01/29 19:42:46 by ivromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,8 +88,8 @@ void	check_elem_texture(const char *map_use, t_texture_element *elem_txt)
 	count = 0;
 	fd = open(map_use, O_RDONLY);
 	get_dsp_data()->fd = fd;
-	if (fd < 0)
-		ft_error("Error:  Map path not valid\n", line);
+	if (fd <= 0)
+		ft_error("Error:  Map path not valid\n", ft_strdup(" "));
 	while (count < 7)
 	{
 		read_stat = get_next_line(fd, &line);
