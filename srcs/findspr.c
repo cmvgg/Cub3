@@ -6,7 +6,7 @@
 /*   By: cvarela- <cvarela-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 09:51:51 by cvarela-          #+#    #+#             */
-/*   Updated: 2025/01/14 13:49:43 by cvarela-         ###   ########.fr       */
+/*   Updated: 2025/01/29 15:39:17 by cvarela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ static void	init_sprites(t_data *dsp_dt, t_map_data *map_data)
 		}
 		y++;
 	}
+	dsp_dt->map_d.sprite = z;
 }
 
 void	find_sprites(t_data *dsp_dt, t_map_data *map_data)

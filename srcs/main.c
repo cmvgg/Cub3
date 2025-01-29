@@ -6,7 +6,7 @@
 /*   By: cvarela- <cvarela-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 09:32:15 by cvarela-          #+#    #+#             */
-/*   Updated: 2025/01/29 11:27:18 by cvarela-         ###   ########.fr       */
+/*   Updated: 2025/01/29 16:12:29 by cvarela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ void	ft_error(char *str, char *line)
 	free(map->matrix);
 	free(dsp_dt->spr.zbuf);
 	free(dsp_dt->spr.dist);
-	if (dsp_dt->spr.buf && dsp_dt->spr.buf[0])
+	if (dsp_dt->spr.buf)
 		ft_free(dsp_dt->spr.buf);
 	free(dsp_dt->spr.order);
 	ft_free_gnl_static();

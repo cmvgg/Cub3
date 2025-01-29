@@ -6,7 +6,7 @@
 /*   By: cvarela- <cvarela-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 09:44:29 by cvarela-          #+#    #+#             */
-/*   Updated: 2025/01/29 11:24:01 by cvarela-         ###   ########.fr       */
+/*   Updated: 2025/01/29 15:37:29 by cvarela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,6 +117,7 @@ typedef struct s_map_data
 	int					width;
 	int					height;
 	int					player;
+	int					sprite;
 }						t_map_data;
 
 typedef struct s_player_data
