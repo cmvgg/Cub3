@@ -6,7 +6,7 @@
 /*   By: cvarela- <cvarela-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 09:44:29 by cvarela-          #+#    #+#             */
-/*   Updated: 2025/01/29 15:37:29 by cvarela-         ###   ########.fr       */
+/*   Updated: 2025/01/29 17:59:50 by cvarela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -308,7 +308,8 @@ void					rot_left(double rot, t_data *dsp_dt);
 
 /* error_utils.c */
 void					validate_image_path(char *path, char *line);
-int						look_color(int *red, int *green, char *color);
+int						look_color(int *red, int *green, char *color,
+							char **line);
 
 /* utils.c */
 t_data					*get_dsp_data(void);

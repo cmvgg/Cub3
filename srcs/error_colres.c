@@ -6,7 +6,7 @@
 /*   By: cvarela- <cvarela-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 09:50:59 by cvarela-          #+#    #+#             */
-/*   Updated: 2025/01/28 18:13:16 by cvarela-         ###   ########.fr       */
+/*   Updated: 2025/01/29 17:56:13 by cvarela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ void	error_floor(char **line, t_texture_element *elem_texture)
 		ft_error("Error: Not path texture floor\n", *line);
 	copy_path(count, &str, line);
 	elem_texture->color.floor = str;
-	elem_texture->color.fl_blue = look_color(&red, &green, str);
+	elem_texture->color.fl_blue = look_color(&red, &green, str, line);
 	elem_texture->color.fl_green = green;
 	elem_texture->color.fl_red = red;
 	free(str);
@@ -86,7 +86,7 @@ void	error_skying(char **line, t_texture_element *elem_texture)
 		ft_error("Error: Not path texture sky\n", *line);
 	copy_path(count, &str, line);
 	elem_texture->color.skying = str;
-	elem_texture->color.cl_blue = look_color(&red, &green, str);
+	elem_texture->color.cl_blue = look_color(&red, &green, str, line);
 	elem_texture->color.cl_green = green;
 	elem_texture->color.cl_red = red;
 	free(str);

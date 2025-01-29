@@ -6,7 +6,7 @@
 /*   By: cvarela- <cvarela-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 09:51:43 by cvarela-          #+#    #+#             */
-/*   Updated: 2025/01/29 12:15:44 by cvarela-         ###   ########.fr       */
+/*   Updated: 2025/01/29 17:46:59 by cvarela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,9 +41,7 @@ static void	extract_map_textures(char **line, t_texture_element *elem_texture)
 	while ((*line)[index] == ' ' || (*line)[index] == '\n'
 	|| (*line)[index] == '\t')
 		index++;
-	if ((*line)[index] == 'R')
-		validate_texture_data(index, 'R', line, elem_texture);
-	else if ((*line)[index] == 'N' && (*line)[index + 1] == 'O')
+	if ((*line)[index] == 'N' && (*line)[index + 1] == 'O')
 		validate_texture_data(index, 'N', line, elem_texture);
 	else if ((*line)[index] == 'S' && (*line)[index + 1] == 'O')
 		validate_texture_data(index, 'S', line, elem_texture);
