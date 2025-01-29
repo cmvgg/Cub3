@@ -1,3 +1,4 @@
+85903dd - Cesar Manuel Varela Garcia, 3 minutes ago : srcs/errors.c: Error! 29/01/2025--11:55
 bc107fb - ivromero, 17 hours ago : Update file headers and add file descriptor to data structure: free the rest of the map
 c4849ad - Cesar Manuel Varela Garcia, 17 hours ago : Correcciones de linting 28/01/2025--18:52
 fb9edd6 - ivromero, 5 days ago : mouse fix
