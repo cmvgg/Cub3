@@ -6,7 +6,7 @@
 /*   By: cvarela- <cvarela-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 09:51:21 by cvarela-          #+#    #+#             */
-/*   Updated: 2025/01/29 11:50:10 by cvarela-         ###   ########.fr       */
+/*   Updated: 2025/01/29 12:16:53 by cvarela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,6 @@ void	check_validate_map(const char *map_use, t_map_data *map_data)
 		if (read_count == 7)
 			break ;
 		free(current_line);
-		ft_free_gnl_static();
 	}
 	free(current_line);
 	ft_free_gnl_static();
@@ -103,7 +102,6 @@ void	check_validate_map(const char *map_use, t_map_data *map_data)
 		read_count = get_next_line(fd, &current_line);
 		read_count = check_map_values(read_count, current_line, map_data);
 		free(current_line);
-		ft_free_gnl_static();
 	}
 	close(fd);
 }
