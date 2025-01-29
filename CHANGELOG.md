@@ -1,9 +1,10 @@
-f9ad9a3 - Cesar Manuel Varela Garcia, 2 hours ago : Correcciones de linting 29/01/2025--14:00
-367caa5 - Cesar Manuel Varela Garcia, 4 hours ago : all ok 29/01/2025--12:17
-e08d833 - Cesar Manuel Varela Garcia, 4 hours ago : srcs/error_map.c: Error! TOO_MANY_LINES       (line: 109, col:   1):	Function has more than 25 lines" "srcs/errors.c: Error! (line: 106, col:   1):	Function has more than 25 lines" 29/01/2025--11:58
-85903dd - Cesar Manuel Varela Garcia, 4 hours ago : srcs/errors.c: Error! 29/01/2025--11:55
-bc107fb - ivromero, 21 hours ago : Update file headers and add file descriptor to data structure: free the rest of the map
-c4849ad - Cesar Manuel Varela Garcia, 21 hours ago : Correcciones de linting 28/01/2025--18:52
+372276f - Cesar Manuel Varela Garcia, 65 minutes ago : ultimos cambios 29/01/2025--16:16
+f9ad9a3 - Cesar Manuel Varela Garcia, 3 hours ago : Correcciones de linting 29/01/2025--14:00
+367caa5 - Cesar Manuel Varela Garcia, 5 hours ago : all ok 29/01/2025--12:17
+e08d833 - Cesar Manuel Varela Garcia, 5 hours ago : srcs/error_map.c: Error! TOO_MANY_LINES       (line: 109, col:   1):	Function has more than 25 lines" "srcs/errors.c: Error! (line: 106, col:   1):	Function has more than 25 lines" 29/01/2025--11:58
+85903dd - Cesar Manuel Varela Garcia, 5 hours ago : srcs/errors.c: Error! 29/01/2025--11:55
+bc107fb - ivromero, 22 hours ago : Update file headers and add file descriptor to data structure: free the rest of the map
+c4849ad - Cesar Manuel Varela Garcia, 22 hours ago : Correcciones de linting 28/01/2025--18:52
 fb9edd6 - ivromero, 5 days ago : mouse fix
 d1d0648 - ivromero, 5 days ago : more leaks
 66a70a5 - ivromero, 5 days ago : leaks + sf
