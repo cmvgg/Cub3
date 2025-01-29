@@ -6,7 +6,7 @@ NO ./textures/ww.xpm
 EA ./textures/we.xpm
 
 
-WE /home/cvarela-/sgoinfre/cursus/cub_entrega1/textures/wn.xpm
+WE ./textures/wn.xpm
 S ./textures/barrel.xpm
 
 F 117,106,104

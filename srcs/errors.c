@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   errors.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cvarela- <cvarela-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mero <mero@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 09:51:43 by cvarela-          #+#    #+#             */
-/*   Updated: 2025/01/29 17:46:59 by cvarela-         ###   ########.fr       */
+/*   Updated: 2025/01/29 18:59:08 by mero             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ static void	extract_map_textures(char **line, t_texture_element *elem_texture)
 
 	index = 0;
 	while ((*line)[index] == ' ' || (*line)[index] == '\n'
-	|| (*line)[index] == '\t')
+		|| (*line)[index] == '\t')
 		index++;
 	if ((*line)[index] == 'N' && (*line)[index + 1] == 'O')
 		validate_texture_data(index, 'N', line, elem_texture);
@@ -65,7 +65,12 @@ static int	handle_identify(int read_stat, char **line,
 	if (read_stat == -1 || !(*line))
 		return (-1);
 	if (read_stat == 0)
-		ft_error("Error: Invalid format\n", *line);
+	{
+		if (*line)
+			free(*line);
+		ft_free_gnl_static();
+		ft_error("Error: Invalid format\n", ft_strdup(" "));
+	}
 	if (**line == '\0')
 		return (0);
 	extract_map_textures(line, elem_texture);
